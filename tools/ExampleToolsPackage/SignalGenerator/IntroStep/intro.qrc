@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="images">
+    <file>signal1.png</file>
+    <file>signal2.png</file>
+    <file>signal_out.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,41 @@
+{
+    "item_name": "AddSignals",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "",
+    "item_description": "",
+    "dependencies": [],
+    "module_params": {
+        "cls": "AddSignals",
+        "name": "AddSignals",
+        "metadata": {},
+        "file_location": "",
+        "module_label": "Add Signals",
+        "module_category": "Examples",
+        "module_options": {},
+        "inputs": {
+            "signal_1": {
+                "name": "signal_1",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "signal_2": {
+                "name": "signal_2",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "signal": {
+                "name": "signal",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "module": "ExampleModulesPackage.AddSignals"
+    }
+}
