@@ -1,0 +1,53 @@
+{
+    "item_name": "MutualInfoZScore",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "CEAMS",
+    "item_description": "",
+    "dependencies": [],
+    "module_params": {
+        "cls": "MutualInfoZScore",
+        "name": "MutualInfoZScore",
+        "metadata": {},
+        "file_location": "",
+        "module_label": "MutualInfoZScore",
+        "module_category": "Statistics",
+        "module_options": {},
+        "inputs": {
+            "samples": {
+                "name": "samples",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "mean": {
+                "name": "mean",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "std": {
+                "name": "std",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "criteria": {
+                "name": "criteria",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "z_values": {
+                "name": "z_values",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "module": "RapidEyeMovementModules.MutualInfoZScore"
+    }
+}

@@ -1,0 +1,56 @@
+{   
+    "item_name": "EOGPeaksFinder",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "dependencies": [
+    ],
+    "module_params":{
+        "cls":"EOGPeaksFinder",
+        "name":"EOGPeaksFinder",
+        "metadata":{},
+        "file_location":null,
+        "module":"RapidEyeMovementModules.EOGPeaksFinder",
+        "module_label": "EOG Peaks Finder",
+        "module_category":"Signal Processing",
+        "module_author":"",
+        "module_url":"",
+        "module_description":"",
+        "module_options":{},
+        "inputs": {
+            "EOG_signals": {
+                "name": "EOG_signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"sEOG_signals": {
+                "name": "sEOG_signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"dEOG_signals": {
+                "name": "dEOG_signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"parameters": {
+                "name": "parameters",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "peaks_df": {
+                "name": "peaks_df",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"peaks_parameters": {
+                "name": "peaks_parameters",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        }
+    }
+}

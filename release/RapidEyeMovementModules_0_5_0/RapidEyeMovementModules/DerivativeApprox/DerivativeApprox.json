@@ -1,0 +1,47 @@
+{
+    "item_name": "DerivativeApprox",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "Samuel Poulin",
+    "item_description": "",
+    "dependencies": [],
+    "module_params": {
+        "cls": "DerivativeApprox",
+        "name": "DerivativeApprox",
+        "metadata": {},
+        "file_location": "",
+        "module_label": "Derivative Approximation",
+        "module_category": "Signal Processing",
+        "module_options": {},
+        "inputs": {
+            "signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "order": {
+                "name": "order",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "derivatives": {
+                "name": "derivatives",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "module": "RapidEyeMovementModules.DerivativeApprox"
+    }
+}

@@ -1,0 +1,304 @@
+{
+    "package_name": "RapidEyeMovementModules",
+    "package_version": "0.5.0",
+    "package_author": "Samuel Poulin",
+    "package_url": "",
+    "package_description": "Modules to manage rapid eye movement on the EEG during REM stage",
+    "package_api_version": "1.0.0",
+    "items": [
+        {
+            "item_name": "PolynomialApprox",
+            "item_type": "module",
+            "item_version": "0.1.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "Polynomial Approximation"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "EventSubdivision",
+            "item_type": "module",
+            "item_version": "0.4.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Events Utilities",
+                        "module_label": "Event Subdivision"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "DerivativeApprox",
+            "item_type": "module",
+            "item_version": "0.1.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "Derivative Approximation"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "DetrendSignal",
+            "item_type": "module",
+            "item_version": "0.1.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "Detrend Signal"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "RemDetector",
+            "item_type": "module",
+            "item_version": "0.1.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Detectors",
+                        "module_label": "REM Detector"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "SpectralPower",
+            "item_type": "module",
+            "item_version": "0.1.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Statistics",
+                        "module_label": "Spectral Power"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "MutualInfoZScore",
+            "item_type": "module",
+            "item_version": "0.2.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Statistics",
+                        "module_label": "MutualInfoZScore"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "FilterComponents",
+            "item_type": "module",
+            "item_version": "2.5.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "Filter Components"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "SubstractSignals",
+            "item_type": "module",
+            "item_version": "0.2.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "Substract Signals"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "AccidentalMutualInfo",
+            "item_type": "module",
+            "item_version": "2.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Statistics",
+                        "module_label": "Accidental Mutual Info"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "SignalsCombine",
+            "item_type": "module",
+            "item_version": "0.1.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Parameters",
+                        "module_label": "Signals Combine"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "EOGBaselineProcess",
+            "item_type": "module",
+            "item_version": "0.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "EOG Baseline Process"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "EOGNormalization",
+            "item_type": "module",
+            "item_version": "0.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "EOG Normalization"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "MovingAverage",
+            "item_type": "module",
+            "item_version": "0.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "Moving Average"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "SumSignals",
+            "item_type": "module",
+            "item_version": "0.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "Sum Signals"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "EOGPeaksFinder",
+            "item_type": "module",
+            "item_version": "1.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "EOG Peaks Finder"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "EllipFilterSignal",
+            "item_type": "module",
+            "item_version": "0.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "Ellip Filter Signal"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "EOGIntersectionsFinder",
+            "item_type": "module",
+            "item_version": "0.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "EOG Intersections Finder"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "EOGPeaksMatches",
+            "item_type": "module",
+            "item_version": "1.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Signal Processing",
+                        "module_label": "EOG Peaks Matches"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "EOGEventsCreator",
+            "item_type": "module",
+            "item_version": "0.1.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Events Utilities",
+                        "module_label": "EOG Events Creator"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "REMsEventsToMiniEpochs",
+            "item_type": "module",
+            "item_version": "1.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Events Utilities",
+                        "module_label": "REMs to mini-epochs"
+                    }
+                }
+            ]
+        }
+    ]
+}

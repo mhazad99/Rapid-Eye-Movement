@@ -1,0 +1,89 @@
+{
+    "item_name": "FilterComponents",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "CEAMS",
+    "item_description": "",
+    "dependencies": [],
+    "module_params": {
+        "cls": "FilterComponents",
+        "name": "FilterComponents",
+        "metadata": {},
+        "file_location": "",
+        "module_label": "Filter Components",
+        "module_category": "Signal Processing",
+        "module_options": {},
+        "inputs": {
+            "z_values": {
+                "name": "z_values",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "components": {
+                "name": "components",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "epochs_to_process": {
+                "name": "epochs_to_process",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "threshold": {
+                "name": "threshold",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "n_max_to_rem": {
+                "name": "n_max_to_rem",
+                "value": "1",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "group_name": {
+                "name": "event_group",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "event_name": {
+                "name": "event_name",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "event_channel": {
+                "name": "event_channel",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "filter_components": {
+                "name": "filter_components",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "deleted_components": {
+                "name": "deleted_components",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "events": {
+                "name": "events",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "module": "RapidEyeMovementModules.FilterComponents"
+    }
+}

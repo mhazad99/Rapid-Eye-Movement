@@ -1,0 +1,59 @@
+{
+    "item_name": "EOGBaselineProcess",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "",
+    "item_description": "",
+    "dependencies": [],
+    "module_params": {
+        "cls": "EOGBaselineProcess",
+        "name": "EOGBaselineProcess",
+        "metadata": {},
+        "file_location": "",
+        "module_label": "EOG Baseline Process",
+        "module_category": "Signal Processing",
+        "module_options": {},
+        "inputs": {
+            "filename": {
+                "name": "filename",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "sleep_stages": {
+                "name": "sleep_stages",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "parameters": {
+                "name": "parameters",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "baseline_stats": {
+                "name": "baseline_stats",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "module": "RapidEyeMovementModules.EOGBaselineProcess"
+    }
+}

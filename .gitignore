@@ -53,6 +53,4 @@ Thumbs.db
 # Sphinx documentation
 docs/build/
 
-release/
-
 .vscode/settings.json

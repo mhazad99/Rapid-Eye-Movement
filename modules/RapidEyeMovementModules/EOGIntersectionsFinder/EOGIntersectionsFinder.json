@@ -1,0 +1,41 @@
+{   
+    "item_name": "EOGIntersectionsFinder",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "dependencies": [
+    ],
+    "module_params":{
+        "cls":"EOGIntersectionsFinder",
+        "name":"EOGIntersectionsFinder",
+        "metadata":{},
+        "file_location":null,
+        "module":"RapidEyeMovementModules.EOGIntersectionsFinder",
+        "module_label": "EOG Intersections Finder",
+        "module_category":"Signal Processing",
+        "module_author":"",
+        "module_url":"",
+        "module_description":"",
+        "module_options":{},
+        "inputs": {
+            "EOG_signals": {
+                "name": "EOG_signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"parameters": {
+                "name": "parameters",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "intersections_df": {
+                "name": "intersections_df",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        }
+    }
+}

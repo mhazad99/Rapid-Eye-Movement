@@ -1,0 +1,47 @@
+{
+    "item_name": "MovingAverage",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "CEAMS",
+    "item_description": "",
+    "dependencies": [],
+    "module_params": {
+        "cls": "MovingAverage",
+        "name": "MovingAverage",
+        "metadata": {},
+        "file_location": "",
+        "module_label": "Moving Average",
+        "module_category": "Signal Processing",
+        "module_options": {},
+        "inputs": {
+            "signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "win_len_sec": {
+                "name": "win_len_sec",
+                "value": "1",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "win_step_sec": {
+                "name": "win_step_sec",
+                "value": "1",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "module": "RapidEyeMovementModules.MovingAverage"
+    }
+}

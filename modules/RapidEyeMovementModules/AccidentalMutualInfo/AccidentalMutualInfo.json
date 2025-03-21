@@ -1,0 +1,71 @@
+{
+    "item_name": "AccidentalMutualInfo",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "CEAMS",
+    "item_description": "",
+    "dependencies": [],
+    "module_params": {
+        "cls": "AccidentalMutualInfo",
+        "name": "AccidentalMutualInfo",
+        "metadata": {},
+        "file_location": "",
+        "module_label": "Accidental Mutual Info",
+        "module_category": "Statistics",
+        "module_options": {},
+        "inputs": {
+            "signals1": {
+                "name": "signals1",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "signals2": {
+                "name": "signals2",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "cycle_events": {
+                "name": "cycle_events",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "parameters": {
+                "name": "parameters",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "artifact_events": {
+                "name": "artifact_events",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "mean_ami": {
+                "name": "mean_ami",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "std_ami": {
+                "name": "std_ami",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "criteria": {
+                "name": "criteria",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "module": "RapidEyeMovementModules.AccidentalMutualInfo"
+    }
+}

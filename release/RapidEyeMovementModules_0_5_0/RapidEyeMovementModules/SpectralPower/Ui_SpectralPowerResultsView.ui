@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SpectralPowerResultsView</class>
+ <widget class="QWidget" name="SpectralPowerResultsView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>633</width>
+    <height>109</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>SpectralPower</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QCheckBox" name="delta_checkBox">
+         <property name="text">
+          <string>Delta</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="theta_checkBox">
+         <property name="text">
+          <string>Theta</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="alpha_checkBox">
+         <property name="text">
+          <string>Alpha</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="beta_checkBox">
+         <property name="text">
+          <string>Beta</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="gamma_checkBox">
+         <property name="text">
+          <string>Gamma</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="other_checkBox">
+         <property name="text">
+          <string>Other</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="result_layout"/>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>theta_checkBox</sender>
+   <signal>clicked()</signal>
+   <receiver>SpectralPowerResultsView</receiver>
+   <slot>scatter_plot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>95</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delta_checkBox</sender>
+   <signal>clicked()</signal>
+   <receiver>SpectralPowerResultsView</receiver>
+   <slot>scatter_plot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>49</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>alpha_checkBox</sender>
+   <signal>clicked()</signal>
+   <receiver>SpectralPowerResultsView</receiver>
+   <slot>scatter_plot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>beta_checkBox</sender>
+   <signal>clicked()</signal>
+   <receiver>SpectralPowerResultsView</receiver>
+   <slot>scatter_plot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>25</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gamma_checkBox</sender>
+   <signal>clicked()</signal>
+   <receiver>SpectralPowerResultsView</receiver>
+   <slot>scatter_plot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>other_checkBox</sender>
+   <signal>clicked()</signal>
+   <receiver>SpectralPowerResultsView</receiver>
+   <slot>scatter_plot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>322</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>7</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>scatter_plot()</slot>
+ </slots>
+</ui>

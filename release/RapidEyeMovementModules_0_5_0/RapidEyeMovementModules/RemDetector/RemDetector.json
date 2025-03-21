@@ -1,0 +1,65 @@
+{
+    "item_name": "RemDetector",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "Samuel Poulin",
+    "item_description": "",
+    "dependencies": [],
+    "module_params": {
+        "cls": "RemDetector",
+        "name": "RemDetector",
+        "metadata": {},
+        "file_location": "",
+        "module_label": "REM Detector",
+        "module_category": "Detectors",
+        "module_options": {},
+        "inputs": {
+            "signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "event_group": {
+                "name": "event_group",
+                "value": "REMs_det",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "event_name": {
+                "name": "event_name",
+                "value": "REMs_Poulin",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "event_channel": {
+                "name": "event_channel",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "border_effect": {
+                "name": "border_effect",
+                "value": "10",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "percentile": {
+                "name": "percentile",
+                "value": "65",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "detections": {
+                "name": "detections",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "module": "RapidEyeMovementModules.RemDetector"
+    }
+}

@@ -1,0 +1,1692 @@
+{
+    "item_name": "REMDetectorShotGroup",
+    "item_type": "tool",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "CEAMS",
+    "item_description": "Tool to detect rapid eye movements during REM.",
+    "tool_params": {
+        "tool_label": "REM Detection (Shot-grouping approach)",
+        "tool_category": "Rapid Eye Movements",
+        "asset_directory": "",
+        "package_name": "RapidEyeMovementTools",
+        "steps": [
+            {
+                "name": "REMs detector",
+                "description": "Documentation for the REMs detector based on the shot-grouping approach.",
+                "custom_step_name": "IntroStep",
+                "show_index": false
+            },
+            {
+                "name": "Input Files",
+                "description": "<p>Start by adding your PSG files.<br><br>Select the <b>2 EOG channels</b>.<br><br>The EOG channels are used to detect REMs.</p>",
+                "module_id": "599c0f5e-0c1e-4de6-ac6f-a3b58e5bedc5",
+                "show_index": true
+            },
+            {
+                "name": "Detector Settings",
+                "description": "\n\nDefine your settings.",
+                "custom_step_name": "DetectorSettings",
+                "show_index": true,
+                "configs": {
+                    "label": "Optional settings:",
+                    "list": [
+                        {
+                            "name": "Bandpass filter before the baseline computation",
+                            "description": "Define your settings for the bandpass filter.",
+                            "module_id": "080165f3-9851-4f90-b764-055513e0657b"
+                        },
+                        {
+                            "name": "Peaks Finder Settings",
+                            "description": "Define your settings for the peaks detection.",
+                            "module_id": "ad06a511-c368-4d04-992b-e826947cc2a0"
+                        },
+                        {
+                            "name": "Peaks Matches Settings",
+                            "description": "Define your settings for the peaks matches.",
+                            "module_id": "c8cce206-c815-4b66-9723-f22afd686cef"
+                        },
+                        {
+                            "name": "Intersections Settings",
+                            "description": "Define your settings for the intersections finder.",
+                            "module_id": "da247b4b-edd7-448d-b99e-08ae84e34836"
+                        },
+                        {
+                            "name": "MORs Settings for matched peaks",
+                            "description": "Define your settings for the creation of MORs from peaks matched.",
+                            "module_id": "d16a0f66-d6e9-47ef-a91b-5094b59b289e"
+                        },
+                        {
+                            "name": "MORs Settings for unmatched peaks",
+                            "description": "Define your settings for the creation of MORs from peaks unmatched.",
+                            "module_id": "e7801db2-d111-4de5-a00a-123a7be713f6"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "dependencies": [
+        {
+            "package_name": "RapidEyeMovementTools",
+            "package_version": "0.9.0",
+            "deleteable": false
+        },
+        {
+            "package_name": "CEAMSModules",
+            "package_version": "6.10.0"
+        },
+        {
+            "package_name": "RapidEyeMovementModules",
+            "package_version": "0.5.0"
+        }
+    ],
+    "process_params": {
+        "process_label": "REM Detector Shot Group",
+        "subgraph_params": {},
+        "nodes": [
+            {
+                "cls": "Constant",
+                "name": "Constant",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Constant",
+                "module_category": "Parameters",
+                "module_options": {},
+                "inputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "ad06a511-c368-4d04-992b-e826947cc2a0": "peaks_parameters"
+                        }
+                    }
+                },
+                "outputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "e7801db2-d111-4de5-a00a-123a7be713f6": [
+                                "peaks_parameters"
+                            ],
+                            "d16a0f66-d6e9-47ef-a91b-5094b59b289e": [
+                                "peaks_parameters"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.Constant",
+                "identifier": "03fffba7-01bb-4f75-ae69-f2a29213e41c",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": 1726.0,
+                "pos_y": 126.0
+            },
+            {
+                "cls": "Constant",
+                "name": "Constant",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Constant",
+                "module_category": "Parameters",
+                "module_options": {},
+                "inputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "56815f9a-ceca-47fb-9311-c360770516ea": "signals"
+                        }
+                    }
+                },
+                "outputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "c8cce206-c815-4b66-9723-f22afd686cef": [
+                                "EOG_signals"
+                            ],
+                            "ad06a511-c368-4d04-992b-e826947cc2a0": [
+                                "EOG_signals"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.Constant",
+                "identifier": "0d4fd5a0-12ac-44d4-bb2d-38f8df80a02a",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": 1125.0,
+                "pos_y": -209.0
+            },
+            {
+                "cls": "EventCombine",
+                "name": "EventCombine",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Event Combine",
+                "module_category": "Events Utilities",
+                "module_options": {},
+                "inputs": {
+                    "events1": {
+                        "name": "events1",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "d16a0f66-d6e9-47ef-a91b-5094b59b289e": "MORs_df"
+                        }
+                    },
+                    "event1_name": {
+                        "name": "event1_name",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "events2": {
+                        "name": "events2",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "e7801db2-d111-4de5-a00a-123a7be713f6": "MORs_df"
+                        }
+                    },
+                    "event2_name": {
+                        "name": "event2_name",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "channel1_name": {
+                        "name": "channel1_name",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "channel2_name": {
+                        "name": "channel2_name",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "behavior": {
+                        "name": "behavior",
+                        "value": "append",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "new_event_group": {
+                        "name": "new_event_group",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "new_event_name": {
+                        "name": "new_event_name",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "new_event_chan": {
+                        "name": "new_event_chan",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "events": {
+                        "name": "events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "737c0380-3ad1-49ff-ae06-20dacc5e7d1e": [
+                                "new_events"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.EventCombine",
+                "identifier": "14e79c5a-9d0b-4898-b8b4-af67c11366bc",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": 2250.0,
+                "pos_y": -312.0
+            },
+            {
+                "cls": "EOGEventsCreator",
+                "name": "EOGEventsCreator",
+                "metadata": {},
+                "file_location": null,
+                "module": "RapidEyeMovementModules.EOGEventsCreator",
+                "module_label": "EOG Events Creator",
+                "module_category": "Events Utilities",
+                "module_author": "",
+                "module_url": "",
+                "module_description": "",
+                "module_options": {},
+                "inputs": {
+                    "EOG_signals": {
+                        "name": "EOG_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "952d724d-be87-4582-ba88-033156eb3a9f": "constant"
+                        }
+                    },
+                    "intersections_df": {
+                        "name": "intersections_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "da247b4b-edd7-448d-b99e-08ae84e34836": "intersections_df"
+                        }
+                    },
+                    "peaks_df": {
+                        "name": "peaks_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "c8cce206-c815-4b66-9723-f22afd686cef": "peaks_unmatched_df"
+                        }
+                    },
+                    "parameters": {
+                        "name": "parameters",
+                        "value": {
+                            "time_window_s": 1.0,
+                            "min_deflection_angle": 45.0,
+                            "max_deflection_time": null,
+                            "max_deflection_std": 1.5,
+                            "max_angle_diff_EOG": 15.0,
+                            "min_amplitude_z_2nd_EOG": 0.75
+                        },
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "peaks_parameters": {
+                        "name": "peaks_parameters",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "03fffba7-01bb-4f75-ae69-f2a29213e41c": "constant"
+                        }
+                    }
+                },
+                "outputs": {
+                    "MORs_df": {
+                        "name": "MORs_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "14e79c5a-9d0b-4898-b8b4-af67c11366bc": [
+                                "events2"
+                            ]
+                        }
+                    }
+                },
+                "identifier": "e7801db2-d111-4de5-a00a-123a7be713f6",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                },
+                "pos_x": 2043.0,
+                "pos_y": -261.0
+            },
+            {
+                "cls": "EOGEventsCreator",
+                "name": "EOGEventsCreator",
+                "metadata": {},
+                "file_location": null,
+                "module": "RapidEyeMovementModules.EOGEventsCreator",
+                "module_label": "EOG Events Creator",
+                "module_category": "Events Utilities",
+                "module_author": "",
+                "module_url": "",
+                "module_description": "",
+                "module_options": {},
+                "inputs": {
+                    "EOG_signals": {
+                        "name": "EOG_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "952d724d-be87-4582-ba88-033156eb3a9f": "constant"
+                        }
+                    },
+                    "intersections_df": {
+                        "name": "intersections_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "da247b4b-edd7-448d-b99e-08ae84e34836": "intersections_df"
+                        }
+                    },
+                    "peaks_df": {
+                        "name": "peaks_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "c8cce206-c815-4b66-9723-f22afd686cef": "peaks_df"
+                        }
+                    },
+                    "parameters": {
+                        "name": "parameters",
+                        "value": {
+                            "time_window_s": 1.0,
+                            "min_deflection_angle": null,
+                            "min_deflection_time": null,
+                            "max_deflection_std": null,
+                            "max_deflection_time": null,
+                            "max_angle_diff_EOG": null,
+                            "min_amplitude_z_2nd_EOG": 0.75
+                        },
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "peaks_parameters": {
+                        "name": "peaks_parameters",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "03fffba7-01bb-4f75-ae69-f2a29213e41c": "constant"
+                        }
+                    }
+                },
+                "outputs": {
+                    "MORs_df": {
+                        "name": "MORs_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "14e79c5a-9d0b-4898-b8b4-af67c11366bc": [
+                                "events1"
+                            ]
+                        }
+                    }
+                },
+                "identifier": "d16a0f66-d6e9-47ef-a91b-5094b59b289e",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                },
+                "pos_x": 2044.28125,
+                "pos_y": -448.203125
+            },
+            {
+                "cls": "EOGPeaksMatches",
+                "name": "EOGPeaksMatches",
+                "metadata": {},
+                "file_location": null,
+                "module": "RapidEyeMovementModules.EOGPeaksMatches",
+                "module_label": "EOG Peaks Matches",
+                "module_category": "Signal Processing",
+                "module_author": "",
+                "module_url": "",
+                "module_description": "",
+                "module_options": {},
+                "inputs": {
+                    "EOG_signals": {
+                        "name": "EOG_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "0d4fd5a0-12ac-44d4-bb2d-38f8df80a02a": "constant"
+                        }
+                    },
+                    "sEOG_signals": {
+                        "name": "sEOG_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "099f9123-15f1-4c97-b69d-b877806fb140": "new_signals"
+                        }
+                    },
+                    "dEOG_signals": {
+                        "name": "dEOG_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "5c14cde1-a95e-4301-8919-3e8ae3c45ed6": "new_signals"
+                        }
+                    },
+                    "peaks_df": {
+                        "name": "peaks_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "ad06a511-c368-4d04-992b-e826947cc2a0": "peaks_df"
+                        }
+                    },
+                    "parameters": {
+                        "name": "parameters",
+                        "value": {
+                            "time_window_s": 0.1
+                        },
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "peaks_df": {
+                        "name": "peaks_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "d16a0f66-d6e9-47ef-a91b-5094b59b289e": [
+                                "peaks_df"
+                            ]
+                        }
+                    },
+                    "peaks_unmatched_df": {
+                        "name": "peaks_unmatched_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "e7801db2-d111-4de5-a00a-123a7be713f6": [
+                                "peaks_df"
+                            ]
+                        }
+                    }
+                },
+                "identifier": "c8cce206-c815-4b66-9723-f22afd686cef",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                },
+                "pos_x": 1634.0,
+                "pos_y": -48.0
+            },
+            {
+                "cls": "EOGIntersectionsFinder",
+                "name": "EOGIntersectionsFinder",
+                "metadata": {},
+                "file_location": null,
+                "module": "RapidEyeMovementModules.EOGIntersectionsFinder",
+                "module_label": "EOG Intersections Finder",
+                "module_category": "Signal Processing",
+                "module_author": "",
+                "module_url": "",
+                "module_description": "",
+                "module_options": {},
+                "inputs": {
+                    "EOG_signals": {
+                        "name": "EOG_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "952d724d-be87-4582-ba88-033156eb3a9f": "constant"
+                        }
+                    },
+                    "parameters": {
+                        "name": "parameters",
+                        "value": {
+                            "time_window_s": 0.16
+                        },
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "intersections_df": {
+                        "name": "intersections_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "d16a0f66-d6e9-47ef-a91b-5094b59b289e": [
+                                "intersections_df"
+                            ],
+                            "e7801db2-d111-4de5-a00a-123a7be713f6": [
+                                "intersections_df"
+                            ]
+                        }
+                    }
+                },
+                "identifier": "da247b4b-edd7-448d-b99e-08ae84e34836",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                },
+                "pos_x": 1481.0,
+                "pos_y": -247.0
+            },
+            {
+                "cls": "Constant",
+                "name": "Constant",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Constant",
+                "module_category": "Parameters",
+                "module_options": {},
+                "inputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "56815f9a-ceca-47fb-9311-c360770516ea": "signals"
+                        }
+                    }
+                },
+                "outputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "da247b4b-edd7-448d-b99e-08ae84e34836": [
+                                "EOG_signals"
+                            ],
+                            "d16a0f66-d6e9-47ef-a91b-5094b59b289e": [
+                                "EOG_signals"
+                            ],
+                            "e7801db2-d111-4de5-a00a-123a7be713f6": [
+                                "EOG_signals"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.Constant",
+                "identifier": "952d724d-be87-4582-ba88-033156eb3a9f",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": 1127.328125,
+                "pos_y": -428.34375
+            },
+            {
+                "cls": "EOGPeaksFinder",
+                "name": "EOGPeaksFinder",
+                "metadata": {},
+                "file_location": null,
+                "module": "RapidEyeMovementModules.EOGPeaksFinder",
+                "module_label": "EOG Peaks Finder",
+                "module_category": "Signal Processing",
+                "module_author": "",
+                "module_url": "",
+                "module_description": "",
+                "module_options": {},
+                "inputs": {
+                    "EOG_signals": {
+                        "name": "EOG_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "0d4fd5a0-12ac-44d4-bb2d-38f8df80a02a": "constant"
+                        }
+                    },
+                    "sEOG_signals": {
+                        "name": "sEOG_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "099f9123-15f1-4c97-b69d-b877806fb140": "new_signals"
+                        }
+                    },
+                    "dEOG_signals": {
+                        "name": "dEOG_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "5c14cde1-a95e-4301-8919-3e8ae3c45ed6": "new_signals"
+                        }
+                    },
+                    "parameters": {
+                        "name": "parameters",
+                        "value": {
+                            "min_height_z": 1.25,
+                            "min_interval_s": 0.5
+                        },
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "peaks_df": {
+                        "name": "peaks_df",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "c8cce206-c815-4b66-9723-f22afd686cef": [
+                                "peaks_df"
+                            ]
+                        }
+                    },
+                    "peaks_parameters": {
+                        "name": "peaks_parameters",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "03fffba7-01bb-4f75-ae69-f2a29213e41c": [
+                                "constant"
+                            ]
+                        }
+                    }
+                },
+                "identifier": "ad06a511-c368-4d04-992b-e826947cc2a0",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                },
+                "pos_x": 1363.0,
+                "pos_y": 112.0
+            },
+            {
+                "cls": "SumSignals",
+                "name": "SumSignals",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Sum Signals",
+                "module_category": "Signal Processing",
+                "module_options": {},
+                "inputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "56815f9a-ceca-47fb-9311-c360770516ea": "signals"
+                        }
+                    },
+                    "channel": {
+                        "name": "channel",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "channel_to_sum": {
+                        "name": "channel_to_sum",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "new_channel_name": {
+                        "name": "new_channel_name",
+                        "value": "sEOG",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "new_signals": {
+                        "name": "new_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "ad06a511-c368-4d04-992b-e826947cc2a0": [
+                                "sEOG_signals"
+                            ],
+                            "c8cce206-c815-4b66-9723-f22afd686cef": [
+                                "sEOG_signals"
+                            ]
+                        }
+                    }
+                },
+                "module": "RapidEyeMovementModules.SumSignals",
+                "identifier": "099f9123-15f1-4c97-b69d-b877806fb140",
+                "pos_x": 1124.0,
+                "pos_y": -111.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                }
+            },
+            {
+                "cls": "SubstractSignals",
+                "name": "SubstractSignals",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Substract Signals",
+                "module_category": "Signal Processing",
+                "module_options": {},
+                "inputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "56815f9a-ceca-47fb-9311-c360770516ea": "signals"
+                        }
+                    },
+                    "channel": {
+                        "name": "channel",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "channel_to_sub": {
+                        "name": "channel_to_sub",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "new_channel_name": {
+                        "name": "new_channel_name",
+                        "value": "dEOG",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "new_signals": {
+                        "name": "new_signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "ad06a511-c368-4d04-992b-e826947cc2a0": [
+                                "dEOG_signals"
+                            ],
+                            "c8cce206-c815-4b66-9723-f22afd686cef": [
+                                "dEOG_signals"
+                            ]
+                        }
+                    }
+                },
+                "module": "RapidEyeMovementModules.SubstractSignals",
+                "identifier": "5c14cde1-a95e-4301-8919-3e8ae3c45ed6",
+                "pos_x": 1128.0,
+                "pos_y": 39.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                }
+            },
+            {
+                "cls": "MovingAverage",
+                "name": "MovingAverage",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Moving Average",
+                "module_category": "Signal Processing",
+                "module_options": {},
+                "inputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "cfd95a26-7531-47c0-a0fa-a0877e2e9e10": "signals"
+                        }
+                    },
+                    "win_len_sec": {
+                        "name": "win_len_sec",
+                        "value": "0.33",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "win_step_sec": {
+                        "name": "win_step_sec",
+                        "value": null,
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "5c14cde1-a95e-4301-8919-3e8ae3c45ed6": [
+                                "signals"
+                            ],
+                            "099f9123-15f1-4c97-b69d-b877806fb140": [
+                                "signals"
+                            ],
+                            "952d724d-be87-4582-ba88-033156eb3a9f": [
+                                "constant"
+                            ],
+                            "0d4fd5a0-12ac-44d4-bb2d-38f8df80a02a": [
+                                "constant"
+                            ]
+                        }
+                    }
+                },
+                "module": "RapidEyeMovementModules.MovingAverage",
+                "identifier": "56815f9a-ceca-47fb-9311-c360770516ea",
+                "pos_x": 931.0,
+                "pos_y": -124.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                }
+            },
+            {
+                "cls": "Constant",
+                "name": "Constant",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Constant",
+                "module_category": "Parameters",
+                "module_options": {},
+                "inputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "e3483cd5-2533-45f9-a794-8db772323133": "constant"
+                        }
+                    }
+                },
+                "outputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "cfd95a26-7531-47c0-a0fa-a0877e2e9e10": [
+                                "filename"
+                            ],
+                            "608e1068-9f62-47d2-9b5f-8396aa2bf562": [
+                                "constant"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.Constant",
+                "identifier": "306119e6-3f4b-41b9-b0b9-2b640bcb4451",
+                "pos_x": 479.0,
+                "pos_y": -235.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                }
+            },
+            {
+                "cls": "EOGNormalization",
+                "name": "EOGNormalization",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "EOG Normalization",
+                "module_category": "Signal Processing",
+                "module_options": {},
+                "inputs": {
+                    "filename": {
+                        "name": "filename",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "306119e6-3f4b-41b9-b0b9-2b640bcb4451": "constant"
+                        }
+                    },
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "177dad32-7fc0-4ddc-8ad2-d6063e29b8ca": "signals"
+                        }
+                    },
+                    "baseline_stats": {
+                        "name": "baseline_stats",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "177dad32-7fc0-4ddc-8ad2-d6063e29b8ca": "baseline_stats"
+                        }
+                    },
+                    "parameters": {
+                        "name": "parameters",
+                        "value": {
+                            "bsl_normalization": false,
+                            "rem_weight": false,
+                            "rem_normalization": true
+                        },
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "56815f9a-ceca-47fb-9311-c360770516ea": [
+                                "signals"
+                            ]
+                        }
+                    }
+                },
+                "module": "RapidEyeMovementModules.EOGNormalization",
+                "identifier": "cfd95a26-7531-47c0-a0fa-a0877e2e9e10",
+                "pos_x": 750.0,
+                "pos_y": -124.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                }
+            },
+            {
+                "cls": "Constant",
+                "name": "Constant",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Constant",
+                "module_category": "Parameters",
+                "module_options": {},
+                "inputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "599c0f5e-0c1e-4de6-ac6f-a3b58e5bedc5": "filename"
+                        }
+                    }
+                },
+                "outputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "177dad32-7fc0-4ddc-8ad2-d6063e29b8ca": [
+                                "filename"
+                            ],
+                            "306119e6-3f4b-41b9-b0b9-2b640bcb4451": [
+                                "constant"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.Constant",
+                "identifier": "e3483cd5-2533-45f9-a794-8db772323133",
+                "pos_x": -114.0,
+                "pos_y": -231.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                }
+            },
+            {
+                "cls": "Constant",
+                "name": "Constant",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Constant",
+                "module_category": "Parameters",
+                "module_options": {},
+                "inputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "f0f49ad9-d717-468e-9160-f01aea843448": "sleep_stage_events"
+                        }
+                    }
+                },
+                "outputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "177dad32-7fc0-4ddc-8ad2-d6063e29b8ca": [
+                                "sleep_stages"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.Constant",
+                "identifier": "d1cb69c1-435c-4029-8b53-ceb61562d282",
+                "pos_x": -138.0,
+                "pos_y": 161.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                }
+            },
+            {
+                "cls": "FilterSignal",
+                "name": "FilterSignal",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Filter Signal",
+                "module_category": "Signal Processing",
+                "module_options": {},
+                "inputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "599c0f5e-0c1e-4de6-ac6f-a3b58e5bedc5": "signals"
+                        }
+                    },
+                    "type": {
+                        "name": "type",
+                        "value": "bandpass",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "IR_family": {
+                        "name": "IR_family",
+                        "value": "IIR",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "use_std_order": {
+                        "name": "use_std_order",
+                        "value": "False",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "order": {
+                        "name": "order",
+                        "value": "6",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "cutoff": {
+                        "name": "cutoff",
+                        "value": "0.5 6",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "window": {
+                        "name": "window",
+                        "value": "hamming",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "c0e4a6a6-8109-4c74-acc8-8d66671140b9": [
+                                "signals"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.FilterSignal",
+                "identifier": "080165f3-9851-4f90-b764-055513e0657b",
+                "pos_x": -379.0,
+                "pos_y": -87.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                }
+            },
+            {
+                "cls": "EOGBaselineProcess",
+                "name": "EOGBaselineProcess",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "EOG Baseline Process",
+                "module_category": "Signal Processing",
+                "module_options": {},
+                "inputs": {
+                    "filename": {
+                        "name": "filename",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "e3483cd5-2533-45f9-a794-8db772323133": "constant"
+                        }
+                    },
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "c0e4a6a6-8109-4c74-acc8-8d66671140b9": "signals_from_events"
+                        }
+                    },
+                    "sleep_stages": {
+                        "name": "sleep_stages",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "d1cb69c1-435c-4029-8b53-ceb61562d282": "constant"
+                        }
+                    },
+                    "parameters": {
+                        "name": "parameters",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "cfd95a26-7531-47c0-a0fa-a0877e2e9e10": [
+                                "signals"
+                            ]
+                        }
+                    },
+                    "baseline_stats": {
+                        "name": "baseline_stats",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "cfd95a26-7531-47c0-a0fa-a0877e2e9e10": [
+                                "baseline_stats"
+                            ]
+                        }
+                    }
+                },
+                "module": "RapidEyeMovementModules.EOGBaselineProcess",
+                "identifier": "177dad32-7fc0-4ddc-8ad2-d6063e29b8ca",
+                "pos_x": 188.0,
+                "pos_y": -111.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                }
+            },
+            {
+                "cls": "SignalsFromEvents",
+                "name": "SignalsFromEvents",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Signals From Events",
+                "module_category": "Events Utilities",
+                "module_options": {},
+                "inputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "080165f3-9851-4f90-b764-055513e0657b": "signals"
+                        }
+                    },
+                    "events": {
+                        "name": "events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "f0f49ad9-d717-468e-9160-f01aea843448": "sleep_stage_events"
+                        }
+                    },
+                    "events_names": {
+                        "name": "events_names",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "create": {
+                        "name": "create",
+                        "value": true,
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "signals_from_events": {
+                        "name": "signals_from_events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "177dad32-7fc0-4ddc-8ad2-d6063e29b8ca": [
+                                "signals"
+                            ]
+                        }
+                    },
+                    "epochs_to_process": {
+                        "name": "epochs_to_process",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "module": "CEAMSModules.SignalsFromEvents",
+                "identifier": "c0e4a6a6-8109-4c74-acc8-8d66671140b9",
+                "pos_x": -183.0,
+                "pos_y": -83.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                }
+            },
+            {
+                "cls": "SleepStageEvents",
+                "name": "SleepStageEvents",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Sleep Stage Events",
+                "module_category": "Events Utilities",
+                "module_options": {},
+                "inputs": {
+                    "epoch_len": {
+                        "name": "epoch_len",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "sleep_stages": {
+                        "name": "sleep_stages",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "599c0f5e-0c1e-4de6-ac6f-a3b58e5bedc5": "sleep_stages"
+                        }
+                    },
+                    "stages": {
+                        "name": "stages",
+                        "value": "5",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "merge_events": {
+                        "name": "merge_events",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "new_event_name": {
+                        "name": "new_event_name",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "exclude_nremp": {
+                        "name": "exclude_nremp",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "exclude_remp": {
+                        "name": "exclude_remp",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "in_cycle": {
+                        "name": "in_cycle",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "sleep_stage_events": {
+                        "name": "sleep_stage_events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "c0e4a6a6-8109-4c74-acc8-8d66671140b9": [
+                                "events"
+                            ],
+                            "d1cb69c1-435c-4029-8b53-ceb61562d282": [
+                                "constant"
+                            ],
+                            "be58eebf-f018-4081-8712-6000b53479af": [
+                                "events"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.SleepStageEvents",
+                "identifier": "f0f49ad9-d717-468e-9160-f01aea843448",
+                "pos_x": -613.0,
+                "pos_y": 206.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                }
+            },
+            {
+                "cls": "PSGReader",
+                "name": "PSGReader",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "PSGReader",
+                "module_category": "Files I/O",
+                "module_options": {
+                    "alias": {
+                        "value": null,
+                        "tooltip": "List of aliases separated by a semicolon(;) character"
+                    },
+                    "file_selection_only": {
+                        "value": "0",
+                        "tooltip": "Set it to 1 if you only need to select a file and not its montages and channels."
+                    }
+                },
+                "inputs": {
+                    "files": {
+                        "name": "files",
+                        "value": {},
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "alias": {
+                        "name": "alias",
+                        "value": {},
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "filename": {
+                        "name": "filename",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "e3483cd5-2533-45f9-a794-8db772323133": [
+                                "constant"
+                            ]
+                        }
+                    },
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "080165f3-9851-4f90-b764-055513e0657b": [
+                                "signals"
+                            ],
+                            "5fcd46c3-57b9-4754-954f-f91fe4c5b4f2": [
+                                "constant"
+                            ]
+                        }
+                    },
+                    "events": {
+                        "name": "events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "sleep_stages": {
+                        "name": "sleep_stages",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "f0f49ad9-d717-468e-9160-f01aea843448": [
+                                "sleep_stages"
+                            ]
+                        }
+                    },
+                    "subject_info": {
+                        "name": "subject_info",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "module": "CEAMSModules.PSGReader",
+                "identifier": "599c0f5e-0c1e-4de6-ac6f-a3b58e5bedc5",
+                "pos_x": -791.0,
+                "pos_y": -102.0,
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                }
+            },
+            {
+                "cls": "Constant",
+                "name": "Constant",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Constant",
+                "module_category": "Parameters",
+                "module_options": {},
+                "inputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "306119e6-3f4b-41b9-b0b9-2b640bcb4451": "constant"
+                        }
+                    }
+                },
+                "outputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "659297e9-93ff-449b-8dd9-52312233f870": [
+                                "constant"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.Constant",
+                "identifier": "608e1068-9f62-47d2-9b5f-8396aa2bf562",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": 1129.328125,
+                "pos_y": -750.34375
+            },
+            {
+                "cls": "PSGWriter",
+                "name": "PSGWriter",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "PSGWriter",
+                "module_category": "Files I/O",
+                "module_options": {},
+                "inputs": {
+                    "input_filename": {
+                        "name": "input_filename",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "659297e9-93ff-449b-8dd9-52312233f870": "constant"
+                        }
+                    },
+                    "output_filename": {
+                        "name": "output_filename",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "659297e9-93ff-449b-8dd9-52312233f870": "constant"
+                        }
+                    },
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "5fcd46c3-57b9-4754-954f-f91fe4c5b4f2": "constant"
+                        }
+                    },
+                    "new_events": {
+                        "name": "new_events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "14e79c5a-9d0b-4898-b8b4-af67c11366bc": "events"
+                        }
+                    },
+                    "events_to_remove": {
+                        "name": "events_to_remove",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "overwrite_events": {
+                        "name": "overwrite_events",
+                        "value": true,
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "overwrite_signals": {
+                        "name": "overwrite_signals",
+                        "value": false,
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {},
+                "module": "CEAMSModules.PSGWriter",
+                "identifier": "737c0380-3ad1-49ff-ae06-20dacc5e7d1e",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": 2422.5625,
+                "pos_y": -558.125
+            },
+            {
+                "cls": "Constant",
+                "name": "Constant",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Constant",
+                "module_category": "Parameters",
+                "module_options": {},
+                "inputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "608e1068-9f62-47d2-9b5f-8396aa2bf562": "constant"
+                        }
+                    }
+                },
+                "outputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "737c0380-3ad1-49ff-ae06-20dacc5e7d1e": [
+                                "input_filename",
+                                "output_filename"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.Constant",
+                "identifier": "659297e9-93ff-449b-8dd9-52312233f870",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": 1778.328125,
+                "pos_y": -892.34375
+            },
+            {
+                "cls": "Constant",
+                "name": "Constant",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Constant",
+                "module_category": "Parameters",
+                "module_options": {},
+                "inputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "599c0f5e-0c1e-4de6-ac6f-a3b58e5bedc5": "signals"
+                        }
+                    }
+                },
+                "outputs": {
+                    "constant": {
+                        "name": "constant",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "737c0380-3ad1-49ff-ae06-20dacc5e7d1e": [
+                                "signals"
+                            ],
+                            "be58eebf-f018-4081-8712-6000b53479af": [
+                                "signals"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.Constant",
+                "identifier": "5fcd46c3-57b9-4754-954f-f91fe4c5b4f2",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": -609.53125,
+                "pos_y": -397.2031250000001
+            },
+            {
+                "cls": "SignalsFromEvents",
+                "name": "SignalsFromEvents",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Signals From Events",
+                "module_category": "Events Utilities",
+                "module_options": {},
+                "inputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "5fcd46c3-57b9-4754-954f-f91fe4c5b4f2": "constant"
+                        }
+                    },
+                    "events": {
+                        "name": "events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "f0f49ad9-d717-468e-9160-f01aea843448": "sleep_stage_events"
+                        }
+                    },
+                    "events_names": {
+                        "name": "events_names",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "create": {
+                        "name": "create",
+                        "value": true,
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "signals_from_events": {
+                        "name": "signals_from_events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "epochs_to_process": {
+                        "name": "epochs_to_process",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "module": "CEAMSModules.SignalsFromEvents",
+                "identifier": "be58eebf-f018-4081-8712-6000b53479af",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": -381.0,
+                "pos_y": -318.0
+            }
+        ]
+    }
+}

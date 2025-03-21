@@ -1,0 +1,52 @@
+{
+    "item_name": "SpectralPower",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "item_url": "",
+    "item_author": "Samuel Poulin",
+    "item_description": "",
+    "dependencies": [],
+    "module_params": {
+        "cls": "SpectralPower",
+        "name": "SpectralPower",
+        "metadata": {},
+        "file_location": "",
+        "module_label": "Spectral Power",
+        "module_category": "Statistics",
+        "module_options": {},
+        "inputs": {
+            "signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "signals2": {
+                "name": "signals2",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "mode": {
+                "name": "mode",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "freq_band": {
+                "name": "freq_band",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "filename": {
+                "name": "filename",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {},
+        "module": "RapidEyeMovementModules.SpectralPower"
+    }
+}

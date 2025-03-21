@@ -1,0 +1,73 @@
+<ui version="4.0">
+ <class>ValidationStep</class>
+ <widget class="QWidget" name="ValidationStep">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>730</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string />
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>25</number>
+   </property>
+  </layout>
+  <widget class="QCheckBox" name="validation_checkBox">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Use validation step</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+ <property name="styleSheet"><string>font: 10pt "Roboto-Regular";</string></property></widget>
+ <resources><include location="../../../../../scinodes_poc/src/main/python/ui/themes/themes.qrc" /></resources>
+ <connections>
+  <connection>
+   <sender>validation_checkBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ValidationStep</receiver>
+   <slot>on_active_validation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>84</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>222</x>
+     <y>2</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_active_validation()</slot>
+ </slots>
+</ui>
