@@ -1,0 +1,56 @@
+{   
+    "item_name": "REMsDetectionYasa",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "dependencies": [
+    ],
+    "module_params":{
+        "cls":"REMsDetectionYasa",
+        "name":"REMsDetectionYasa",
+        "metadata":{},
+        "file_location":null,
+        "module":"RapidEyeMovementModules.REMsDetectionYasa",
+        "module_label": "REMs Detection Yasa",
+        "module_category":"Detectors",
+        "module_author":"",
+        "module_url":"",
+        "module_description":"",
+        "module_options":{},
+        "inputs": {
+            "filename": {
+                "name": "filename",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"events": {
+                "name": "events",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"sleepstages": {
+                "name": "sleepstages",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"thresholds": {
+                "name": "thresholds",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "detectiondataframe": {
+                "name": "detectiondataframe",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        }
+    }
+}
