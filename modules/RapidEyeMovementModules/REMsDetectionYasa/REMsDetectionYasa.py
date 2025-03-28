@@ -57,6 +57,8 @@ class REMsDetectionYasa(SciNode):
         InputPlug('relative_prominence',self)
         InputPlug('remove_outliers',self)
         InputPlug('rems_event_name', self)
+        InputPlug('rems_event_group', self)
+        InputPlug('include', self)
         
 
         # Output plugs
@@ -70,7 +72,7 @@ class REMsDetectionYasa(SciNode):
         # There can only be 1 master module per process.
         self._is_master = False 
     
-    def compute(self, filename,signals,events,sleepstages,amplitude, duration, freq_rem, relative_prominence, remove_outliers, rems_event_name):    
+    def compute(self, filename,signals,events,sleepstages,amplitude, duration, freq_rem, relative_prominence, remove_outliers, rems_event_name, rems_event_group, include):     
         """
         TODO DESCRIPTION
 
@@ -99,8 +101,6 @@ class REMsDetectionYasa(SciNode):
             NodeRuntimeException
                 If an error occurs during the execution of the function.
         """
-        REM_amplitude_det = 50
-
         # Extract subject label from a list of .edf file
         filename = filename[:-4]
         error_flag = False
@@ -113,10 +113,17 @@ class REMsDetectionYasa(SciNode):
 
         loc = raw._data[0,:] * 1e6
         roc = raw._data[1,:] * 1e6
+        # check the include input
+        Include_list = self.extract_ints(include)
+        if len(Include_list) == 1:
+            include = Include_list[0]
+        else:
+            include = Include_list
+
         rem = yasa.rem_detect(loc, roc, raw.info['sfreq'], 
-                                hypno=hypno_up, include=5, amplitude=(REM_amplitude_det, 325), 
-                                duration=(0.3, 1.5), freq_rem=(0.5, 5), 
-                                relative_prominence=0.8, remove_outliers=True, verbose='info')
+                                hypno=hypno_up, include=include, amplitude=amplitude, 
+                                duration=duration, freq_rem=freq_rem, 
+                                relative_prominence=relative_prominence, remove_outliers=remove_outliers, verbose='info')
 
         # Save the REMs dataFrame in a tsv file
         rems_detection_df = rem.summary().round(3)
@@ -130,7 +137,7 @@ class REMsDetectionYasa(SciNode):
         #       duration as rems_detection_df['duration'],
         #       channel as channels_label
         snooz_rem = pd.DataFrame({
-            'group': 'YASA',
+            'group': rems_event_group,
             'name': rems_event_name,
             'start_sec': rems_detection_df['Start'],
             'duration_sec': rems_detection_df['Duration'],
@@ -177,3 +184,10 @@ class REMsDetectionYasa(SciNode):
         
         info = mne.create_info(ch_names=ch_names, sfreq=sfreq, ch_types=ch_type)
         return mne.io.RawArray(data, info)
+    
+    def extract_ints(self, s):
+        nums = []
+        for word in s.replace(' ', '').split(','):
+            if word.lstrip('-').isdigit():
+                nums.append(int(word))
+        return nums

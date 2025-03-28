@@ -42,11 +42,11 @@
             "package_version": "0.5.0"
         },
         {
-            "package_name": "CEAMSTools",
+            "package_name": "CEAMSModules",
             "package_version": "6.12.0"
         },
         {
-            "package_name": "CEAMSModules",
+            "package_name": "CEAMSTools",
             "package_version": "6.12.0"
         }
     ],
@@ -341,151 +341,7 @@
                 "inputs": {
                     "files": {
                         "name": "files",
-                        "value": {
-                            "C:/Users/mhazad/MYFILES/Dataset/RBD_Project/r152_2014.edf": {
-                                "event_groups": [
-                                    "stage",
-                                    "stageY",
-                                    "art_snooz",
-                                    "Biocalibration",
-                                    "DetecteMJ_TAG",
-                                    "Annotation",
-                                    "DetecteMJ_TAD",
-                                    "\u00c9V\u00c9NEMENTS RESPIRATOIRES",
-                                    "M-EVE",
-                                    "exp_MOR_3s",
-                                    "TCSP_Phasique",
-                                    "TCSP_Tonique",
-                                    "HYPNO",
-                                    "Position du corps",
-                                    "EEG\u00e9veil "
-                                ],
-                                "montages": {
-                                    "edf": {
-                                        "is_selected": true,
-                                        "montage_index": 0,
-                                        "channels": {
-                                            "EEG F3-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG F4-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG F7-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG F8-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG C3-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG C4-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG P3-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG P4-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG O1-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG O2-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG T3-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG T4-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG T5-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG T6-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG Fz-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG Cz-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG Pz-RC": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EOG LOC-RC": {
-                                                "is_selected": true,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EOG ROC-RC": {
-                                                "is_selected": true,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EMG EMG1": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EMG EMG2": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "ECG DII": {
-                                                "is_selected": false,
-                                                "sample_rate": "512.0"
-                                            },
-                                            "EMG TAG": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EMG TAD": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EMG FSDG": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EMG FSDD": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "CANULE": {
-                                                "is_selected": false,
-                                                "sample_rate": "128.0"
-                                            },
-                                            "SANTHOR": {
-                                                "is_selected": false,
-                                                "sample_rate": "128.0"
-                                            },
-                                            "SaO2 OXYMETRE": {
-                                                "is_selected": false,
-                                                "sample_rate": "32.0"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
+                        "value": {},
                         "sub_plugs": {},
                         "connections": {}
                     },
@@ -493,8 +349,7 @@
                         "name": "alias",
                         "value": {
                             "EOG": [
-                                "EOG LOC-RC",
-                                "EOG ROC-RC"
+                                ""
                             ]
                         },
                         "sub_plugs": {},
@@ -698,35 +553,53 @@
                         "name": "amplitude",
                         "value": "",
                         "sub_plugs": {},
-                        "connections": {}
+                        "connections": {
+                            "e00964ea-3df6-4aaa-8403-e2b75137a539": "Tuple"
+                        }
                     },
                     "duration": {
                         "name": "duration",
                         "value": "",
                         "sub_plugs": {},
-                        "connections": {}
+                        "connections": {
+                            "a064ba35-38d6-4d11-a54c-9758044fb9bf": "Tuple"
+                        }
                     },
                     "freq_rem": {
                         "name": "freq_rem",
                         "value": "",
                         "sub_plugs": {},
-                        "connections": {}
+                        "connections": {
+                            "be8b0065-d6f1-4dea-82ee-eda181f655ab": "Tuple"
+                        }
                     },
                     "relative_prominence": {
                         "name": "relative_prominence",
-                        "value": "",
+                        "value": 0.8,
                         "sub_plugs": {},
                         "connections": {}
                     },
                     "remove_outliers": {
                         "name": "remove_outliers",
-                        "value": "",
+                        "value": true,
                         "sub_plugs": {},
                         "connections": {}
                     },
                     "rems_event_name": {
                         "name": "rems_event_name",
-                        "value": "",
+                        "value": "YASA_REM",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "rems_event_group": {
+                        "name": "rems_event_group",
+                        "value": "REM",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "include": {
+                        "name": "include",
+                        "value": "5",
                         "sub_plugs": {},
                         "connections": {}
                     }
@@ -748,8 +621,146 @@
                 "package": {
                     "package_name": "RapidEyeMovementModules"
                 },
-                "pos_x": 406.0,
-                "pos_y": -113.0
+                "pos_x": 522.0,
+                "pos_y": -120.0
+            },
+            {
+                "cls": "CreateTuple",
+                "name": "CreateTuple",
+                "metadata": {},
+                "file_location": null,
+                "module": "RapidEyeMovementModules.CreateTuple",
+                "module_label": "Create Tuple",
+                "module_category": "Parameters",
+                "module_author": "",
+                "module_url": "",
+                "module_description": "",
+                "module_options": {},
+                "inputs": {
+                    "Idx0": {
+                        "name": "Idx0",
+                        "value": 50,
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "Idx1": {
+                        "name": "Idx1",
+                        "value": 325,
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "Tuple": {
+                        "name": "Tuple",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "4824f13b-4ff2-4165-81e1-ace7dee62b5e": [
+                                "amplitude"
+                            ]
+                        }
+                    }
+                },
+                "identifier": "e00964ea-3df6-4aaa-8403-e2b75137a539",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                },
+                "pos_x": 178.0,
+                "pos_y": 248.0
+            },
+            {
+                "cls": "CreateTuple",
+                "name": "CreateTuple",
+                "metadata": {},
+                "file_location": null,
+                "module": "RapidEyeMovementModules.CreateTuple",
+                "module_label": "Create Tuple",
+                "module_category": "Parameters",
+                "module_author": "",
+                "module_url": "",
+                "module_description": "",
+                "module_options": {},
+                "inputs": {
+                    "Idx0": {
+                        "name": "Idx0",
+                        "value": 0.3,
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "Idx1": {
+                        "name": "Idx1",
+                        "value": 1.5,
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "Tuple": {
+                        "name": "Tuple",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "4824f13b-4ff2-4165-81e1-ace7dee62b5e": [
+                                "duration"
+                            ]
+                        }
+                    }
+                },
+                "identifier": "a064ba35-38d6-4d11-a54c-9758044fb9bf",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                },
+                "pos_x": 178.0,
+                "pos_y": 408.0
+            },
+            {
+                "cls": "CreateTuple",
+                "name": "CreateTuple",
+                "metadata": {},
+                "file_location": null,
+                "module": "RapidEyeMovementModules.CreateTuple",
+                "module_label": "Create Tuple",
+                "module_category": "Parameters",
+                "module_author": "",
+                "module_url": "",
+                "module_description": "",
+                "module_options": {},
+                "inputs": {
+                    "Idx0": {
+                        "name": "Idx0",
+                        "value": 0.5,
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "Idx1": {
+                        "name": "Idx1",
+                        "value": 5.0,
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "Tuple": {
+                        "name": "Tuple",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "4824f13b-4ff2-4165-81e1-ace7dee62b5e": [
+                                "freq_rem"
+                            ]
+                        }
+                    }
+                },
+                "identifier": "be8b0065-d6f1-4dea-82ee-eda181f655ab",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "RapidEyeMovementModules"
+                },
+                "pos_x": 178.0,
+                "pos_y": 572.0
             }
         ]
     }

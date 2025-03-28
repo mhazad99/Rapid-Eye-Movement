@@ -12,218 +12,303 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-import themes_rc
 
 class Ui_DetectorStep(object):
     def setupUi(self, DetectorStep):
         if not DetectorStep.objectName():
             DetectorStep.setObjectName(u"DetectorStep")
-        DetectorStep.resize(730, 590)
-        self.verticalLayout = QVBoxLayout(DetectorStep)
-        self.verticalLayout.setSpacing(25)
-        self.verticalLayout.setObjectName(u"verticalLayout")
+        DetectorStep.resize(755, 590)
+        self.gridLayout_2 = QGridLayout(DetectorStep)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout = QGridLayout()
         self.gridLayout.setSpacing(4)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.label = QLabel(DetectorStep)
-        self.label.setObjectName(u"label")
-        self.label.setMaximumSize(QSize(16777215, 16777215))
+        self.label_3 = QLabel(DetectorStep)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
-        font.setPointSize(12)
-        self.label.setFont(font)
-        self.label.setWordWrap(True)
+        font.setFamily(u"Roboto-Regular")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label_3.setFont(font)
+        self.label_3.setLineWidth(0)
+        self.label_3.setWordWrap(True)
 
-        self.gridLayout.addWidget(self.label, 4, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_3, 6, 0, 1, 1)
 
-        self.validation_checkBox = QCheckBox(DetectorStep)
-        self.validation_checkBox.setObjectName(u"validation_checkBox")
-        self.validation_checkBox.setMaximumSize(QSize(16777215, 16777215))
-        font1 = QFont()
-        font1.setPointSize(11)
-        self.validation_checkBox.setFont(font1)
+        self.frame_2 = QFrame(DetectorStep)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.NoFrame)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.frame_2.setLineWidth(0)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame_2)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.label_11 = QLabel(self.frame_2)
+        self.label_11.setObjectName(u"label_11")
 
-        self.gridLayout.addWidget(self.validation_checkBox, 17, 0, 1, 1)
+        self.horizontalLayout_2.addWidget(self.label_11)
 
-        self.filename_label = QLabel(DetectorStep)
-        self.filename_label.setObjectName(u"filename_label")
-        self.filename_label.setEnabled(False)
-        self.filename_label.setMaximumSize(QSize(16777215, 16777215))
-        self.filename_label.setFont(font1)
+        self.doubleSpinBox_6 = QDoubleSpinBox(self.frame_2)
+        self.doubleSpinBox_6.setObjectName(u"doubleSpinBox_6")
+        self.doubleSpinBox_6.setSingleStep(0.010000000000000)
 
-        self.gridLayout.addWidget(self.filename_label, 19, 0, 1, 1)
+        self.horizontalLayout_2.addWidget(self.doubleSpinBox_6)
 
-        self.filename_pushButton = QPushButton(DetectorStep)
-        self.filename_pushButton.setObjectName(u"filename_pushButton")
-        self.filename_pushButton.setEnabled(False)
-        self.filename_pushButton.setMaximumSize(QSize(95, 16777215))
+        self.label_12 = QLabel(self.frame_2)
+        self.label_12.setObjectName(u"label_12")
 
-        self.gridLayout.addWidget(self.filename_pushButton, 19, 4, 1, 1)
+        self.horizontalLayout_2.addWidget(self.label_12)
 
-        self.event_name_lineEdit = QLineEdit(DetectorStep)
-        self.event_name_lineEdit.setObjectName(u"event_name_lineEdit")
-        self.event_name_lineEdit.setEnabled(False)
-        self.event_name_lineEdit.setMaximumSize(QSize(300, 16777215))
-        self.event_name_lineEdit.setFont(font1)
-        self.event_name_lineEdit.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.doubleSpinBox_5 = QDoubleSpinBox(self.frame_2)
+        self.doubleSpinBox_5.setObjectName(u"doubleSpinBox_5")
+        self.doubleSpinBox_5.setSingleStep(0.010000000000000)
 
-        self.gridLayout.addWidget(self.event_name_lineEdit, 18, 1, 1, 1)
+        self.horizontalLayout_2.addWidget(self.doubleSpinBox_5)
 
-        self.percentile_spinBox = QSpinBox(DetectorStep)
-        self.percentile_spinBox.setObjectName(u"percentile_spinBox")
-        self.percentile_spinBox.setMaximumSize(QSize(300, 16777215))
-        self.percentile_spinBox.setFont(font1)
-        self.percentile_spinBox.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.percentile_spinBox.setMaximum(100)
-        self.percentile_spinBox.setValue(65)
 
-        self.gridLayout.addWidget(self.percentile_spinBox, 8, 1, 1, 1)
+        self.gridLayout.addWidget(self.frame_2, 5, 2, 1, 1)
+
+        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_7, 7, 1, 1, 1)
+
+        self.frame_6 = QFrame(DetectorStep)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.NoFrame)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.frame_6.setLineWidth(0)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_6)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.lineEdit_2 = QLineEdit(self.frame_6)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.horizontalLayout_6.addWidget(self.lineEdit_2)
+
+
+        self.gridLayout.addWidget(self.frame_6, 1, 2, 1, 1)
+
+        self.label_15 = QLabel(DetectorStep)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setLineWidth(-3)
+
+        self.gridLayout.addWidget(self.label_15, 0, 0, 1, 2)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer, 14, 0, 1, 1)
+
+        self.frame_8 = QFrame(DetectorStep)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.NoFrame)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.frame_8.setLineWidth(0)
+        self.horizontalLayout_8 = QHBoxLayout(self.frame_8)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.lineEdit_3 = QLineEdit(self.frame_8)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+
+        self.horizontalLayout_8.addWidget(self.lineEdit_3)
+
+
+        self.gridLayout.addWidget(self.frame_8, 8, 2, 1, 1)
 
         self.label_9 = QLabel(DetectorStep)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setMaximumSize(QSize(16777215, 16777215))
+        self.label_9.setLineWidth(0)
 
-        self.gridLayout.addWidget(self.label_9, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_9, 1, 0, 1, 2)
+
+        self.frame_5 = QFrame(DetectorStep)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.NoFrame)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.frame_5.setLineWidth(0)
+        self.horizontalLayout_5 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.checkBox = QCheckBox(self.frame_5)
+        self.checkBox.setObjectName(u"checkBox")
+
+        self.horizontalLayout_5.addWidget(self.checkBox)
+
+
+        self.gridLayout.addWidget(self.frame_5, 9, 2, 1, 1)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.gridLayout.addItem(self.verticalSpacer_2, 2, 0, 1, 2)
+
+        self.label_7 = QLabel(DetectorStep)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setLineWidth(0)
+
+        self.gridLayout.addWidget(self.label_7, 9, 0, 1, 2)
+
+        self.frame_4 = QFrame(DetectorStep)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.NoFrame)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.frame_4.setLineWidth(0)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_4)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.label_5 = QLabel(self.frame_4)
+        self.label_5.setObjectName(u"label_5")
+
+        self.horizontalLayout_4.addWidget(self.label_5)
+
+        self.doubleSpinBox_2 = QDoubleSpinBox(self.frame_4)
+        self.doubleSpinBox_2.setObjectName(u"doubleSpinBox_2")
+        self.doubleSpinBox_2.setSingleStep(0.010000000000000)
+
+        self.horizontalLayout_4.addWidget(self.doubleSpinBox_2)
+
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_5)
+
+
+        self.gridLayout.addWidget(self.frame_4, 7, 2, 1, 2)
 
         self.label_4 = QLabel(DetectorStep)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMaximumSize(QSize(16777215, 16777215))
-        self.label_4.setFont(font1)
+        self.label_4.setFont(font)
+        self.label_4.setLineWidth(0)
 
-        self.gridLayout.addWidget(self.label_4, 8, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_4, 7, 0, 1, 1)
 
-        self.label_7 = QLabel(DetectorStep)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setMaximumSize(QSize(16777215, 16777215))
-        self.label_7.setFont(font)
-        self.label_7.setWordWrap(True)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.gridLayout.addWidget(self.label_7, 11, 0, 1, 1)
+        self.gridLayout.addItem(self.horizontalSpacer, 4, 1, 1, 1)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_4, 6, 3, 1, 1)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_2, 5, 1, 1, 1)
+
+        self.label = QLabel(DetectorStep)
+        self.label.setObjectName(u"label")
+        self.label.setMaximumSize(QSize(16777215, 16777215))
+        self.label.setFont(font)
+        self.label.setLineWidth(0)
+        self.label.setWordWrap(True)
+
+        self.gridLayout.addWidget(self.label, 3, 0, 1, 2)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_3, 6, 1, 1, 1)
+
+        self.label_16 = QLabel(DetectorStep)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setLineWidth(0)
+
+        self.gridLayout.addWidget(self.label_16, 8, 0, 1, 2)
+
+        self.frame_3 = QFrame(DetectorStep)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.NoFrame)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.frame_3.setLineWidth(0)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_3)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.label_13 = QLabel(self.frame_3)
+        self.label_13.setObjectName(u"label_13")
+
+        self.horizontalLayout_3.addWidget(self.label_13)
+
+        self.doubleSpinBox = QDoubleSpinBox(self.frame_3)
+        self.doubleSpinBox.setObjectName(u"doubleSpinBox")
+        self.doubleSpinBox.setSingleStep(0.010000000000000)
+
+        self.horizontalLayout_3.addWidget(self.doubleSpinBox)
+
+        self.label_14 = QLabel(self.frame_3)
+        self.label_14.setObjectName(u"label_14")
+
+        self.horizontalLayout_3.addWidget(self.label_14)
+
+        self.doubleSpinBox_3 = QDoubleSpinBox(self.frame_3)
+        self.doubleSpinBox_3.setObjectName(u"doubleSpinBox_3")
+        self.doubleSpinBox_3.setSingleStep(0.010000000000000)
+
+        self.horizontalLayout_3.addWidget(self.doubleSpinBox_3)
+
+
+        self.gridLayout.addWidget(self.frame_3, 6, 2, 1, 1)
 
         self.label_2 = QLabel(DetectorStep)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(16777215, 16777215))
-        self.label_2.setFont(font1)
+        self.label_2.setFont(font)
+        self.label_2.setLineWidth(0)
 
-        self.gridLayout.addWidget(self.label_2, 6, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_2, 5, 0, 1, 1)
 
-        self.window_sec_doubleSpinBox = QDoubleSpinBox(DetectorStep)
-        self.window_sec_doubleSpinBox.setObjectName(u"window_sec_doubleSpinBox")
-        self.window_sec_doubleSpinBox.setMaximumSize(QSize(300, 16777215))
-        self.window_sec_doubleSpinBox.setFont(font1)
-        self.window_sec_doubleSpinBox.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.window_sec_doubleSpinBox.setValue(3.000000000000000)
+        self.frame_7 = QFrame(DetectorStep)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setFrameShape(QFrame.NoFrame)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.frame_7.setLineWidth(0)
+        self.horizontalLayout_7 = QHBoxLayout(self.frame_7)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.lineEdit = QLineEdit(self.frame_7)
+        self.lineEdit.setObjectName(u"lineEdit")
 
-        self.gridLayout.addWidget(self.window_sec_doubleSpinBox, 5, 1, 1, 1)
+        self.horizontalLayout_7.addWidget(self.lineEdit)
 
-        self.label_5 = QLabel(DetectorStep)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font1)
 
-        self.gridLayout.addWidget(self.label_5, 7, 2, 1, 1)
-
-        self.filename_lineEdit = QLineEdit(DetectorStep)
-        self.filename_lineEdit.setObjectName(u"filename_lineEdit")
-        self.filename_lineEdit.setEnabled(False)
-        self.filename_lineEdit.setMaximumSize(QSize(300, 16777215))
-        self.filename_lineEdit.setFont(font1)
-        self.filename_lineEdit.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout.addWidget(self.filename_lineEdit, 19, 1, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout.addItem(self.verticalSpacer, 20, 0, 1, 1)
-
-        self.label_3 = QLabel(DetectorStep)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setMaximumSize(QSize(16777215, 16777215))
-        self.label_3.setFont(font1)
-        self.label_3.setWordWrap(True)
-
-        self.gridLayout.addWidget(self.label_3, 7, 0, 1, 1)
+        self.gridLayout.addWidget(self.frame_7, 0, 2, 1, 1)
 
         self.label_8 = QLabel(DetectorStep)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font1)
+        self.label_8.setFont(font)
+        self.label_8.setLineWidth(0)
 
-        self.gridLayout.addWidget(self.label_8, 5, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_8, 4, 0, 1, 1)
 
-        self.order_spinBox = QSpinBox(DetectorStep)
-        self.order_spinBox.setObjectName(u"order_spinBox")
-        self.order_spinBox.setMaximumSize(QSize(300, 16777215))
-        self.order_spinBox.setFont(font1)
-        self.order_spinBox.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.order_spinBox.setMaximum(1000)
-        self.order_spinBox.setValue(11)
+        self.frame = QFrame(DetectorStep)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.NoFrame)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.frame.setLineWidth(0)
+        self.horizontalLayout = QHBoxLayout(self.frame)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.label_18 = QLabel(self.frame)
+        self.label_18.setObjectName(u"label_18")
 
-        self.gridLayout.addWidget(self.order_spinBox, 6, 1, 1, 1)
+        self.horizontalLayout.addWidget(self.label_18)
 
-        self.line = QFrame(DetectorStep)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
+        self.spinBox_2 = QSpinBox(self.frame)
+        self.spinBox_2.setObjectName(u"spinBox_2")
+        self.spinBox_2.setMaximum(10000)
 
-        self.gridLayout.addWidget(self.line, 10, 0, 1, 5)
+        self.horizontalLayout.addWidget(self.spinBox_2)
 
-        self.event_name_label = QLabel(DetectorStep)
-        self.event_name_label.setObjectName(u"event_name_label")
-        self.event_name_label.setEnabled(False)
-        self.event_name_label.setMaximumSize(QSize(200, 16777215))
-        self.event_name_label.setFont(font1)
+        self.label_17 = QLabel(self.frame)
+        self.label_17.setObjectName(u"label_17")
 
-        self.gridLayout.addWidget(self.event_name_label, 18, 0, 1, 1)
+        self.horizontalLayout.addWidget(self.label_17)
 
-        self.border_effect_doubleSpinBox = QDoubleSpinBox(DetectorStep)
-        self.border_effect_doubleSpinBox.setObjectName(u"border_effect_doubleSpinBox")
-        self.border_effect_doubleSpinBox.setMaximumSize(QSize(300, 16777215))
-        self.border_effect_doubleSpinBox.setFont(font1)
-        self.border_effect_doubleSpinBox.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.border_effect_doubleSpinBox.setMaximum(50.000000000000000)
-        self.border_effect_doubleSpinBox.setValue(10.000000000000000)
+        self.spinBox = QSpinBox(self.frame)
+        self.spinBox.setObjectName(u"spinBox")
+        self.spinBox.setMaximum(10000)
 
-        self.gridLayout.addWidget(self.border_effect_doubleSpinBox, 7, 1, 1, 1)
-
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer_3, 19, 5, 1, 1)
-
-        self.label_11 = QLabel(DetectorStep)
-        self.label_11.setObjectName(u"label_11")
-
-        self.gridLayout.addWidget(self.label_11, 16, 0, 1, 1)
-
-        self.events_name_lineEdit = QLineEdit(DetectorStep)
-        self.events_name_lineEdit.setObjectName(u"events_name_lineEdit")
-        self.events_name_lineEdit.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.events_name_lineEdit, 1, 1, 1, 1)
-
-        self.label_10 = QLabel(DetectorStep)
-        self.label_10.setObjectName(u"label_10")
-        font2 = QFont()
-        font2.setItalic(True)
-        self.label_10.setFont(font2)
-
-        self.gridLayout.addWidget(self.label_10, 2, 0, 1, 1)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
-
-        self.gridLayout.addItem(self.verticalSpacer_2, 3, 0, 1, 1)
-
-        self.label_6 = QLabel(DetectorStep)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setMinimumSize(QSize(0, 50))
-        self.label_6.setMaximumSize(QSize(200, 16777215))
-
-        self.gridLayout.addWidget(self.label_6, 9, 0, 1, 1)
+        self.horizontalLayout.addWidget(self.spinBox)
 
 
-        self.verticalLayout.addLayout(self.gridLayout)
+        self.gridLayout.addWidget(self.frame, 4, 2, 1, 1)
+
+
+        self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
 
 
         self.retranslateUi(DetectorStep)
-        self.filename_pushButton.clicked.connect(DetectorStep.on_choose)
-        self.validation_checkBox.clicked.connect(DetectorStep.on_active_validation)
 
         QMetaObject.connectSlotsByName(DetectorStep)
     # setupUi
@@ -231,23 +316,22 @@ class Ui_DetectorStep(object):
     def retranslateUi(self, DetectorStep):
         DetectorStep.setWindowTitle("")
         DetectorStep.setStyleSheet(QCoreApplication.translate("DetectorStep", u"font: 10pt \"Roboto-Regular\";", None))
-        self.label.setText(QCoreApplication.translate("DetectorStep", u"There is only 4 main parameters for this tool:", None))
-        self.validation_checkBox.setText(QCoreApplication.translate("DetectorStep", u"Activate validation", None))
-        self.filename_label.setText(QCoreApplication.translate("DetectorStep", u"Filename to save the performance results", None))
-        self.filename_pushButton.setText(QCoreApplication.translate("DetectorStep", u"Browse...", None))
-        self.label_9.setText(QCoreApplication.translate("DetectorStep", u"REMs Event Name", None))
-        self.label_4.setText(QCoreApplication.translate("DetectorStep", u"Percentile", None))
-        self.label_7.setText(QCoreApplication.translate("DetectorStep", u"[Optional]", None))
-        self.label_2.setText(QCoreApplication.translate("DetectorStep", u"Order of the derivative approximation", None))
-#if QT_CONFIG(tooltip)
-        self.window_sec_doubleSpinBox.setToolTip(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Must be a divider of the sleep stage's window lenght (30 sec in most case)</p></body></html>", None))
-#endif // QT_CONFIG(tooltip)
-        self.label_5.setText(QCoreApplication.translate("DetectorStep", u"%", None))
-        self.label_3.setText(QCoreApplication.translate("DetectorStep", u"Border effect (% of signal to remove each side)", None))
-        self.label_8.setText(QCoreApplication.translate("DetectorStep", u"Time window length (s)", None))
-        self.event_name_label.setText(QCoreApplication.translate("DetectorStep", u"Event Name to compare with", None))
-        self.label_11.setText(QCoreApplication.translate("DetectorStep", u"Parameters to validate against another set of events", None))
-        self.label_10.setText(QCoreApplication.translate("DetectorStep", u"REMs detection within the time window (i.e. 3 s)", None))
-        self.label_6.setText("")
+        self.label_3.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>REM Frequency<br/><span style=\" font-size:8pt;\">Frequency range of REMs.</span></p></body></html>", None))
+        self.label_11.setText(QCoreApplication.translate("DetectorStep", u"Min:", None))
+        self.label_12.setText(QCoreApplication.translate("DetectorStep", u"Max:", None))
+        self.label_15.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>REMs Event group<br/><span style=\" font-size:8pt;\">The group category in the annotation file.</span></p></body></html>", None))
+        self.label_9.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>REMs Event Name<br/><span style=\" font-size:8pt;\">The event name in the annotation file.</span></p></body></html>", None))
+        self.checkBox.setText(QCoreApplication.translate("DetectorStep", u"Yes", None))
+        self.label_7.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Remove Outliers<br/><span style=\" font-size:8pt;\">Note that this step will only be applied if there are <br/>more than 50 detected REMs in the first place.</span></p></body></html>", None))
+        self.label_5.setText(QCoreApplication.translate("DetectorStep", u"Value:", None))
+        self.label_4.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Relative Prominence<br/><span style=\" font-size:8pt;\">Relative prominence used to detect the peaks.</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("DetectorStep", u"There are 6 main parameters for this tool:", None))
+        self.label_16.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Include<br/><span style=\" font-size:8pt;\">Values in the hypnogram will be included in the mask.</span></p></body></html>", None))
+        self.label_13.setText(QCoreApplication.translate("DetectorStep", u"Min:", None))
+        self.label_14.setText(QCoreApplication.translate("DetectorStep", u"Max:", None))
+        self.label_2.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Duration<br/><span style=\" font-size:8pt;\">Minimum and maximum duration of the REMs.</span></p></body></html>", None))
+        self.label_8.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Amplitude<br/><span style=\" font-size:8pt;\">Minimum and maximum amplitude of the peak of the REM.</span></p></body></html>", None))
+        self.label_18.setText(QCoreApplication.translate("DetectorStep", u"Min:", None))
+        self.label_17.setText(QCoreApplication.translate("DetectorStep", u"Max:", None))
     # retranslateUi
 

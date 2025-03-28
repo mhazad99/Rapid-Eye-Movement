@@ -84,6 +84,16 @@
                         "value": "",
                         "sub_plugs": {},
                         "connections": {}
+                    },"rems_event_group": {
+                        "name": "rems_event_group",
+                        "value": "",
+                        "connections": {},
+                        "sub_plugs": {}
+                    },"include": {
+                        "name": "include",
+                        "value": "",
+                        "connections": {},
+                        "sub_plugs": {}
                     }
                 },
                 "outputs": {
