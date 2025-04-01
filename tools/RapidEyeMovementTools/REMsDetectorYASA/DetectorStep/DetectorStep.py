@@ -27,10 +27,6 @@ class DetectorStep(BaseStepView, Ui_DetectorStep, QtWidgets.QWidget):
         # init UI
         self.setupUi(self)
 
-        # Center align text in lineEdit_2
-        self.lineEdit_2.setAlignment(Qt.AlignCenter)
-        self.lineEdit.setAlignment(Qt.AlignCenter)
-
         # set the spinbox values
         self.doubleSpinBox_2.setValue(0.8)
         self.spinBox_2.setValue(50)

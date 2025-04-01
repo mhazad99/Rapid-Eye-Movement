@@ -14,8 +14,17 @@
             {
                 "name": "REMs Detector YASA",
                 "description": "",
-                "custom_step_name": "IntroStep",
-                "show_index": false
+                "custom_step_name": "IntroStepYASA",
+                "configs": {
+                    "label": "More information:",
+                    "list": [
+                        {
+                            "name": "Algorithm's Detatils",
+                            "description": "Explain more details of the YASA algorithm.",
+                            "custom_step_name": "AlgorithmDetail"
+                        }
+                    ]
+                }
             },
             {
                 "name": "Input Files",

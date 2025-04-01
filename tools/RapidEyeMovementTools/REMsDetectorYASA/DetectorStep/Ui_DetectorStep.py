@@ -67,12 +67,12 @@ class Ui_DetectorStep(object):
 
         self.horizontalLayout_2.addWidget(self.doubleSpinBox_5)
 
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+
 
         self.gridLayout.addWidget(self.frame_2, 5, 2, 1, 1)
-
-        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer_7, 7, 1, 1, 1)
 
         self.frame_6 = QFrame(DetectorStep)
         self.frame_6.setObjectName(u"frame_6")
@@ -179,17 +179,9 @@ class Ui_DetectorStep(object):
 
         self.gridLayout.addWidget(self.label_4, 7, 0, 1, 1)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer, 4, 1, 1, 1)
-
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.gridLayout.addItem(self.horizontalSpacer_4, 6, 3, 1, 1)
-
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer_2, 5, 1, 1, 1)
 
         self.label = QLabel(DetectorStep)
         self.label.setObjectName(u"label")
@@ -199,10 +191,6 @@ class Ui_DetectorStep(object):
         self.label.setWordWrap(True)
 
         self.gridLayout.addWidget(self.label, 3, 0, 1, 2)
-
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer_3, 6, 1, 1, 1)
 
         self.label_16 = QLabel(DetectorStep)
         self.label_16.setObjectName(u"label_16")
@@ -238,6 +226,10 @@ class Ui_DetectorStep(object):
         self.doubleSpinBox_3.setSingleStep(0.010000000000000)
 
         self.horizontalLayout_3.addWidget(self.doubleSpinBox_3)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_3)
 
 
         self.gridLayout.addWidget(self.frame_3, 6, 2, 1, 1)
@@ -301,8 +293,36 @@ class Ui_DetectorStep(object):
 
         self.horizontalLayout.addWidget(self.spinBox)
 
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
 
         self.gridLayout.addWidget(self.frame, 4, 2, 1, 1)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_6, 0, 3, 1, 1)
+
+        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_8, 1, 3, 1, 1)
+
+        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_9, 4, 3, 1, 1)
+
+        self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_10, 5, 3, 1, 1)
+
+        self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_11, 8, 3, 1, 1)
+
+        self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_12, 9, 3, 1, 1)
 
 
         self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
@@ -316,7 +336,7 @@ class Ui_DetectorStep(object):
     def retranslateUi(self, DetectorStep):
         DetectorStep.setWindowTitle("")
         DetectorStep.setStyleSheet(QCoreApplication.translate("DetectorStep", u"font: 10pt \"Roboto-Regular\";", None))
-        self.label_3.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>REM Frequency<br/><span style=\" font-size:8pt;\">Frequency range of REMs.</span></p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>REM Frequency (Hz)<br/><span style=\" font-size:8pt;\">Frequency range of REMs.</span></p></body></html>", None))
         self.label_11.setText(QCoreApplication.translate("DetectorStep", u"Min:", None))
         self.label_12.setText(QCoreApplication.translate("DetectorStep", u"Max:", None))
         self.label_15.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>REMs Event group<br/><span style=\" font-size:8pt;\">The group category in the annotation file.</span></p></body></html>", None))
@@ -329,8 +349,8 @@ class Ui_DetectorStep(object):
         self.label_16.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Include<br/><span style=\" font-size:8pt;\">Values in the hypnogram will be included in the mask.</span></p></body></html>", None))
         self.label_13.setText(QCoreApplication.translate("DetectorStep", u"Min:", None))
         self.label_14.setText(QCoreApplication.translate("DetectorStep", u"Max:", None))
-        self.label_2.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Duration<br/><span style=\" font-size:8pt;\">Minimum and maximum duration of the REMs.</span></p></body></html>", None))
-        self.label_8.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Amplitude<br/><span style=\" font-size:8pt;\">Minimum and maximum amplitude of the peak of the REM.</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Duration (s)<br/><span style=\" font-size:8pt;\">Minimum and maximum duration of the REMs.</span></p></body></html>", None))
+        self.label_8.setText(QCoreApplication.translate("DetectorStep", u"<html><head/><body><p>Amplitude (uV)<br/><span style=\" font-size:8pt;\">Minimum and maximum amplitude of the peak of the REM.</span></p></body></html>", None))
         self.label_18.setText(QCoreApplication.translate("DetectorStep", u"Min:", None))
         self.label_17.setText(QCoreApplication.translate("DetectorStep", u"Max:", None))
     # retranslateUi

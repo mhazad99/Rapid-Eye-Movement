@@ -5,11 +5,11 @@
 """
 from commons.BaseStepView import BaseStepView
 
-from RapidEyeMovementTools.REMsDetectorYASA.IntroStep.Ui_IntroStep import Ui_IntroStep
+from RapidEyeMovementTools.REMsDetectorYASA.IntroStepYASA.Ui_IntroStepYASA import Ui_IntroStepYASA
 
 from qtpy import QtWidgets
 
-class IntroStep(BaseStepView, Ui_IntroStep, QtWidgets.QWidget):
+class IntroStepYASA(BaseStepView, Ui_IntroStepYASA, QtWidgets.QWidget):
     """
         IntroStep
         TODO CLASS DESCRIPTION

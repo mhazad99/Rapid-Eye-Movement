@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Ui_IntroStep.ui'
+## Form generated from reading UI file 'Ui_IntroStepYASA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -12,18 +12,17 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-from . import intro_res_rc
-#from RapidEyeMovementTools.RapidEyeMovDetectorPolynomial.IntroStep import intro_res_rc
 import themes_rc
 
-class Ui_IntroStep(object):
-    def setupUi(self, IntroStep):
-        if not IntroStep.objectName():
-            IntroStep.setObjectName(u"IntroStep")
-        IntroStep.resize(1091, 859)
-        self.horizontalLayout = QHBoxLayout(IntroStep)
+class Ui_IntroStepYASA(object):
+    def setupUi(self, IntroStepYASA):
+        if not IntroStepYASA.objectName():
+            IntroStepYASA.setObjectName(u"IntroStepYASA")
+        IntroStepYASA.resize(1091, 906)
+        IntroStepYASA.setStyleSheet(u"font: 10pt \"Roboto-Regular\"; QLabel {background-color: rgb(255, 255, 255);}")
+        self.horizontalLayout = QHBoxLayout(IntroStepYASA)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.splitter_2 = QSplitter(IntroStep)
+        self.splitter_2 = QSplitter(IntroStepYASA)
         self.splitter_2.setObjectName(u"splitter_2")
         self.splitter_2.setOrientation(Qt.Horizontal)
         self.layoutWidget = QWidget(self.splitter_2)
@@ -80,6 +79,7 @@ class Ui_IntroStep(object):
         self.textEdit.setMinimumSize(QSize(0, 200))
         self.textEdit.setMaximumSize(QSize(16777215, 200))
         self.textEdit.setLayoutDirection(Qt.LeftToRight)
+        self.textEdit.setStyleSheet(u"")
         self.textEdit.setFrameShape(QFrame.HLine)
         self.textEdit.setFrameShadow(QFrame.Plain)
         self.textEdit.setLineWidth(0)
@@ -103,6 +103,8 @@ class Ui_IntroStep(object):
         self.label_4.setMaximumSize(QSize(16777215, 20))
         self.label_4.setSizeIncrement(QSize(0, 0))
         self.label_4.setFont(font)
+        self.label_4.setFrameShadow(QFrame.Plain)
+        self.label_4.setLineWidth(0)
         self.label_4.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_2.addWidget(self.label_4)
@@ -119,51 +121,41 @@ class Ui_IntroStep(object):
 
         self.verticalLayout_2.addWidget(self.textEdit_2)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_2.addItem(self.verticalSpacer_4)
-
         self.splitter.addWidget(self.layoutWidget2)
 
         self.verticalLayout_4.addWidget(self.splitter)
+
+        self.label_3 = QLabel(self.layoutWidget)
+        self.label_3.setObjectName(u"label_3")
+
+        self.verticalLayout_4.addWidget(self.label_3)
+
+        self.textEdit_3 = QTextEdit(self.layoutWidget)
+        self.textEdit_3.setObjectName(u"textEdit_3")
+        self.textEdit_3.setFrameShape(QFrame.NoFrame)
+        self.textEdit_3.setLineWidth(0)
+
+        self.verticalLayout_4.addWidget(self.textEdit_3)
 
         self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_2)
 
         self.splitter_2.addWidget(self.layoutWidget)
-        self.scrollArea = QScrollArea(self.splitter_2)
-        self.scrollArea.setObjectName(u"scrollArea")
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollAreaWidgetContents = QWidget()
-        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1174, 814))
-        self.verticalLayout = QVBoxLayout(self.scrollAreaWidgetContents)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label_6 = QLabel(self.scrollAreaWidgetContents)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setPixmap(QPixmap(u":/Intro/Eyes_movement0.PNG"))
-        self.label_6.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout.addWidget(self.label_6)
-
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.splitter_2.addWidget(self.scrollArea)
 
         self.horizontalLayout.addWidget(self.splitter_2)
 
 
-        self.retranslateUi(IntroStep)
+        self.retranslateUi(IntroStepYASA)
 
-        QMetaObject.connectSlotsByName(IntroStep)
+        QMetaObject.connectSlotsByName(IntroStepYASA)
     # setupUi
 
-    def retranslateUi(self, IntroStep):
-        IntroStep.setWindowTitle(QCoreApplication.translate("IntroStep", u"Form", None))
-        IntroStep.setStyleSheet(QCoreApplication.translate("IntroStep", u"font: 10pt \"Roboto-Regular\";", None))
-        self.label_2.setText(QCoreApplication.translate("IntroStep", u"<html><head/><body><p><span style=\" font-weight:600;\">RAPID EYE MOVEMENTS DETECTOR</span></p><p>This tool <span style=\" font-weight:600;\">detects </span>if a window contains<span style=\" font-weight:600;\"> a rapid eye movement </span>during<span style=\" font-weight:600;\"> REM sleep</span> from PSG files.</p></body></html>", None))
-        self.label.setText(QCoreApplication.translate("IntroStep", u"Input", None))
-        self.textEdit.setHtml(QCoreApplication.translate("IntroStep", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+    def retranslateUi(self, IntroStepYASA):
+        IntroStepYASA.setWindowTitle(QCoreApplication.translate("IntroStepYASA", u"Form", None))
+        self.label_2.setText(QCoreApplication.translate("IntroStepYASA", u"<html><head/><body><p><span style=\" font-weight:600;\">YASA RAPID EYE MOVEMENTS DETECTOR</span></p><p>This tool utilizes the (Yet Another Spindle Algorithm) <span style=\" font-weight:600;\">YASA</span> rapid eye movements (<span style=\" font-weight:600;\">REMs</span>) detector algorithm.</p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("IntroStepYASA", u"<html><head/><body><p><span style=\" font-weight:600;\">Input</span></p></body></html>", None))
+        self.textEdit.setHtml(QCoreApplication.translate("IntroStepYASA", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Roboto-Regular'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
@@ -176,17 +168,24 @@ class Ui_IntroStep(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">The annotations files have to include the sleep staging.</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Channels:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">*** Select <"
-                        "span style=\" font-weight:600;\">2</span> <span style=\" font-weight:600;\">EOG</span> <span style=\" font-weight:600;\">channels</span> per recording.  ***</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This tool re"
+                        "quires the selection of <span style=\" font-weight:600;\">2</span> <span style=\" font-weight:600;\">EOG</span> <span style=\" font-weight:600;\">channels</span> per recording for REMs detection.</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-        self.label_4.setText(QCoreApplication.translate("IntroStep", u"Output", None))
-        self.textEdit_2.setHtml(QCoreApplication.translate("IntroStep", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_4.setText(QCoreApplication.translate("IntroStepYASA", u"<html><head/><body><p><span style=\" font-weight:600;\">Output</span></p></body></html>", None))
+        self.textEdit_2.setHtml(QCoreApplication.translate("IntroStepYASA", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Roboto-Regular'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">The REMs detected events (i.e. REMs_Poulin_Det) are added in the annotations files (.tsv, .sts or .ent) depending of the format used. <br /></span>If the annotations file already contains the group event to be added, they will first be deleted. </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">Each events is defined by : </span><br />-&gt; 1. group : The group where the events are ad"
-                        "ded (i.e. REMs_det).<br />-&gt; 2. name : The name of the event (i.e. REMs_Poulin_Det)<br />-&gt; 3. start_sec : The onset of the event in second. <br />-&gt; 4. duration_sec : The duration of the event in second.<br />-&gt; 5. channels : The list of channels on which the event occurs.</p></body></html>", None))
-        self.label_6.setText("")
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">The REMs detected events are added in the annotations files (.tsv, .sts or .ent) depending of the format used.<br /></span>If the annotations file already includes the group event to be added, the existing entries will be removed before adding the new ones.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">Each events is defined by : </span><br />-&gt; 1. group : The group where the e"
+                        "vents are added (i.e. REM).<br />-&gt; 2. name : The name of the event (i.e. YASA_REM)<br />-&gt; 3. start_sec : The onset of the event in second. <br />-&gt; 4. duration_sec : The duration of the event in second.<br />-&gt; 5. channels : The list of channels on which the event occurs.<br /><br /></p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("IntroStepYASA", u"<html><head/><body><p><span style=\" font-weight:600;\">References</span></p></body></html>", None))
+        self.textEdit_3.setHtml(QCoreApplication.translate("IntroStepYASA", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Roboto-Regular'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Arial','sans-serif'; color:#222222; background-color:#ffffff;\">Yetton, B. D., et al. (2016). Automatic detection of rapid eye movements (REMs):A machine learning approach. </span><span style=\" font-family:'Arial','sans-serif'; font-style:italic; color:#222222; background-color:#ffffff;\">Journal of neuroscience methods</span><span style=\" font-family:'Arial','sans-serif'; color:#222222; background-color:#ffffff;\">, </span><span style=\" font-family:'Arial','sans-serif'; font-style:italic; color:#222222; background-color:#fff"
+                        "fff;\">259</span><span style=\" font-family:'Arial','sans-serif'; color:#222222; background-color:#ffffff;\">, 72-82.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Arial','sans-serif'; color:#222222; background-color:#ffffff;\">Agarwal, R., et al. (2005). Detection of rapid-eye movements in sleep studies. </span><span style=\" font-family:'Arial','sans-serif'; font-style:italic; color:#222222; background-color:#ffffff;\">IEEE Transactions on biomedical engineering</span><span style=\" font-family:'Arial','sans-serif'; color:#222222; background-color:#ffffff;\">, </span><span style=\" font-family:'Arial','sans-serif'; font-style:italic; color:#222222; background-color:#ffffff;\">52</span><span style=\" font-family:'Arial','sans-serif'; color:#222222; background-color:#ffffff;\">(8), 1390-1396.</span></p></body></html>", None))
     # retranslateUi
 
