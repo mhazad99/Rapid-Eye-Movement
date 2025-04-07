@@ -28,10 +28,10 @@ Press "Add from folder"
 
 Launch Snooz 
 In the Toolbar -> Rapid Eye Movements -> Ocular Artifact Corrector in REM v0.14.0
-				      \n-> REM Detection (Polynomial approach) v0.5.0
-	  			      \n-> REM Detection (Shot-grouping approach) v0.1.0
-	    			      -> REMs Detector YASA v0.0.0
-	      			      -> REMs to mini-epoch convertor v0.1.0
-				      -> Train REM Detection (Shot-grouping approach) v0.0.0
+In the Toolbar -> Rapid Eye Movements -> REM Detection (Polynomial approach) v0.5.0
+In the Toolbar -> Rapid Eye Movements -> REM Detection (Shot-grouping approach) v0.1.0
+In the Toolbar -> Rapid Eye Movements -> REMs Detector YASA v0.0.0
+In the Toolbar -> Rapid Eye Movements -> REMs to mini-epoch convertor v0.1.0
+In the Toolbar -> Rapid Eye Movements -> Train REM Detection (Shot-grouping approach) v0.0.0
 	  
 	  
