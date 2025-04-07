@@ -28,6 +28,7 @@ Press "Add from folder"
 
 Launch Snooz 
 In the Toolbar -> Rapid Eye Movements -> Ocular Artifact Corrector in REM v0.14.0
+
 In the Toolbar -> Rapid Eye Movements -> REM Detection (Polynomial approach) v0.5.0
 In the Toolbar -> Rapid Eye Movements -> REM Detection (Shot-grouping approach) v0.1.0
 In the Toolbar -> Rapid Eye Movements -> REMs Detector YASA v0.0.0
