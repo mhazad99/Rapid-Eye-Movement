@@ -12,8 +12,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-from . import intro_res_rc
-#from RapidEyeMovementTools.RapidEyeMovDetectorPolynomial.IntroStep import intro_res_rc
+import intro_res_rc_rc
 import themes_rc
 
 class Ui_IntroStep(object):

@@ -12,15 +12,13 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-from . import intro_res_rc
-#from RapidEyeMovementTools.RapidEyeMovDetectorPolynomial.IntroStep import intro_res_rc
 import themes_rc
 
 class Ui_IntroStep(object):
     def setupUi(self, IntroStep):
         if not IntroStep.objectName():
             IntroStep.setObjectName(u"IntroStep")
-        IntroStep.resize(1091, 859)
+        IntroStep.resize(1383, 907)
         self.horizontalLayout = QHBoxLayout(IntroStep)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.splitter_2 = QSplitter(IntroStep)
@@ -33,8 +31,8 @@ class Ui_IntroStep(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.label_2 = QLabel(self.layoutWidget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(0, 100))
-        self.label_2.setMaximumSize(QSize(500, 60))
+        self.label_2.setMinimumSize(QSize(800, 100))
+        self.label_2.setMaximumSize(QSize(800, 70))
         font = QFont()
         font.setFamily(u"Roboto-Regular")
         font.setPointSize(10)
@@ -77,8 +75,8 @@ class Ui_IntroStep(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
         self.textEdit.setSizePolicy(sizePolicy)
-        self.textEdit.setMinimumSize(QSize(0, 200))
-        self.textEdit.setMaximumSize(QSize(16777215, 200))
+        self.textEdit.setMinimumSize(QSize(0, 225))
+        self.textEdit.setMaximumSize(QSize(16777215, 16777215))
         self.textEdit.setLayoutDirection(Qt.LeftToRight)
         self.textEdit.setFrameShape(QFrame.HLine)
         self.textEdit.setFrameShadow(QFrame.Plain)
@@ -88,7 +86,7 @@ class Ui_IntroStep(object):
 
         self.verticalLayout_3.addWidget(self.textEdit)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_3.addItem(self.verticalSpacer)
 
@@ -109,7 +107,7 @@ class Ui_IntroStep(object):
 
         self.textEdit_2 = QTextEdit(self.layoutWidget2)
         self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setMinimumSize(QSize(0, 250))
+        self.textEdit_2.setMinimumSize(QSize(0, 275))
         self.textEdit_2.setMaximumSize(QSize(16777215, 16777215))
         self.textEdit_2.setFrameShape(QFrame.HLine)
         self.textEdit_2.setFrameShadow(QFrame.Plain)
@@ -132,23 +130,6 @@ class Ui_IntroStep(object):
         self.verticalLayout_4.addItem(self.verticalSpacer_2)
 
         self.splitter_2.addWidget(self.layoutWidget)
-        self.scrollArea = QScrollArea(self.splitter_2)
-        self.scrollArea.setObjectName(u"scrollArea")
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollAreaWidgetContents = QWidget()
-        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1174, 814))
-        self.verticalLayout = QVBoxLayout(self.scrollAreaWidgetContents)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label_6 = QLabel(self.scrollAreaWidgetContents)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setPixmap(QPixmap(u":/Intro/Eyes_movement0.PNG"))
-        self.label_6.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout.addWidget(self.label_6)
-
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.splitter_2.addWidget(self.scrollArea)
 
         self.horizontalLayout.addWidget(self.splitter_2)
 
@@ -161,32 +142,31 @@ class Ui_IntroStep(object):
     def retranslateUi(self, IntroStep):
         IntroStep.setWindowTitle(QCoreApplication.translate("IntroStep", u"Form", None))
         IntroStep.setStyleSheet(QCoreApplication.translate("IntroStep", u"font: 10pt \"Roboto-Regular\";", None))
-        self.label_2.setText(QCoreApplication.translate("IntroStep", u"<html><head/><body><p><span style=\" font-weight:600;\">RAPID EYE MOVEMENTS DETECTOR</span></p><p>This tool <span style=\" font-weight:600;\">detects </span>if a window contains<span style=\" font-weight:600;\"> a rapid eye movement </span>during<span style=\" font-weight:600;\"> REM sleep</span> from PSG files.</p></body></html>", None))
-        self.label.setText(QCoreApplication.translate("IntroStep", u"Input", None))
+        self.label_2.setText(QCoreApplication.translate("IntroStep", u"<html><head/><body><p><span style=\" font-weight:600;\">OCULAR MOVEMENT ARTIFACTS CORRECTOR IN REM</span></p><p>This tool <span style=\" font-weight:600;\">corrects </span>EEG signals containing <span style=\" font-weight:600;\">ocular movement artifacts</span> during<span style=\" font-weight:600;\"> REM sleep</span> from PSG files.</p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("IntroStep", u"<html><head/><body><p><span style=\" font-weight:600;\">Input</span></p></body></html>", None))
         self.textEdit.setHtml(QCoreApplication.translate("IntroStep", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Roboto-Regular'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu';\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">PSG files including header and events are needed (all saved in the same directory).</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-&gt; European Data Format (EDF) : .edf and .tsv files with the exact same filename.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-ri"
-                        "ght:0px; -qt-block-indent:0; text-indent:0px;\">-&gt; Stellate : .sig and .sts files with the exact same filename.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-&gt; NATUS : <span style=\" font-family:'MS Shell Dlg 2';\"> the whole NATUS subject folder</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">The annotations files have to include the sleep staging.</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Channels:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">*** Select <"
-                        "span style=\" font-weight:600;\">2</span> <span style=\" font-weight:600;\">EOG</span> <span style=\" font-weight:600;\">channels</span> per recording.  ***</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">PSG file (.edf) with the sleep staging (.tsv) is needed for this tool. </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-&gt; PSG : Only the European Data Format (EDF) is supported to correct Rapid Eye Movements artifact.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-&gt; Annotations : The .tsv (Tab Separated Values) file with the same name as the PSG file in the same folder is mandatory.</p>\n"
+""
+                        "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The .tsv columns of the annotation file are as follows:<br />-&gt; 1. group : The group of the event (i.e. stage for sleep stage).<br />-&gt; 2. name : The name of the event (i.e. 5 for R stage).<br />-&gt; 3. start_sec : The onset of the event in second. <br />-&gt; 4. duration_sec : The duration of the event in second.<br />-&gt; 5. channels : The list of channels on which the event occurs.</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-        self.label_4.setText(QCoreApplication.translate("IntroStep", u"Output", None))
+        self.label_4.setText(QCoreApplication.translate("IntroStep", u"<html><head/><body><p><span style=\" font-weight:600;\">Output</span></p></body></html>", None))
         self.textEdit_2.setHtml(QCoreApplication.translate("IntroStep", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Roboto-Regular'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">The REMs detected events (i.e. REMs_Poulin_Det) are added in the annotations files (.tsv, .sts or .ent) depending of the format used. <br /></span>If the annotations file already contains the group event to be added, they will first be deleted. </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">Each events is defined by : </span><br />-&gt; 1. group : The group where the events are ad"
-                        "ded (i.e. REMs_det).<br />-&gt; 2. name : The name of the event (i.e. REMs_Poulin_Det)<br />-&gt; 3. start_sec : The onset of the event in second. <br />-&gt; 4. duration_sec : The duration of the event in second.<br />-&gt; 5. channels : The list of channels on which the event occurs.</p></body></html>", None))
-        self.label_6.setText("")
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- A new PSG (.edf) file with the artifact-free signals named as the previous one with the suffix &quot;_corrected&quot;.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />- A new .tsv file named as the corrected PSG file containing the original annotations and the new REMs events (correction and possibly the detection). </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-&gt; The events for the "
+                        "corrected (10 s) epochs (i.e. REMs_Poulin_Cor) are added on the first EOG channel of the recording. </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-&gt; If the detector is used - the events of the (3 s) epochs where a REM is detected (i.e. REMs_Poulin_det) are added on the first EOG channel of the recording.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The columns of the .tsv file are as follows:<br />-&gt; 1. group : The group of the event (i.e. REMs_det)<br />-&gt; 2. name : The name of the event. (i.e. REMs_Poulin_Cor or REMs_Poulin_Det)<br />-&gt; 3. start_sec : The onset of the event in second. <br />-&gt; 4. duration_sec : The duration of the event in second.<br />-&gt; 5. channels : The list of channels on which the event occurs.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:"
+                        "0; text-indent:0px;\">- If the validation have been checked, a csv file named with the PSG file name with _spectral_power.csv containing the value of the spectral band before and after the correction.</p></body></html>", None))
     # retranslateUi
 
