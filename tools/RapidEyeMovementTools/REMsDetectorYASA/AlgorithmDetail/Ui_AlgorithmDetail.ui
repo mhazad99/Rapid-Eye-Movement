@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>986</width>
-    <height>691</height>
+    <width>489</width>
+    <height>467</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,6 +67,9 @@
              <property name="lineWidth">
               <number>0</number>
              </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="html">
               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -109,11 +112,14 @@ p, li { white-space: pre-wrap; }
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>1342</width>
-                <height>480</height>
+                <width>1338</width>
+                <height>476</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_5">
+               <property name="sizeConstraint">
+                <enum>QLayout::SetNoConstraint</enum>
+               </property>
                <item>
                 <widget class="QLabel" name="label_2">
                  <property name="text">

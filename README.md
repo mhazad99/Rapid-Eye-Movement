@@ -6,7 +6,7 @@ A package for modules called : RapidEyeMovementModules
 A package for tools called : RapidEyeMovementTools  
 
 # TAG HISTORY  
-* Tag Snooz Beta-1.2.0 : RapidEyeMovementTools linked to CEAMSModules v6.9.0, v6.10.0, v6.11.0 and Snooz beta-1.2.0  
+* Tag Snooz Beta-1.2.0 : RapidEyeMovementTools has dependancies to CEAMSModules v6.9.0, v6.10.0 and v6.11.0.  CEAMSModules 6.9-6.11 are preinstalled in Snooz beta-1.2.0  
 
 # What and where to add this package?  
 
@@ -14,10 +14,10 @@ Launch Snooz
 In the Snooz File menu -> Settings -> Packages  
 Press "Add from folder"   
 
-## To add the released package for Snooz beta-1.2.0 (CEAMSModules v6.11.0)  
+## To add the released package for Snooz beta-1.1.0 or 1.2.0 (CEAMSModules v6.11.0)  
 
-	- add the folder : release/RapidEyeMovementModules_0_5_0  
-	- add the folder : release/RapidEyeMovementTools_0_9_0  
+	- add the folder : release/RapidEyeMovementModules_0_5_0/RapidEyeMovementModules  
+	- add the folder : release/RapidEyeMovementTools_0_9_0/RapidEyeMovementTools
 
 ## To add the packages in development  
 

@@ -18,19 +18,11 @@ class Ui_IntroStepYASA(object):
     def setupUi(self, IntroStepYASA):
         if not IntroStepYASA.objectName():
             IntroStepYASA.setObjectName(u"IntroStepYASA")
-        IntroStepYASA.resize(1091, 906)
+        IntroStepYASA.resize(736, 568)
         IntroStepYASA.setStyleSheet(u"font: 10pt \"Roboto-Regular\"; QLabel {background-color: rgb(255, 255, 255);}")
-        self.horizontalLayout = QHBoxLayout(IntroStepYASA)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.splitter_2 = QSplitter(IntroStepYASA)
-        self.splitter_2.setObjectName(u"splitter_2")
-        self.splitter_2.setOrientation(Qt.Horizontal)
-        self.layoutWidget = QWidget(self.splitter_2)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.verticalLayout_4 = QVBoxLayout(self.layoutWidget)
+        self.verticalLayout_4 = QVBoxLayout(IntroStepYASA)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.layoutWidget)
+        self.label_2 = QLabel(IntroStepYASA)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMinimumSize(QSize(0, 100))
         self.label_2.setMaximumSize(QSize(500, 60))
@@ -48,19 +40,10 @@ class Ui_IntroStepYASA(object):
 
         self.verticalLayout_4.addWidget(self.label_2)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
-
-        self.verticalLayout_4.addItem(self.verticalSpacer_3)
-
-        self.splitter = QSplitter(self.layoutWidget)
-        self.splitter.setObjectName(u"splitter")
-        self.splitter.setOrientation(Qt.Vertical)
-        self.layoutWidget1 = QWidget(self.splitter)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.verticalLayout_3 = QVBoxLayout(self.layoutWidget1)
+        self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.layoutWidget1)
+        self.verticalLayout_3.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.label = QLabel(IntroStepYASA)
         self.label.setObjectName(u"label")
         self.label.setMinimumSize(QSize(0, 20))
         self.label.setMaximumSize(QSize(16777215, 20))
@@ -69,15 +52,15 @@ class Ui_IntroStepYASA(object):
 
         self.verticalLayout_3.addWidget(self.label)
 
-        self.textEdit = QTextEdit(self.layoutWidget1)
+        self.textEdit = QTextEdit(IntroStepYASA)
         self.textEdit.setObjectName(u"textEdit")
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
         self.textEdit.setSizePolicy(sizePolicy)
-        self.textEdit.setMinimumSize(QSize(0, 200))
-        self.textEdit.setMaximumSize(QSize(16777215, 200))
+        self.textEdit.setMinimumSize(QSize(0, 0))
+        self.textEdit.setMaximumSize(QSize(16777215, 16777215))
         self.textEdit.setLayoutDirection(Qt.LeftToRight)
         self.textEdit.setStyleSheet(u"")
         self.textEdit.setFrameShape(QFrame.HLine)
@@ -88,17 +71,13 @@ class Ui_IntroStepYASA(object):
 
         self.verticalLayout_3.addWidget(self.textEdit)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
-        self.verticalLayout_3.addItem(self.verticalSpacer)
+        self.verticalLayout_4.addLayout(self.verticalLayout_3)
 
-        self.splitter.addWidget(self.layoutWidget1)
-        self.layoutWidget2 = QWidget(self.splitter)
-        self.layoutWidget2.setObjectName(u"layoutWidget2")
-        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget2)
+        self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.label_4 = QLabel(self.layoutWidget2)
+        self.verticalLayout_2.setSizeConstraint(QLayout.SetFixedSize)
+        self.label_4 = QLabel(IntroStepYASA)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMaximumSize(QSize(16777215, 20))
         self.label_4.setSizeIncrement(QSize(0, 0))
@@ -109,9 +88,9 @@ class Ui_IntroStepYASA(object):
 
         self.verticalLayout_2.addWidget(self.label_4)
 
-        self.textEdit_2 = QTextEdit(self.layoutWidget2)
+        self.textEdit_2 = QTextEdit(IntroStepYASA)
         self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setMinimumSize(QSize(0, 250))
+        self.textEdit_2.setMinimumSize(QSize(0, 0))
         self.textEdit_2.setMaximumSize(QSize(16777215, 16777215))
         self.textEdit_2.setFrameShape(QFrame.HLine)
         self.textEdit_2.setFrameShadow(QFrame.Plain)
@@ -121,29 +100,34 @@ class Ui_IntroStepYASA(object):
 
         self.verticalLayout_2.addWidget(self.textEdit_2)
 
-        self.splitter.addWidget(self.layoutWidget2)
 
-        self.verticalLayout_4.addWidget(self.splitter)
+        self.verticalLayout_4.addLayout(self.verticalLayout_2)
 
-        self.label_3 = QLabel(self.layoutWidget)
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.label_3 = QLabel(IntroStepYASA)
         self.label_3.setObjectName(u"label_3")
+        self.label_3.setMaximumSize(QSize(16777215, 20))
 
-        self.verticalLayout_4.addWidget(self.label_3)
+        self.verticalLayout.addWidget(self.label_3)
 
-        self.textEdit_3 = QTextEdit(self.layoutWidget)
+        self.textEdit_3 = QTextEdit(IntroStepYASA)
         self.textEdit_3.setObjectName(u"textEdit_3")
+        self.textEdit_3.setMaximumSize(QSize(16777215, 16777215))
         self.textEdit_3.setFrameShape(QFrame.NoFrame)
         self.textEdit_3.setLineWidth(0)
+        self.textEdit_3.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.textEdit_3.setReadOnly(True)
 
-        self.verticalLayout_4.addWidget(self.textEdit_3)
+        self.verticalLayout.addWidget(self.textEdit_3)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_4.addLayout(self.verticalLayout)
+
+        self.verticalSpacer_2 = QSpacerItem(715, 10, QSizePolicy.Minimum, QSizePolicy.Minimum)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_2)
-
-        self.splitter_2.addWidget(self.layoutWidget)
-
-        self.horizontalLayout.addWidget(self.splitter_2)
 
 
         self.retranslateUi(IntroStepYASA)
