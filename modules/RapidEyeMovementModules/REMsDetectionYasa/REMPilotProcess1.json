@@ -84,12 +84,14 @@
                         "value": "",
                         "sub_plugs": {},
                         "connections": {}
-                    },"rems_event_group": {
+                    },
+                    "rems_event_group": {
                         "name": "rems_event_group",
                         "value": "",
                         "connections": {},
                         "sub_plugs": {}
-                    },"include": {
+                    },
+                    "include": {
                         "name": "include",
                         "value": "",
                         "connections": {},
@@ -723,5 +725,6 @@
             "package_name": "CEAMSModules",
             "package_version": "6.12.0"
         }
-    ]
+    ],
+    "item_api_version": "2.0.0"
 }

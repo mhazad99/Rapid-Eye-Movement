@@ -1,7 +1,7 @@
 {
     "item_name": "RapidEyeMovCorrector",
     "item_type": "tool",
-    "item_api_version": "1.0.0",
+    "item_api_version": "2.0.0",
     "item_url": "",
     "item_author": "Samuel Poulin",
     "item_description": "Correct ocular artifact on the EEG during REM",

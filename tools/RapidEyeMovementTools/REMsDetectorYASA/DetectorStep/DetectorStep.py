@@ -6,7 +6,7 @@
 
 from qtpy import QtWidgets, QtCore
 from qtpy.QtCore import QTimer
-from PySide2.QtCore import *
+from PySide6.QtCore import *
 
 from commons.BaseStepView import BaseStepView
 from flowpipe.ActivationState import ActivationState

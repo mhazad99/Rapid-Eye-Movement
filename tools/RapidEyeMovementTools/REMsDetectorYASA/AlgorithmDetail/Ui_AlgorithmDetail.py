@@ -3,16 +3,22 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_AlgorithmDetail.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
-from . import Detail_res_rc_rc
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
+    QLayout, QScrollArea, QSizePolicy, QTextEdit,
+    QVBoxLayout, QWidget)
+from . import Detail_res_rc
 
 class Ui_AlgorithmDetail(object):
     def setupUi(self, AlgorithmDetail):
@@ -32,7 +38,7 @@ class Ui_AlgorithmDetail(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.frame_2 = QFrame(self.frame)
         self.frame_2.setObjectName(u"frame_2")
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())

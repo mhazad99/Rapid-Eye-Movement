@@ -3,15 +3,22 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_SpectralPowerSettingsView.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QFrame, QGridLayout,
+    QHBoxLayout, QLabel, QLineEdit, QPushButton,
+    QRadioButton, QSizePolicy, QSpacerItem, QVBoxLayout,
+    QWidget)
 
 class Ui_SpectralPowerSettingsView(object):
     def setupUi(self, SpectralPowerSettingsView):
@@ -28,7 +35,6 @@ class Ui_SpectralPowerSettingsView(object):
         self.Title.setObjectName(u"Title")
         font = QFont()
         font.setBold(True)
-        font.setWeight(75)
         self.Title.setFont(font)
         self.Title.setAlignment(Qt.AlignCenter)
 
@@ -48,7 +54,7 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.horizontalLayout.addWidget(self.rel_radioButton)
 
-        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_9)
 
@@ -67,8 +73,8 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.line_2 = QFrame(SpectralPowerSettingsView)
         self.line_2.setObjectName(u"line_2")
-        self.line_2.setFrameShape(QFrame.HLine)
-        self.line_2.setFrameShadow(QFrame.Sunken)
+        self.line_2.setFrameShape(QFrame.Shape.HLine)
+        self.line_2.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout.addWidget(self.line_2)
 
@@ -105,7 +111,7 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.horizontalLayout_6.addWidget(self.label_3)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer)
 
@@ -132,7 +138,7 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.horizontalLayout_7.addWidget(self.label_4)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_7.addItem(self.horizontalSpacer_2)
 
@@ -158,7 +164,7 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.horizontalLayout_8.addWidget(self.label_5)
 
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_8.addItem(self.horizontalSpacer_3)
 
@@ -184,7 +190,7 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.horizontalLayout_9.addWidget(self.label_6)
 
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_9.addItem(self.horizontalSpacer_4)
 
@@ -210,7 +216,7 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.horizontalLayout_10.addWidget(self.label_7)
 
-        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_10.addItem(self.horizontalSpacer_5)
 
@@ -236,7 +242,7 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.horizontalLayout_11.addWidget(self.label_8)
 
-        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_11.addItem(self.horizontalSpacer_6)
 
@@ -262,7 +268,7 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.horizontalLayout_12.addWidget(self.label_9)
 
-        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_12.addItem(self.horizontalSpacer_8)
 
@@ -281,8 +287,8 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.line = QFrame(SpectralPowerSettingsView)
         self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
+        self.line.setFrameShape(QFrame.Shape.HLine)
+        self.line.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout.addWidget(self.line)
 
@@ -304,14 +310,14 @@ class Ui_SpectralPowerSettingsView(object):
 
         self.horizontalLayout_5.addWidget(self.choose_pushButton)
 
-        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_7)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_5)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer)
 

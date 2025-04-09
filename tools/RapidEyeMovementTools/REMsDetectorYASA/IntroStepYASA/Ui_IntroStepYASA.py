@@ -3,15 +3,21 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_IntroStepYASA.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QFrame, QLabel,
+    QLayout, QSizePolicy, QSpacerItem, QTextEdit,
+    QVBoxLayout, QWidget)
 import themes_rc
 
 class Ui_IntroStepYASA(object):
@@ -27,11 +33,10 @@ class Ui_IntroStepYASA(object):
         self.label_2.setMinimumSize(QSize(0, 100))
         self.label_2.setMaximumSize(QSize(500, 60))
         font = QFont()
-        font.setFamily(u"Roboto-Regular")
+        font.setFamilies([u"Roboto-Regular"])
         font.setPointSize(10)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.label_2.setFont(font)
         self.label_2.setTextFormat(Qt.AutoText)
         self.label_2.setScaledContents(False)
@@ -54,7 +59,7 @@ class Ui_IntroStepYASA(object):
 
         self.textEdit = QTextEdit(IntroStepYASA)
         self.textEdit.setObjectName(u"textEdit")
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
@@ -125,7 +130,7 @@ class Ui_IntroStepYASA(object):
 
         self.verticalLayout_4.addLayout(self.verticalLayout)
 
-        self.verticalSpacer_2 = QSpacerItem(715, 10, QSizePolicy.Minimum, QSizePolicy.Minimum)
+        self.verticalSpacer_2 = QSpacerItem(715, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_2)
 

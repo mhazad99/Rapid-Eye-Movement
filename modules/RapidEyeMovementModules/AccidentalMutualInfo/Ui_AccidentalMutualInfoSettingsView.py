@@ -3,15 +3,21 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_AccidentalMutualInfoSettingsView.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QDoubleSpinBox, QGridLayout, QHBoxLayout,
+    QLabel, QRadioButton, QSizePolicy, QSpacerItem,
+    QSpinBox, QVBoxLayout, QWidget)
 
 class Ui_AccidentalMutualInfoSettingsView(object):
     def setupUi(self, AccidentalMutualInfoSettingsView):
@@ -26,13 +32,12 @@ class Ui_AccidentalMutualInfoSettingsView(object):
         self.Title.setObjectName(u"Title")
         font = QFont()
         font.setBold(True)
-        font.setWeight(75)
         self.Title.setFont(font)
         self.Title.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_2.addWidget(self.Title)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_3)
 
@@ -70,7 +75,7 @@ class Ui_AccidentalMutualInfoSettingsView(object):
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout.addItem(self.verticalSpacer_2)
 
@@ -93,14 +98,14 @@ class Ui_AccidentalMutualInfoSettingsView(object):
 
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
 
 
         self.horizontalLayout.addLayout(self.verticalLayout_2)
 
-        self.horizontalSpacer = QSpacerItem(102, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(102, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 

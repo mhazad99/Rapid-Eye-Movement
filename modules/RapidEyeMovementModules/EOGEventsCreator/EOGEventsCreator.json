@@ -1,43 +1,46 @@
-{   
+{
     "item_name": "EOGEventsCreator",
     "item_type": "module",
-    "item_api_version": "1.0.0",
-    "dependencies": [
-    ],
-    "module_params":{
-        "cls":"EOGEventsCreator",
-        "name":"EOGEventsCreator",
-        "metadata":{},
-        "file_location":null,
-        "module":"RapidEyeMovementModules.EOGEventsCreator",
+    "item_api_version": "2.0.0",
+    "dependencies": [],
+    "module_params": {
+        "cls": "EOGEventsCreator",
+        "name": "EOGEventsCreator",
+        "metadata": {},
+        "file_location": null,
+        "module": "RapidEyeMovementModules.EOGEventsCreator",
         "module_label": "EOG Events Creator",
-        "module_category":"Events Utilities",
-        "module_author":"",
-        "module_url":"",
-        "module_description":"",
-        "module_options":{},
+        "module_category": "Events Utilities",
+        "module_author": "",
+        "module_url": "",
+        "module_description": "",
+        "module_options": {},
         "inputs": {
             "EOG_signals": {
                 "name": "EOG_signals",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"intersections_df": {
+            },
+            "intersections_df": {
                 "name": "intersections_df",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"peaks_df": {
+            },
+            "peaks_df": {
                 "name": "peaks_df",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"parameters": {
+            },
+            "parameters": {
                 "name": "parameters",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"peaks_parameters": {
+            },
+            "peaks_parameters": {
                 "name": "peaks_parameters",
                 "value": "",
                 "connections": {},

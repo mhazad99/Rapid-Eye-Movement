@@ -3,15 +3,21 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_EOGEventsCreatorSettingsView.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QDoubleSpinBox, QHBoxLayout,
+    QLabel, QSizePolicy, QSpacerItem, QVBoxLayout,
+    QWidget)
 import themes_rc
 
 class Ui_EOGEventsCreatorSettingsView(object):
@@ -22,7 +28,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
         EOGEventsCreatorSettingsView.setStyleSheet(u"font: 12pt \"Roboto\";")
         self.verticalLayout_5 = QVBoxLayout(EOGEventsCreatorSettingsView)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.horizontalSpacer = QSpacerItem(659, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(659, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_5.addItem(self.horizontalSpacer)
 
@@ -36,7 +42,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
 
         self.verticalLayout_5.addWidget(self.label)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 13, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_4 = QSpacerItem(20, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout_5.addItem(self.verticalSpacer_4)
 
@@ -44,7 +50,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalSpacer_3 = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_3)
 
@@ -75,7 +81,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
 
         self.verticalLayout_5.addLayout(self.verticalLayout)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 13, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_2 = QSpacerItem(20, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout_5.addItem(self.verticalSpacer_2)
 
@@ -83,7 +89,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalSpacer_4 = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_4 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer_4)
 
@@ -119,7 +125,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalSpacer_6 = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_6 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_6)
 
@@ -152,7 +158,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
 
         self.verticalLayout_5.addLayout(self.verticalLayout_3)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 13, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_3 = QSpacerItem(20, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout_5.addItem(self.verticalSpacer_3)
 
@@ -160,7 +166,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.horizontalSpacer_8 = QSpacerItem(20, 18, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_8 = QSpacerItem(20, 18, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer_8)
 
@@ -174,7 +180,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
 
         self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalSpacer_2 = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_7.addItem(self.horizontalSpacer_2)
 
@@ -188,7 +194,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalSpacer_7 = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_7 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_7)
 
@@ -219,13 +225,13 @@ class Ui_EOGEventsCreatorSettingsView(object):
 
         self.verticalLayout_5.addLayout(self.verticalLayout_4)
 
-        self.verticalSpacer = QSpacerItem(1071, 13, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer = QSpacerItem(1071, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout_5.addItem(self.verticalSpacer)
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalSpacer_5 = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_5 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer_5)
 
@@ -252,7 +258,7 @@ class Ui_EOGEventsCreatorSettingsView(object):
 
         self.verticalLayout_5.addWidget(self.label_8)
 
-        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_5.addItem(self.verticalSpacer_5)
 

@@ -1,40 +1,42 @@
-{   
+{
     "item_name": "REMsEventsToMiniEpochs",
     "item_type": "module",
-    "item_api_version": "1.0.0",
-    "dependencies": [
-    ],
-    "module_params":{
-        "cls":"REMsEventsToMiniEpochs",
-        "name":"REMsEventsToMiniEpochs",
-        "metadata":{},
-        "file_location":null,
-        "module":"RapidEyeMovementModules.REMsEventsToMiniEpochs",
+    "item_api_version": "2.0.0",
+    "dependencies": [],
+    "module_params": {
+        "cls": "REMsEventsToMiniEpochs",
+        "name": "REMsEventsToMiniEpochs",
+        "metadata": {},
+        "file_location": null,
+        "module": "RapidEyeMovementModules.REMsEventsToMiniEpochs",
         "module_label": "REMs to mini-epochs",
-        "module_category":"Events Utilities",
-        "module_author":"",
-        "module_url":"",
-        "module_description":"",
-        "module_options":{},
+        "module_category": "Events Utilities",
+        "module_author": "",
+        "module_url": "",
+        "module_description": "",
+        "module_options": {},
         "inputs": {
             "filename": {
                 "name": "filename",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"REMs_events": {
+            },
+            "REMs_events": {
                 "name": "REMs_events",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"epochs_to_proceed": {
+            },
+            "epochs_to_proceed": {
                 "name": "epochs_to_proceed",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"parameters": {
+            },
+            "parameters": {
                 "name": "parameters",
-                "value":"{'mini_epoch_group': 'DET_MOR_3s', 'mini_epoch_name_REMs': 'Snooz_MOR_3s_DET', 'mini_epoch_name_NO': 'Snooz_MOR_3s_NO'}",
+                "value": "{'mini_epoch_group': 'DET_MOR_3s', 'mini_epoch_name_REMs': 'Snooz_MOR_3s_DET', 'mini_epoch_name_NO': 'Snooz_MOR_3s_NO'}",
                 "connections": {},
                 "sub_plugs": {}
             }

@@ -1,78 +1,88 @@
-{   
+{
     "item_name": "REMsDetectionYasa",
     "item_type": "module",
-    "item_api_version": "1.0.0",
-    "dependencies": [
-    ],
-    "module_params":{
-        "cls":"REMsDetectionYasa",
-        "name":"REMsDetectionYasa",
-        "metadata":{},
-        "file_location":null,
-        "module":"RapidEyeMovementModules.REMsDetectionYasa",
+    "item_api_version": "2.0.0",
+    "dependencies": [],
+    "module_params": {
+        "cls": "REMsDetectionYasa",
+        "name": "REMsDetectionYasa",
+        "metadata": {},
+        "file_location": null,
+        "module": "RapidEyeMovementModules.REMsDetectionYasa",
         "module_label": "REMs Detection Yasa",
-        "module_category":"Detectors",
-        "module_author":"",
-        "module_url":"",
-        "module_description":"",
-        "module_options":{},
+        "module_category": "Detectors",
+        "module_author": "",
+        "module_url": "",
+        "module_description": "",
+        "module_options": {},
         "inputs": {
             "filename": {
                 "name": "filename",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"signals": {
+            },
+            "signals": {
                 "name": "signals",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"events": {
+            },
+            "events": {
                 "name": "events",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"sleepstages": {
+            },
+            "sleepstages": {
                 "name": "sleepstages",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"amplitude": {
+            },
+            "amplitude": {
                 "name": "amplitude",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"duration": {
+            },
+            "duration": {
                 "name": "duration",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"freq_rem": {
+            },
+            "freq_rem": {
                 "name": "freq_rem",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"relative_prominence": {
+            },
+            "relative_prominence": {
                 "name": "relative_prominence",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"remove_outliers": {
+            },
+            "remove_outliers": {
                 "name": "remove_outliers",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"rems_event_name": {
+            },
+            "rems_event_name": {
                 "name": "rems_event_name",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"rems_event_group": {
+            },
+            "rems_event_group": {
                 "name": "rems_event_group",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"include": {
+            },
+            "include": {
                 "name": "include",
                 "value": "",
                 "connections": {},
