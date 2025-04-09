@@ -1,6 +1,6 @@
 {
     "package_name": "RapidEyeMovementModules",
-    "package_version": "0.5.0",
+    "package_version": "2.0.0",
     "package_author": "Samuel Poulin",
     "package_url": "",
     "package_description": "Modules to manage rapid eye movement on the EEG during REM stage",
