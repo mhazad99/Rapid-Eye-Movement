@@ -18,7 +18,7 @@ class Ui_AlgorithmDetail(object):
     def setupUi(self, AlgorithmDetail):
         if not AlgorithmDetail.objectName():
             AlgorithmDetail.setObjectName(u"AlgorithmDetail")
-        AlgorithmDetail.resize(986, 691)
+        AlgorithmDetail.resize(489, 467)
         self.gridLayout_2 = QGridLayout(AlgorithmDetail)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.verticalLayout = QVBoxLayout()
@@ -52,6 +52,7 @@ class Ui_AlgorithmDetail(object):
         self.textEdit.setObjectName(u"textEdit")
         self.textEdit.setFrameShape(QFrame.NoFrame)
         self.textEdit.setLineWidth(0)
+        self.textEdit.setReadOnly(True)
 
         self.verticalLayout_3.addWidget(self.textEdit)
 
@@ -74,6 +75,7 @@ class Ui_AlgorithmDetail(object):
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1338, 476))
         self.verticalLayout_5 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setSizeConstraint(QLayout.SetNoConstraint)
         self.label_2 = QLabel(self.scrollAreaWidgetContents)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setPixmap(QPixmap(u":/image/Eyes_movement.PNG"))

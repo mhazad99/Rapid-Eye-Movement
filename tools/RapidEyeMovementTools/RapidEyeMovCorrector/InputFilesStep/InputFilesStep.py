@@ -147,4 +147,4 @@ class InputFilesStep(BaseStepView, Ui_InputFilesStep, QtWidgets.QWidget):
     # Called when the user delete an instance of the plugin
     def __del__(self):
         #self.my_PsgReaderSettingsView.__del__()
-        self._pub_sub_manager.unsubscribe(self, self._EOG_chan_dict)
+        self._pub_sub_manager.unsubscribe(self, self._channel_topic)
