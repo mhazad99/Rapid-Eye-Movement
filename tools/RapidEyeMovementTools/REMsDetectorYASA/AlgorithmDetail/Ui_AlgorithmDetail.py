@@ -71,7 +71,7 @@ class Ui_AlgorithmDetail(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1342, 480))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1338, 476))
         self.verticalLayout_5 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.label_2 = QLabel(self.scrollAreaWidgetContents)
@@ -115,8 +115,7 @@ class Ui_AlgorithmDetail(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Usage points</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- All output parameters of this algorithm are computed using the filtered LOC and ROC signals. The filtering process is based on the thresholds defined in the <span style=\" font-style:italic;\">DetectionStep</span>.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; marg"
-                        "in-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- For optimal results, the user should apply this detection only to artifact-free REM sleep data.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+                        "in-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- For optimal results, the user should apply this detection only to artifact-free REM sleep data.</p></body></html>", None))
         self.label_2.setText("")
     # retranslateUi
 
