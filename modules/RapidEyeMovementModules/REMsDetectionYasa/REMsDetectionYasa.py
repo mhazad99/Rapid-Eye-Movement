@@ -126,7 +126,12 @@ class REMsDetectionYasa(SciNode):
             # Process inclusion list
             include = self.extract_ints(include)
             include = include[0] if len(include) == 1 else include
-
+            
+            # Check if the user provided the sleep stages or not
+            if set(list(sleepstages['name'].unique())) == {'9'}:
+                hypno_up = None
+                include = None
+                
             # Detect REMs
             rem = yasa.rem_detect(loc, roc, raw.info['sfreq'], 
                                   hypno=hypno_up, include=include, 
