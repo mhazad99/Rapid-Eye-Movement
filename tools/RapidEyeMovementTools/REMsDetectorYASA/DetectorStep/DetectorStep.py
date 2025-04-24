@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 """
     DetectorStep
-    TODO CLASS DESCRIPTION
+    Step to set the thresholds for the REMs detection using YASA algorithm.
 """
 
 from qtpy import QtWidgets, QtCore
@@ -19,7 +19,21 @@ from qtpy import QtWidgets
 class DetectorStep(BaseStepView, Ui_DetectorStep, QtWidgets.QWidget):
     """
         DetectorStep
-        TODO CLASS DESCRIPTION
+        Step to set the thresholds for the REMs detection using YASA algorithm.
+        This step is used to set the parameters for the YASA algorithm.
+        The parameters are:
+        - relative prominence: the minimum relative prominence of the peaks to be detected.
+        - remove outliers: whether to remove outliers from the data.
+        - REMs event name: the name of the REMs event.
+        - REMs event group: the group of the REMs event.
+        - Sleep stages: Which sleep stages to include in the analysis. Default: 5 (REM)
+        - AmpIdx0: the minimum amplitude.
+        - AmpIdx1: the maximum amplitude.
+        - DurIdx0: the minum duration of REMs.
+        - DurIdx1: the maximum duration of REMs.
+        - FreqIdx0: the minimum frequency of the REMs.
+        - FreqIdx1: the maximum frequency of the REMs.
+
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

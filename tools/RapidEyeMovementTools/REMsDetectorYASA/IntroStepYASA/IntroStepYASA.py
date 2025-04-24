@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 """
     IntroStep
-    TODO CLASS DESCRIPTION
+    Step to introduce the REMs detection tool.
 """
 from commons.BaseStepView import BaseStepView
 
@@ -12,7 +12,7 @@ from qtpy import QtWidgets
 class IntroStepYASA(BaseStepView, Ui_IntroStepYASA, QtWidgets.QWidget):
     """
         IntroStep
-        TODO CLASS DESCRIPTION
+        Step to introduce the REMs detection tool.
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

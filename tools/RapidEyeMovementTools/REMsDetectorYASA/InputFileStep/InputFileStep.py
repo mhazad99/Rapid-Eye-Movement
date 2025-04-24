@@ -1,7 +1,8 @@
 #! /usr/bin/env python3
 """
-    InputFiles
-    Step to open files to detect spindles.
+    InputFilesStep
+    Step to select the input files for the REMs detection.
+    It inherits from InputFilesStep and is used to select the input files for the REMs detection.
 """
 
 from qtpy import QtWidgets, QtCore
