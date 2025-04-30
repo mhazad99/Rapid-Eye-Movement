@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 """
     AlgorithmDetail
-    TODO CLASS DESCRIPTION
+    Description of the algorithm used to detect REMs.
 """
 
 from qtpy import QtWidgets, QtCore
@@ -19,7 +19,7 @@ from qtpy import QtWidgets
 class AlgorithmDetail(BaseStepView, Ui_AlgorithmDetail, QtWidgets.QWidget):
     """
         AlgorithmDetail
-        TODO CLASS DESCRIPTION
+        Description of the algorithm used to detect REMs.
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
