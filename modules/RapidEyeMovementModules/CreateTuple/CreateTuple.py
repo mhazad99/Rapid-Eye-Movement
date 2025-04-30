@@ -3,7 +3,8 @@
 See the file LICENCE for full license details.
 
     CreateTuple
-    TODO CLASS DESCRIPTION
+    This module creates a tuple from two input values.
+    It is used to combine two values into a single tuple for further processing.
 """
 from flowpipe import SciNode, InputPlug, OutputPlug
 from commons.NodeInputException import NodeInputException
@@ -13,20 +14,17 @@ DEBUG = False
 
 class CreateTuple(SciNode):
     """
-    TODO CLASS DESCRIPTION
+    This module creates a tuple from two input values.
+    It is used to combine two values into a single tuple for further processing.
 
     Parameters
     ----------
-        Idx0: TODO TYPE
-            TODO DESCRIPTION
-        Idx1: TODO TYPE
-            TODO DESCRIPTION
-        
+        Idx0: first value to be included in the tuple
+        Idx1: second value to be included in the tuple
 
     Returns
     -------
-        Tuple: TODO TYPE
-            TODO DESCRIPTION
+        Tuple: a tuple containing the two input values
         
     """
     def __init__(self, **kwargs):
@@ -51,20 +49,17 @@ class CreateTuple(SciNode):
     
     def compute(self, Idx0,Idx1):
         """
-        TODO DESCRIPTION
+        This module creates a tuple from two input values.
+        It is used to combine two values into a single tuple for further processing.
 
         Parameters
         ----------
-            Idx0: TODO TYPE
-                TODO DESCRIPTION
-            Idx1: TODO TYPE
-                TODO DESCRIPTION
-            
+            Idx0: first value to be included in the tuple
+            Idx1: second value to be included in the tuple
 
         Returns
         -------
-            Tuple: TODO TYPE
-                TODO DESCRIPTION
+            Tuple: a tuple containing the two input values
             
 
         Raises
@@ -74,14 +69,22 @@ class CreateTuple(SciNode):
             NodeRuntimeException
                 If an error occurs during the execution of the function.
         """
+        if DEBUG: print('CreateTuple.compute')
+        # Check if the input parameters are valid   
+        if not isinstance(Idx0, (int, float)):
+            raise NodeInputException("Idx0 must be an int or a float")
+        if not isinstance(Idx1, (int, float)):
+            raise NodeInputException("Idx1 must be an int or a float")
+        
+        if Idx0 is None:
+            raise NodeInputException("Idx0 is None")
+        if Idx1 is None:
+            raise NodeInputException("Idx1 is None")
+
         First = Idx0
         Second = Idx1
         Tuple = (First, Second)
 
-        # Write to the cache to use the data in the resultTab
-        # cache = {}
-        # cache['this_is_a_key'] = 42
-        # self._cache_manager.write_mem_cache(self.identifier, cache)
 
         # Log message for the Logs tab
         self._log_manager.log(self.identifier, "This module creates a tuple.")

@@ -1,43 +1,46 @@
-{   
+{
     "item_name": "EOGPeaksMatches",
     "item_type": "module",
-    "item_api_version": "1.0.0",
-    "dependencies": [
-    ],
-    "module_params":{
-        "cls":"EOGPeaksMatches",
-        "name":"EOGPeaksMatches",
-        "metadata":{},
-        "file_location":null,
-        "module":"RapidEyeMovementModules.EOGPeaksMatches",
+    "item_api_version": "2.0.0",
+    "dependencies": [],
+    "module_params": {
+        "cls": "EOGPeaksMatches",
+        "name": "EOGPeaksMatches",
+        "metadata": {},
+        "file_location": null,
+        "module": "RapidEyeMovementModules.EOGPeaksMatches",
         "module_label": "EOG Peaks Matches",
-        "module_category":"Signal Processing",
-        "module_author":"",
-        "module_url":"",
-        "module_description":"",
-        "module_options":{},
+        "module_category": "Signal Processing",
+        "module_author": "",
+        "module_url": "",
+        "module_description": "",
+        "module_options": {},
         "inputs": {
             "EOG_signals": {
                 "name": "EOG_signals",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"sEOG_signals": {
+            },
+            "sEOG_signals": {
                 "name": "sEOG_signals",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"dEOG_signals": {
+            },
+            "dEOG_signals": {
                 "name": "dEOG_signals",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"peaks_df": {
+            },
+            "peaks_df": {
                 "name": "peaks_df",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"parameters": {
+            },
+            "parameters": {
                 "name": "parameters",
                 "value": "",
                 "connections": {},
@@ -50,7 +53,8 @@
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"peaks_unmatched_df": {
+            },
+            "peaks_unmatched_df": {
                 "name": "peaks_unmatched_df",
                 "value": "",
                 "connections": {},

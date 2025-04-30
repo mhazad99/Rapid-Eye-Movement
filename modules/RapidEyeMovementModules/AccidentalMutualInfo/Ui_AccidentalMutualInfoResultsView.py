@@ -3,15 +3,21 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_AccidentalMutualInfoResultsView.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
+    QLineEdit, QSizePolicy, QSpacerItem, QVBoxLayout,
+    QWidget)
 
 class Ui_AccidentalMutualInfoResultsView(object):
     def setupUi(self, AccidentalMutualInfoResultsView):
@@ -28,7 +34,6 @@ class Ui_AccidentalMutualInfoResultsView(object):
         self.label_2.setObjectName(u"label_2")
         font = QFont()
         font.setBold(True)
-        font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setAlignment(Qt.AlignCenter)
 
@@ -63,7 +68,7 @@ class Ui_AccidentalMutualInfoResultsView(object):
 
         self.horizontalLayout_5.addWidget(self.ami_threshold_lineEdit)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer)
 

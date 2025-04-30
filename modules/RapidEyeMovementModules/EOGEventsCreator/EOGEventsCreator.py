@@ -231,6 +231,17 @@ class EOGEventsCreator(SciNode):
         MORs_det_df['duration_sec'] = suspect_MORs_df['duration_sec']
         MORs_det_df['channels'] = suspect_MORs_df['channels']
 
+        # Add MOR classified as artifact
+        suspect_artifact_df = events_df[events_df['group'] == 'sEOG']
+        MORs_artifact_df = pd.DataFrame(columns=['group', 'name', 'start_sec', 'duration_sec', 'channels'])
+        MORs_artifact_df['group'] = suspect_artifact_df['group']
+        MORs_artifact_df['name'] = suspect_artifact_df['group']
+        MORs_artifact_df['start_sec'] = suspect_artifact_df['start_sec']
+        MORs_artifact_df['duration_sec'] = suspect_artifact_df['duration_sec']
+        MORs_artifact_df['channels'] = ''
+
+        MORs_det_df = pd.concat([MORs_det_df, MORs_artifact_df])
+
         # Drop duplicated events based on the start time
         # duplicated events can happen when there are 2 unmatched peaks between 2 intersections
         #  (intersection define the MORs onset and the end)

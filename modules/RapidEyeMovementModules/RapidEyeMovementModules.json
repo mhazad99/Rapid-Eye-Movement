@@ -1,15 +1,15 @@
 {
     "package_name": "RapidEyeMovementModules",
-    "package_version": "0.5.0",
+    "package_version": "2.0.0",
     "package_author": "Samuel Poulin",
     "package_url": "",
     "package_description": "Modules to manage rapid eye movement on the EEG during REM stage",
-    "package_api_version": "1.0.0",
+    "package_api_version": "2.0.0",
     "items": [
         {
             "item_name": "PolynomialApprox",
             "item_type": "module",
-            "item_version": "0.1.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -23,7 +23,7 @@
         {
             "item_name": "EventSubdivision",
             "item_type": "module",
-            "item_version": "0.4.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -37,7 +37,7 @@
         {
             "item_name": "DerivativeApprox",
             "item_type": "module",
-            "item_version": "0.1.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -51,7 +51,7 @@
         {
             "item_name": "DetrendSignal",
             "item_type": "module",
-            "item_version": "0.1.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -65,7 +65,7 @@
         {
             "item_name": "RemDetector",
             "item_type": "module",
-            "item_version": "0.1.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -79,7 +79,7 @@
         {
             "item_name": "SpectralPower",
             "item_type": "module",
-            "item_version": "0.1.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -93,7 +93,7 @@
         {
             "item_name": "MutualInfoZScore",
             "item_type": "module",
-            "item_version": "0.2.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -107,7 +107,7 @@
         {
             "item_name": "FilterComponents",
             "item_type": "module",
-            "item_version": "2.5.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -121,7 +121,7 @@
         {
             "item_name": "SubstractSignals",
             "item_type": "module",
-            "item_version": "0.2.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -149,7 +149,7 @@
         {
             "item_name": "SignalsCombine",
             "item_type": "module",
-            "item_version": "0.1.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -163,7 +163,7 @@
         {
             "item_name": "EOGBaselineProcess",
             "item_type": "module",
-            "item_version": "0.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -177,7 +177,7 @@
         {
             "item_name": "EOGNormalization",
             "item_type": "module",
-            "item_version": "0.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -191,7 +191,7 @@
         {
             "item_name": "MovingAverage",
             "item_type": "module",
-            "item_version": "0.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -205,7 +205,7 @@
         {
             "item_name": "SumSignals",
             "item_type": "module",
-            "item_version": "0.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -219,7 +219,7 @@
         {
             "item_name": "EOGPeaksFinder",
             "item_type": "module",
-            "item_version": "1.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -233,7 +233,7 @@
         {
             "item_name": "EllipFilterSignal",
             "item_type": "module",
-            "item_version": "0.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -247,7 +247,7 @@
         {
             "item_name": "EOGIntersectionsFinder",
             "item_type": "module",
-            "item_version": "0.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -261,7 +261,7 @@
         {
             "item_name": "EOGPeaksMatches",
             "item_type": "module",
-            "item_version": "1.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -275,7 +275,7 @@
         {
             "item_name": "EOGEventsCreator",
             "item_type": "module",
-            "item_version": "0.1.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -289,7 +289,7 @@
         {
             "item_name": "REMsEventsToMiniEpochs",
             "item_type": "module",
-            "item_version": "1.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -303,7 +303,7 @@
         {
             "item_name": "REMsDetectionYasa",
             "item_type": "module",
-            "item_version": "0.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -317,7 +317,7 @@
         {
             "item_name": "CreateTuple",
             "item_type": "module",
-            "item_version": "0.0.0",
+            "item_version": "2.0.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",

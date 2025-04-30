@@ -3,17 +3,22 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_IntroStep.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QFrame, QHBoxLayout,
+    QLabel, QScrollArea, QSizePolicy, QSpacerItem,
+    QSplitter, QTextEdit, QVBoxLayout, QWidget)
 from . import intro_res_rc
-#from RapidEyeMovementTools.RapidEyeMovDetectorPolynomial.IntroStep import intro_res_rc
 import themes_rc
 
 class Ui_IntroStep(object):
@@ -36,11 +41,10 @@ class Ui_IntroStep(object):
         self.label_2.setMinimumSize(QSize(0, 100))
         self.label_2.setMaximumSize(QSize(500, 60))
         font = QFont()
-        font.setFamily(u"Roboto-Regular")
+        font.setFamilies([u"Roboto-Regular"])
         font.setPointSize(10)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.label_2.setFont(font)
         self.label_2.setTextFormat(Qt.AutoText)
         self.label_2.setScaledContents(False)
@@ -49,7 +53,7 @@ class Ui_IntroStep(object):
 
         self.verticalLayout_4.addWidget(self.label_2)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_3)
 
@@ -72,7 +76,7 @@ class Ui_IntroStep(object):
 
         self.textEdit = QTextEdit(self.layoutWidget1)
         self.textEdit.setObjectName(u"textEdit")
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
@@ -88,7 +92,7 @@ class Ui_IntroStep(object):
 
         self.verticalLayout_3.addWidget(self.textEdit)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout_3.addItem(self.verticalSpacer)
 
@@ -119,7 +123,7 @@ class Ui_IntroStep(object):
 
         self.verticalLayout_2.addWidget(self.textEdit_2)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_4)
 
@@ -127,7 +131,7 @@ class Ui_IntroStep(object):
 
         self.verticalLayout_4.addWidget(self.splitter)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_2)
 

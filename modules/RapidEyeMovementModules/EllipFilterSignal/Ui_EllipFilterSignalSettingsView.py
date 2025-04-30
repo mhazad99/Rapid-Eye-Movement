@@ -3,15 +3,22 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_EllipFilterSignalSettingsView.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QButtonGroup, QComboBox, QDoubleSpinBox,
+    QFormLayout, QFrame, QGridLayout, QLabel,
+    QLayout, QLineEdit, QRadioButton, QSizePolicy,
+    QSpacerItem, QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_EllipFilterSignalSettingsView(object):
     def setupUi(self, EllipFilterSignalSettingsView):
@@ -26,7 +33,6 @@ class Ui_EllipFilterSignalSettingsView(object):
         self.label_5.setObjectName(u"label_5")
         font = QFont()
         font.setBold(True)
-        font.setWeight(75)
         self.label_5.setFont(font)
         self.label_5.setLayoutDirection(Qt.LeftToRight)
         self.label_5.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
@@ -35,8 +41,8 @@ class Ui_EllipFilterSignalSettingsView(object):
 
         self.line_4 = QFrame(EllipFilterSignalSettingsView)
         self.line_4.setObjectName(u"line_4")
-        self.line_4.setFrameShape(QFrame.HLine)
-        self.line_4.setFrameShadow(QFrame.Sunken)
+        self.line_4.setFrameShape(QFrame.Shape.HLine)
+        self.line_4.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout.addWidget(self.line_4)
 
@@ -106,8 +112,8 @@ class Ui_EllipFilterSignalSettingsView(object):
 
         self.line_3 = QFrame(EllipFilterSignalSettingsView)
         self.line_3.setObjectName(u"line_3")
-        self.line_3.setFrameShape(QFrame.HLine)
-        self.line_3.setFrameShadow(QFrame.Sunken)
+        self.line_3.setFrameShape(QFrame.Shape.HLine)
+        self.line_3.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout.addWidget(self.line_3)
 
@@ -198,8 +204,8 @@ class Ui_EllipFilterSignalSettingsView(object):
 
         self.line_2 = QFrame(EllipFilterSignalSettingsView)
         self.line_2.setObjectName(u"line_2")
-        self.line_2.setFrameShape(QFrame.HLine)
-        self.line_2.setFrameShadow(QFrame.Sunken)
+        self.line_2.setFrameShape(QFrame.Shape.HLine)
+        self.line_2.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout.addWidget(self.line_2)
 
@@ -287,8 +293,8 @@ class Ui_EllipFilterSignalSettingsView(object):
 
         self.line = QFrame(EllipFilterSignalSettingsView)
         self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
+        self.line.setFrameShape(QFrame.Shape.HLine)
+        self.line.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout.addWidget(self.line)
 
@@ -314,7 +320,7 @@ class Ui_EllipFilterSignalSettingsView(object):
 
         self.verticalLayout.addLayout(self.gridLayout_3)
 
-        self.verticalSpacer = QSpacerItem(17, 17, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(17, 17, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer)
 
@@ -401,8 +407,8 @@ class Ui_EllipFilterSignalSettingsView(object):
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Roboto'; font-size:12pt;\">The IIR filter is applied forward and backward to cancel the phase delay.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Roboto'; font-size:12pt;\">The order is divided by 2 when applied since is it applied twice.</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-fa"
-                        "mily:'Roboto'; font-size:10pt;\">ex) An ordre of 6 is sufficient for a bandpass filter </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Roboto'; f"
+                        "ont-size:12pt;\">ex) An ordre of 6 is sufficient for a bandpass filter </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Roboto'; font-size:12pt;\">      0.3-100 Hz with a sample rate=256 Hz</span></p></body></html>", None))
         self.label_8.setText(QCoreApplication.translate("EllipFilterSignalSettingsView", u"FIR Filter Settings", None))
         self.label.setText(QCoreApplication.translate("EllipFilterSignalSettingsView", u"Order", None))

@@ -1,12 +1,12 @@
 #! /usr/bin/env python3
 """
     DetectorStep
-    TODO CLASS DESCRIPTION
+    Step to set the thresholds for the REMs detection using YASA algorithm.
 """
 
 from qtpy import QtWidgets, QtCore
 from qtpy.QtCore import QTimer
-from PySide2.QtCore import *
+from PySide6.QtCore import *
 
 from commons.BaseStepView import BaseStepView
 from flowpipe.ActivationState import ActivationState
@@ -19,7 +19,21 @@ from qtpy import QtWidgets
 class DetectorStep(BaseStepView, Ui_DetectorStep, QtWidgets.QWidget):
     """
         DetectorStep
-        TODO CLASS DESCRIPTION
+        Step to set the thresholds for the REMs detection using YASA algorithm.
+        This step is used to set the parameters for the YASA algorithm.
+        The parameters are:
+        - relative prominence: the minimum relative prominence of the peaks to be detected.
+        - remove outliers: whether to remove outliers from the data.
+        - REMs event name: the name of the REMs event.
+        - REMs event group: the group of the REMs event.
+        - Sleep stages: Which sleep stages to include in the analysis. Default: 5 (REM)
+        - AmpIdx0: the minimum amplitude.
+        - AmpIdx1: the maximum amplitude.
+        - DurIdx0: the minum duration of REMs.
+        - DurIdx1: the maximum duration of REMs.
+        - FreqIdx0: the minimum frequency of the REMs.
+        - FreqIdx1: the maximum frequency of the REMs.
+
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -35,7 +49,12 @@ class DetectorStep(BaseStepView, Ui_DetectorStep, QtWidgets.QWidget):
         self.doubleSpinBox_5.setValue(1.5)
         self.doubleSpinBox.setValue(0.5)
         self.doubleSpinBox_3.setValue(5.0)
-        
+
+        # Connect checkBox_2 signal to handle frame enabling/disabling
+        self.checkBox_2.setChecked(True)
+        self.checkBox_2.stateChanged.connect(self.on_checkBox_2_changed)
+
+
         # If necessary, init the context. The context is a memory space shared by 
         # all steps of a tool. It is used to share and notice other steps whenever
         # the value in it changes. It's very useful when the parameter within a step
@@ -86,6 +105,14 @@ class DetectorStep(BaseStepView, Ui_DetectorStep, QtWidgets.QWidget):
         node_id_FreqTuple = "be8b0065-d6f1-4dea-82ee-eda181f655ab"
         self._FreqIdx1 = f'{node_id_FreqTuple}.Idx1'
         self._pub_sub_manager.subscribe(self, self._FreqIdx1)
+
+
+    def on_checkBox_2_changed(self):
+        """Handle the state change of checkBox_2"""
+        is_checked = self.checkBox_2.isChecked()
+        self.label_16.setEnabled(is_checked)
+        self.frame_8.setEnabled(is_checked)
+
 
     def load_settings(self):
         # Load settings is called after the constructor of all steps has been executed.

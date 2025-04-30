@@ -1,7 +1,7 @@
 {
     "item_name": "REMsToMiniEpochs",
     "item_type": "tool",
-    "item_api_version": "1.0.0",
+    "item_api_version": "2.0.0",
     "tool_params": {
         "tool_label": "REMs to mini-epochs converter",
         "tool_category": "Rapid Eye Movements",
@@ -40,21 +40,21 @@
     "dependencies": [
         {
             "package_name": "RapidEyeMovementTools",
-            "package_version": "0.9.0",
+            "package_version": "2.0.0",
             "deleteable": false
         },
         {
             "package_name": "CEAMSTools",
-            "package_version": "6.9.0",
+            "package_version": "7.0.0",
             "deleteable": false
         },
         {
             "package_name": "RapidEyeMovementModules",
-            "package_version": "0.5.0"
+            "package_version": "2.0.0"
         },
         {
             "package_name": "CEAMSModules",
-            "package_version": "6.9.0"
+            "package_version": "7.0.0"
         }
     ],
     "process_params": {

@@ -3,15 +3,22 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_CorrectorStep.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QDoubleSpinBox, QGridLayout,
+    QHBoxLayout, QLabel, QLineEdit, QRadioButton,
+    QSizePolicy, QSpacerItem, QSpinBox, QVBoxLayout,
+    QWidget)
 import themes_rc
 
 class Ui_CorrectorStep(object):
@@ -33,11 +40,10 @@ class Ui_CorrectorStep(object):
         self.label_15 = QLabel(CorrectorStep)
         self.label_15.setObjectName(u"label_15")
         font = QFont()
-        font.setFamily(u"Roboto-Regular")
+        font.setFamilies([u"Roboto-Regular"])
         font.setPointSize(10)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.label_15.setFont(font)
 
         self.verticalLayout.addWidget(self.label_15)
@@ -69,7 +75,7 @@ class Ui_CorrectorStep(object):
 
         self.verticalLayout.addLayout(self.gridLayout_4)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout.addItem(self.verticalSpacer_4)
 
@@ -81,12 +87,11 @@ class Ui_CorrectorStep(object):
         self.label = QLabel(CorrectorStep)
         self.label.setObjectName(u"label")
         font1 = QFont()
-        font1.setFamily(u"Roboto-Regular")
+        font1.setFamilies([u"Roboto-Regular"])
         font1.setPointSize(10)
         font1.setBold(False)
         font1.setItalic(False)
         font1.setUnderline(False)
-        font1.setWeight(50)
         self.label.setFont(font1)
 
         self.verticalLayout.addWidget(self.label)
@@ -140,7 +145,7 @@ class Ui_CorrectorStep(object):
 
         self.verticalLayout.addLayout(self.gridLayout)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout.addItem(self.verticalSpacer_3)
 
@@ -157,7 +162,7 @@ class Ui_CorrectorStep(object):
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
@@ -191,7 +196,7 @@ class Ui_CorrectorStep(object):
         self.p_val_doubleSpinBox = QDoubleSpinBox(CorrectorStep)
         self.p_val_doubleSpinBox.setObjectName(u"p_val_doubleSpinBox")
         self.p_val_doubleSpinBox.setEnabled(False)
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.p_val_doubleSpinBox.sizePolicy().hasHeightForWidth())
@@ -231,7 +236,7 @@ class Ui_CorrectorStep(object):
 
         self.label_5 = QLabel(CorrectorStep)
         self.label_5.setObjectName(u"label_5")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
@@ -257,7 +262,7 @@ class Ui_CorrectorStep(object):
 
         self.label_2 = QLabel(CorrectorStep)
         self.label_2.setObjectName(u"label_2")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
@@ -297,7 +302,7 @@ class Ui_CorrectorStep(object):
 
         self.verticalLayout.addWidget(self.expert_mode_checkBox)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.verticalLayout.addItem(self.verticalSpacer_2)
 
@@ -331,14 +336,14 @@ class Ui_CorrectorStep(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer)
 
 
         self.horizontalLayout_3.addLayout(self.verticalLayout)
 
-        self.horizontalSpacer_3 = QSpacerItem(236, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(236, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer_3)
 
