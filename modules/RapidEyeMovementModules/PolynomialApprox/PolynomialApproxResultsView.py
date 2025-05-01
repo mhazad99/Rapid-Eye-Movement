@@ -9,11 +9,11 @@ See the file LICENCE for full license details.
 from qtpy import QtWidgets
 
 import matplotlib
-matplotlib.use('Qt5Agg')
+matplotlib.use('QtAgg')
 from CEAMSModules.PSGReader.SignalModel import SignalModel
 from RapidEyeMovementModules.PolynomialApprox.Ui_PolynomialApproxResultsView import Ui_PolynomialApproxResultsView
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
+from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
 import numpy as np
 
