@@ -46,9 +46,7 @@ See the file LICENCE for full license details.
                 channels : Channel where the event occures
 """
 import numpy as np
-import pandas as pd
 from scipy import signal as sci
-from tqdm import tqdm
 
 from flowpipe import SciNode, InputPlug, OutputPlug
 import config

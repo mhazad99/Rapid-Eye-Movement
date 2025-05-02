@@ -71,6 +71,7 @@ import numpy as np
 import pandas as pd
 from random import sample
 from sklearn.metrics import mutual_info_score
+import sys
 from tqdm import tqdm
 
 DEBUG = False
@@ -323,7 +324,9 @@ class AccidentalMutualInfo(SciNode):
                 # if there is at least one epoch in the current cycle
                 if len(signals1_event_sel)>0:
                     desc = f'Calculating Accidental mutual information-cycle{sleep_cycle}'
-                    pbar = tqdm(total=total_event, desc=desc)
+                    # Safe check for terminal support
+                    use_progress_bar = sys.stdout is not None and sys.stdout.isatty()
+                    pbar = tqdm(total=total_event, desc=desc, disable=not use_progress_bar)
                     ite = 0
                     ami = []
                     while (ite != parameters['max_iter']):
@@ -369,7 +372,9 @@ class AccidentalMutualInfo(SciNode):
                 z_score_start = np.hstack(z_score_start)
         else:
             desc = 'Calculating Accidental mutual information'
-            pbar = tqdm(total=total_event, desc=desc)
+            # Safe check for terminal support
+            use_progress_bar = sys.stdout is not None and sys.stdout.isatty()
+            pbar = tqdm(total=total_event, desc=desc, disable=not use_progress_bar)
             ite = 0
             ami = []
             while ite != parameters['max_iter']:
