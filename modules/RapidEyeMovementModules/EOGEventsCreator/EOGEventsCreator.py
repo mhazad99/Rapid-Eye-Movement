@@ -229,7 +229,7 @@ class EOGEventsCreator(SciNode):
         MORs_det_df['name'] = suspect_MORs_df['group']
         MORs_det_df['start_sec'] = suspect_MORs_df['start_sec']
         MORs_det_df['duration_sec'] = suspect_MORs_df['duration_sec']
-        MORs_det_df['channels'] = suspect_MORs_df['channels']
+        MORs_det_df['channels'] = ''
 
         # Add MOR classified as artifact
         suspect_artifact_df = events_df[events_df['group'] == 'sEOG']
