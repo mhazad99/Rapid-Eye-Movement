@@ -8,6 +8,7 @@ See the file LICENCE for full license details.
 
 """
 import numpy as np
+from scipy.io import savemat
 
 import config
 from commons.NodeInputException import NodeInputException
@@ -16,6 +17,7 @@ from flowpipe import SciNode, InputPlug, OutputPlug
 from CEAMSModules.Stft import ts2windows as ts2w
 
 DEBUG = False
+EXPORT_TO_MATLAB = True
 
 class MovingAverage(SciNode):
     """
@@ -111,7 +113,7 @@ class MovingAverage(SciNode):
 
         # Create an empty list
         signals_avg = []
-
+        signals_list = []
         # Loop through all channels
         for i, signal_model in enumerate(signals):
             nsamples_data = len(signal_model.samples)
@@ -152,16 +154,31 @@ class MovingAverage(SciNode):
             signal_avg.samples = ts_in_win_avg
             signals_avg.append(signal_avg)
 
-            # Extract the number of channels
-            channel_lst = [signal.channel for signal in signals_avg]
-            n_chan = len(np.unique(np.array(channel_lst)))
+            if EXPORT_TO_MATLAB:
+                # Convert the signal into a dictionary
+                signal_dict = signal_avg.__dict__.copy()
+                signals_list.append({
+                    'samples': signal_dict['samples'],
+                    'start_time': signal_dict['start_time'],
+                    'end_time': signal_dict['end_time'],
+                    'duration': signal_dict['duration'],
+                    'sample_rate': signal_dict['sample_rate'],
+                    'channel': signal_dict['channel']
+                })
+            
+        if EXPORT_TO_MATLAB:
+            signals_struct = np.array(signals_list, dtype=object)
+            savemat("MovingAverage.mat", {"signals": signals_struct})
 
-            # Write the cache
-            cache = {}
-            if config.is_dev: # Avoid save of the recording when not developping
-                cache['n_chan'] = n_chan
-                cache['signals'] = signals_avg
-                self._cache_manager.write_mem_cache(self.identifier, cache)
+        # Extract the number of channels
+        channel_lst = [signal.channel for signal in signals_avg]
+        n_chan = len(np.unique(np.array(channel_lst)))
+        # Write the cache
+        cache = {}
+        if config.is_dev: # Avoid save of the recording when not developping
+            cache['n_chan'] = n_chan
+            cache['signals'] = signals_avg
+            self._cache_manager.write_mem_cache(self.identifier, cache)
 
         return {
             'signals': signals_avg
