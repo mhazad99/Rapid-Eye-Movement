@@ -8,7 +8,6 @@
         "tool_author": "CEAMS",
         "tool_url": "",
         "tool_description": "To convert Rapid Eye Movement detections to mini-epoch scoring",
-        "tool_version": "0.0.0",
         "package_name": "RapidEyeMovementTools",
         "steps": [
             {
@@ -40,21 +39,21 @@
     "dependencies": [
         {
             "package_name": "RapidEyeMovementTools",
-            "package_version": "2.0.0",
+            "package_version": "2.1.0",
             "deleteable": false
         },
         {
             "package_name": "CEAMSTools",
-            "package_version": "7.0.0",
+            "package_version": "7.3.0",
             "deleteable": false
         },
         {
             "package_name": "RapidEyeMovementModules",
-            "package_version": "2.0.0"
+            "package_version": "2.1.0"
         },
         {
             "package_name": "CEAMSModules",
-            "package_version": "7.0.0"
+            "package_version": "7.3.0"
         }
     ],
     "process_params": {

@@ -136,7 +136,7 @@ class Ui_CorrectorStep(object):
         self.window_sec_doubleSpinBox.setEnabled(False)
         self.window_sec_doubleSpinBox.setMaximumSize(QSize(300, 16777215))
         self.window_sec_doubleSpinBox.setFont(font)
-        self.window_sec_doubleSpinBox.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.window_sec_doubleSpinBox.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.window_sec_doubleSpinBox.setMaximum(50000.000000000000000)
         self.window_sec_doubleSpinBox.setValue(10.000000000000000)
 
@@ -168,14 +168,16 @@ class Ui_CorrectorStep(object):
 
         self.cycle_radioButton = QRadioButton(CorrectorStep)
         self.cycle_radioButton.setObjectName(u"cycle_radioButton")
+        self.cycle_radioButton.setEnabled(False)
         self.cycle_radioButton.setMinimumSize(QSize(190, 0))
-        self.cycle_radioButton.setChecked(True)
+        self.cycle_radioButton.setChecked(False)
 
         self.horizontalLayout.addWidget(self.cycle_radioButton)
 
         self.recording_radioButton = QRadioButton(CorrectorStep)
         self.recording_radioButton.setObjectName(u"recording_radioButton")
         self.recording_radioButton.setMinimumSize(QSize(190, 0))
+        self.recording_radioButton.setChecked(True)
 
         self.horizontalLayout.addWidget(self.recording_radioButton)
 
@@ -203,7 +205,7 @@ class Ui_CorrectorStep(object):
         self.p_val_doubleSpinBox.setSizePolicy(sizePolicy)
         self.p_val_doubleSpinBox.setMaximumSize(QSize(300, 16777215))
         self.p_val_doubleSpinBox.setFont(font)
-        self.p_val_doubleSpinBox.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.p_val_doubleSpinBox.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.p_val_doubleSpinBox.setMaximum(1.000000000000000)
         self.p_val_doubleSpinBox.setValue(0.900000000000000)
 
@@ -228,7 +230,7 @@ class Ui_CorrectorStep(object):
         self.n_iter_spinBox.setSizePolicy(sizePolicy)
         self.n_iter_spinBox.setMaximumSize(QSize(300, 16777215))
         self.n_iter_spinBox.setFont(font)
-        self.n_iter_spinBox.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.n_iter_spinBox.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.n_iter_spinBox.setMaximum(500000)
         self.n_iter_spinBox.setValue(500)
 
@@ -254,7 +256,7 @@ class Ui_CorrectorStep(object):
         self.eeg_bin_spinBox.setSizePolicy(sizePolicy)
         self.eeg_bin_spinBox.setMaximumSize(QSize(300, 16777215))
         self.eeg_bin_spinBox.setFont(font)
-        self.eeg_bin_spinBox.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.eeg_bin_spinBox.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.eeg_bin_spinBox.setMaximum(10000)
         self.eeg_bin_spinBox.setValue(90)
 
@@ -288,7 +290,7 @@ class Ui_CorrectorStep(object):
         self.eog_bin_spinBox.setSizePolicy(sizePolicy)
         self.eog_bin_spinBox.setMaximumSize(QSize(300, 16777215))
         self.eog_bin_spinBox.setFont(font)
-        self.eog_bin_spinBox.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.eog_bin_spinBox.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.eog_bin_spinBox.setMaximum(10000)
         self.eog_bin_spinBox.setValue(30)
 

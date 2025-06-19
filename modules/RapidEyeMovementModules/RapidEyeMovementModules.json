@@ -1,6 +1,6 @@
 {
     "package_name": "RapidEyeMovementModules",
-    "package_version": "2.0.0",
+    "package_version": "2.1.0",
     "package_author": "Samuel Poulin",
     "package_url": "",
     "package_description": "Modules to manage rapid eye movement on the EEG during REM stage",
@@ -93,7 +93,7 @@
         {
             "item_name": "MutualInfoZScore",
             "item_type": "module",
-            "item_version": "2.0.0",
+            "item_version": "2.1.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -107,7 +107,7 @@
         {
             "item_name": "FilterComponents",
             "item_type": "module",
-            "item_version": "2.0.0",
+            "item_version": "2.1.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -135,7 +135,7 @@
         {
             "item_name": "AccidentalMutualInfo",
             "item_type": "module",
-            "item_version": "2.0.0",
+            "item_version": "2.1.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",
@@ -275,7 +275,7 @@
         {
             "item_name": "EOGEventsCreator",
             "item_type": "module",
-            "item_version": "2.0.0",
+            "item_version": "2.1.0",
             "item_hooks": [
                 {
                     "endpoint_name": "module_endpoint",

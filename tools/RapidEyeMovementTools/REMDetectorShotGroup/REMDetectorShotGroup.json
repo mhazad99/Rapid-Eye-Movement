@@ -69,16 +69,16 @@
     "dependencies": [
         {
             "package_name": "RapidEyeMovementTools",
-            "package_version": "2.0.0",
+            "package_version": "2.1.0",
             "deleteable": false
         },
         {
             "package_name": "CEAMSModules",
-            "package_version": "7.0.0"
+            "package_version": "7.3.0"
         },
         {
             "package_name": "RapidEyeMovementModules",
-            "package_version": "2.0.0"
+            "package_version": "2.1.0"
         }
     ],
     "process_params": {

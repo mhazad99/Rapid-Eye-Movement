@@ -44,7 +44,6 @@
         <font>
          <family>Roboto-Regular</family>
          <pointsize>10</pointsize>
-         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -93,10 +92,10 @@
      <item>
       <spacer name="verticalSpacer_4">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
+        <enum>QSizePolicy::Policy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -119,7 +118,6 @@
         <font>
          <family>Roboto-Regular</family>
          <pointsize>10</pointsize>
-         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
          <underline>false</underline>
@@ -208,7 +206,6 @@
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -233,7 +230,6 @@
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -242,7 +238,7 @@
           <string>Must be a divider of the sleep stage's window lenght (30 sec in most case). Check Expert Mode to edit.</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
          <property name="maximum">
           <double>50000.000000000000000</double>
@@ -257,10 +253,10 @@
      <item>
       <spacer name="verticalSpacer_3">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
+        <enum>QSizePolicy::Policy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -276,7 +272,6 @@
         <font>
          <family>Roboto-Regular</family>
          <pointsize>10</pointsize>
-         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -298,10 +293,10 @@
        <item>
         <spacer name="horizontalSpacer">
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
          <property name="sizeType">
-          <enum>QSizePolicy::Minimum</enum>
+          <enum>QSizePolicy::Policy::Minimum</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -313,6 +308,9 @@
        </item>
        <item>
         <widget class="QRadioButton" name="cycle_radioButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="minimumSize">
           <size>
            <width>190</width>
@@ -326,7 +324,7 @@
           <string> for each sleep cycle</string>
          </property>
          <property name="checked">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -343,6 +341,9 @@
          </property>
          <property name="text">
           <string>for the whole recording</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -368,7 +369,6 @@
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -402,7 +402,6 @@
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -412,7 +411,7 @@
 We want to reject the null hypothesis with a degree of confidence. Check Expert Mode to edit.</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
          <property name="maximum">
           <double>1.000000000000000</double>
@@ -436,7 +435,6 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
         <font>
          <family>Roboto-Regular</family>
          <pointsize>10</pointsize>
-         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -469,7 +467,6 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -478,7 +475,7 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
           <string>Check Expert Mode to edit. The number of iteration to compute the Accidental Mutual Infomation, do not confuse with the iteration for the ICA.</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
          <property name="maximum">
           <number>500000</number>
@@ -512,7 +509,6 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -543,7 +539,6 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -552,7 +547,7 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
           <string>Rescaling parameter to compute probability. Check Expert Mode to edit.</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
          <property name="maximum">
           <number>10000</number>
@@ -580,7 +575,6 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -608,7 +602,6 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -639,7 +632,6 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
           <font>
            <family>Roboto-Regular</family>
            <pointsize>10</pointsize>
-           <weight>50</weight>
            <italic>false</italic>
            <bold>false</bold>
           </font>
@@ -648,7 +640,7 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
           <string>Rescaling parameter to compute probability. Check Expert Mode to edit.</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
          <property name="maximum">
           <number>10000</number>
@@ -670,10 +662,10 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
      <item>
       <spacer name="verticalSpacer_2">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
+        <enum>QSizePolicy::Policy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -689,7 +681,6 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
         <font>
          <family>Roboto-Regular</family>
          <pointsize>10</pointsize>
-         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -753,7 +744,7 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
      <item>
       <spacer name="verticalSpacer">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -768,7 +759,7 @@ We want to reject the null hypothesis with a degree of confidence. Check Expert 
    <item>
     <spacer name="horizontalSpacer_3">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>

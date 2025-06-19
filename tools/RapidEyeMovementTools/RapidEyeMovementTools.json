@@ -1,6 +1,6 @@
 {
     "package_name": "RapidEyeMovementTools",
-    "package_version": "2.0.0",
+    "package_version": "2.1.0",
     "package_author": "Samuel Poulin",
     "package_url": "",
     "package_description": "Tools to manage rapid eye movement on the EEG during REM stage",
@@ -9,7 +9,7 @@
         {
             "item_name": "RapidEyeMovCorrector",
             "item_type": "tool",
-            "item_version": "2.0.0",
+            "item_version": "2.1.0",
             "item_hooks": [
                 {
                     "endpoint_name": "menu_endpoint",
@@ -37,7 +37,7 @@
         {
             "item_name": "REMDetectorShotGroup",
             "item_type": "tool",
-            "item_version": "2.0.0",
+            "item_version": "2.1.0",
             "item_hooks": [
                 {
                     "endpoint_name": "menu_endpoint",
@@ -65,7 +65,7 @@
         {
             "item_name": "REMsToMiniEpochs",
             "item_type": "tool",
-            "item_version": "2.0.0",
+            "item_version": "2.1.0",
             "item_hooks": [
                 {
                     "endpoint_name": "menu_endpoint",

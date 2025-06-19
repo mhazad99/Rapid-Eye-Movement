@@ -120,20 +120,21 @@ class MutualInfoZScore(SciNode):
             raise NodeInputException(self.identifier, "std", \
                 f"MutualInfoZScore this input is not connected.")
 
-        # Compute the zvalue for each item of samples (channels of every 10_s_epoch_R stage)
-        # The mean and std can varity for each start time (useful when they vary for each sleep cycle)
-        #   samples_meta_per_start is 3 dimensions [n_MOR_3_s][n_channels][meta]
-        #   signal that share all the same start time are grouped together
-        samples_meta_per_start = SignalModel.get_attribute(samples, 'meta', 'start_time') 
-        z_values = []
-        for i, start_data in enumerate(samples_meta_per_start):
-            z_values_cur = [(sample['mutual_info'] - mean[i])/std[i] for sample in start_data]
-            z_values.append(z_values_cur)
-        z_values = np.hstack(z_values)
+        # # Compute the zvalue for each item of samples (channels of every 10_s_epoch_R stage)
+        # # The mean and std can vary for each start time (useful when they vary for each sleep cycle)
+        # #   samples_meta_per_start is 3 dimensions [n_MOR_3_s][n_channels][meta]
+        # #   samples_meta_per_start is 3 dimensions [n_DET_MOR][n_channels][meta]
+        # #   signal that share all the same start time are grouped together
+        # samples_meta_per_start = SignalModel.get_attribute(samples, 'meta', 'start_time') 
+        # z_values = []
+        # for i, start_data in enumerate(samples_meta_per_start):
+        #     z_values_cur = [(sample['mutual_info'] - mean[i])/std[i] for sample in start_data]
+        #     z_values.append(z_values_cur)
+        # z_values = np.hstack(z_values)
 
         # Code when only one mean and std are available for the whole recording
         # samples is [n_rem_10_s x n_channels] SignalModel
-        # z_values = [(sample.meta['mutual_info'] - mean)/std for sample in samples]
+        z_values = [(sample.meta['mutual_info'] - mean)/std for sample in samples]
 
         # Order the samples as the samples_meta_per_start
         samples_ordered = SignalModel.get_attribute(samples, None, 'start_time')

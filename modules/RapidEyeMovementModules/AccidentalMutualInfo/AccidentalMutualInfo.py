@@ -302,115 +302,116 @@ class AccidentalMutualInfo(SciNode):
             signals1_start_art_free = signals1_start
             signals1_dur_art_free = signals1_dur
 
-        if parameters['criteria_scope']==0: # Per sleep cycle
-            mean_ami_start = []
-            std_ami_start = []
-            z_score_start = []
-            sleep_cycle = 0
-            for index, row in cycle_df.iterrows():
-                # split the signalsx_event per sleep cycle
-                # Find in which sleep cycle the current signal_model is included
-                # Original signals
-                idx_start = round(row["start_sec"],2)<=np.round(signals1_start,2)
-                idx_stop = round(row["start_sec"]+row["duration_sec"],2) > np.round(signals1_start,2) # 3s epoch always aligned with cycle
-                selected_signals = idx_start & idx_stop
-                n_start_time_ori = sum(selected_signals)
-                # Artifact free signal
-                idx_start_art_free = round(row["start_sec"],2)<=np.round(signals1_start_art_free,2)
-                idx_stop_art_free = round(row["start_sec"]+row["duration_sec"],2) > np.round(signals1_start_art_free,2) # 3s epoch always aligned with cycle
-                selected_signals_art_free = idx_start_art_free & idx_stop_art_free
-                signals1_event_sel = signals1_art_free[selected_signals_art_free]
-                signals2_event_sel = signals2_art_free[selected_signals_art_free]
-                # if there is at least one epoch in the current cycle
-                if len(signals1_event_sel)>0:
-                    desc = f'Calculating Accidental mutual information-cycle{sleep_cycle}'
-                    # Safe check for terminal support
-                    use_progress_bar = sys.stdout is not None and sys.stdout.isatty()
-                    pbar = tqdm(total=total_event, desc=desc, disable=not use_progress_bar)
-                    ite = 0
-                    ami = []
-                    while (ite != parameters['max_iter']):
-                        # Gennerate 2 random index to select 1x"10 s epoch" in signals1_event and 1x"10 s epoch" in signals2_event
-                        rand_event_index = sample(range(len(signals1_event_sel)),2)
-                        # Extract samples, samples1 is [n_channels x time series of 10 s epoch]
-                        samples1 = SignalModel.get_attribute(signals1_event_sel[rand_event_index[0]], 'samples', None)
-                        samples2 = SignalModel.get_attribute(signals2_event_sel[rand_event_index[1]], 'samples', None)
-                        # Make sure signals have the same number of samples
-                        if not samples1.shape[1] == samples2.shape[1]:
-                            min_len = min(samples1.shape[1], samples2.shape[1])
-                            samples1 = samples1[:,0:min_len]
-                            samples2 = samples2[:,0:min_len]
-                        #  Compute mutual information for each combination, combine_signals is [n_channels][2 x time series of 10 s epoch]
-                        combine_signals = [[x,y] for x in samples1 for y in samples2]
-                        mutual_info_event = np.hstack([mutual_info_score(combine_signal[0], combine_signal[1], contingency=None) for combine_signal in combine_signals])
-                        ami.append(mutual_info_event)
-                        ite += 1
-                        pbar.update(1)
-                    pbar.close
-                    ami = np.hstack(ami)
-                    # Get stats of the distribution. Will be used to calculate Z value.
-                    mean_ami = np.mean(ami, axis=0)
-                    std_ami = np.std(ami, axis=0)
-                    # Calculate threshold
-                    ami_distribution = np.sort(ami, axis=0)
-                    area_undercurve = np.cumsum(ami_distribution)/np.sum(ami_distribution)
-                    ami_threshold = ami_distribution[len(np.where(area_undercurve < parameters['confidence_level'])[0])]
-                    z_score = (ami_threshold - mean_ami)/std_ami
-                    if DEBUG:
-                        print(f'z_score={z_score}')
-                    # one criteria per start time
-                    tmp_mean_ami_start = np.repeat(mean_ami, n_start_time_ori)
-                    tmp_std_ami_start = np.repeat(std_ami, n_start_time_ori)
-                    tmp_z_score_start = np.repeat(z_score, n_start_time_ori)
-                    mean_ami_start.append(tmp_mean_ami_start)
-                    std_ami_start.append(tmp_std_ami_start)
-                    z_score_start.append(tmp_z_score_start)              
-                sleep_cycle += 1
-            if len(mean_ami_start)>0:
-                mean_ami_start = np.hstack(mean_ami_start)
-                std_ami_start = np.hstack(std_ami_start)    
-                z_score_start = np.hstack(z_score_start)
-        else:
-            desc = 'Calculating Accidental mutual information'
-            # Safe check for terminal support
-            use_progress_bar = sys.stdout is not None and sys.stdout.isatty()
-            pbar = tqdm(total=total_event, desc=desc, disable=not use_progress_bar)
-            ite = 0
-            ami = []
-            while ite != parameters['max_iter']:
-                # Gennerate 2 random index to select 1x"10 s epoch" in signals1_art_free and 1x"10 s epoch" in signals2_art_free
-                rand_event_index = sample(range(len(signals1_art_free)),2)
-                # Extract samples, samples1 is [n_channels x time series of 10 s epoch]
-                samples1 = SignalModel.get_attribute(signals1_art_free[rand_event_index[0]], 'samples', None)
-                samples2 = SignalModel.get_attribute(signals2_art_free[rand_event_index[1]], 'samples', None)
-                # Make sure signals have the same number of samples
-                if not samples1.shape[1] == samples2.shape[1]:
-                    min_len = min(samples1.shape[1], samples2.shape[1])
-                    samples1 = samples1[:,0:min_len]
-                    samples2 = samples2[:,0:min_len]
+        # if parameters['criteria_scope']==0: # Per sleep cycle
+        #     mean_ami_start = []
+        #     std_ami_start = []
+        #     z_score_start = []
+        #     sleep_cycle = 0
+        #     for index, row in cycle_df.iterrows():
+        #         # split the signalsx_event per sleep cycle
+        #         # Find in which sleep cycle the current signal_model is included
+        #         # Original signals
+        #         idx_start = round(row["start_sec"],2)<=np.round(signals1_start,2)
+        #         idx_stop = round(row["start_sec"]+row["duration_sec"],2) > np.round(signals1_start,2) # 3s epoch always aligned with cycle
+        #         selected_signals = idx_start & idx_stop
+        #         n_start_time_ori = sum(selected_signals)
+        #         # Artifact free signal
+        #         idx_start_art_free = round(row["start_sec"],2)<=np.round(signals1_start_art_free,2)
+        #         idx_stop_art_free = round(row["start_sec"]+row["duration_sec"],2) > np.round(signals1_start_art_free,2) # 3s epoch always aligned with cycle
+        #         selected_signals_art_free = idx_start_art_free & idx_stop_art_free
+        #         signals1_event_sel = signals1_art_free[selected_signals_art_free]
+        #         signals2_event_sel = signals2_art_free[selected_signals_art_free]
+        #         # if there is at least one epoch in the current cycle
+        #         if len(signals1_event_sel)>0:
+        #             desc = f'Calculating Accidental mutual information-cycle{sleep_cycle}'
+        #             # Safe check for terminal support
+        #             use_progress_bar = sys.stdout is not None and sys.stdout.isatty()
+        #             pbar = tqdm(total=total_event, desc=desc, disable=not use_progress_bar)
+        #             ite = 0
+        #             ami = []
+        #             while (ite != parameters['max_iter']):
+        #                 # Gennerate 2 random index to select 1x"10 s epoch" in signals1_event and 1x"10 s epoch" in signals2_event
+        #                 rand_event_index = sample(range(len(signals1_event_sel)),2)
+        #                 # Extract samples, samples1 is [n_channels x time series of 10 s epoch]
+        #                 samples1 = SignalModel.get_attribute(signals1_event_sel[rand_event_index[0]], 'samples', None)
+        #                 samples2 = SignalModel.get_attribute(signals2_event_sel[rand_event_index[1]], 'samples', None)
+        #                 # Make sure signals have the same number of samples
+        #                 if not samples1.shape[1] == samples2.shape[1]:
+        #                     min_len = min(samples1.shape[1], samples2.shape[1])
+        #                     samples1 = samples1[:,0:min_len]
+        #                     samples2 = samples2[:,0:min_len]
+        #                 #  Compute mutual information for each combination, combine_signals is [n_channels][2 x time series of 10 s epoch]
+        #                 combine_signals = [[x,y] for x in samples1 for y in samples2]
+        #                 mutual_info_event = np.hstack([mutual_info_score(combine_signal[0], combine_signal[1], contingency=None) for combine_signal in combine_signals])
+        #                 ami.append(mutual_info_event)
+        #                 ite += 1
+        #                 pbar.update(1)
+        #             pbar.close
+        #             ami = np.hstack(ami)
+        #             # Get stats of the distribution. Will be used to calculate Z value.
+        #             mean_ami = np.mean(ami, axis=0)
+        #             std_ami = np.std(ami, axis=0)
+        #             # Calculate threshold
+        #             ami_distribution = np.sort(ami, axis=0)
+        #             area_undercurve = np.cumsum(ami_distribution)/np.sum(ami_distribution)
+        #             ami_threshold = ami_distribution[len(np.where(area_undercurve < parameters['confidence_level'])[0])]
+        #             z_score = (ami_threshold - mean_ami)/std_ami
+        #             if DEBUG:
+        #                 print(f'z_score={z_score}')
+        #             # one criteria per start time
+        #             tmp_mean_ami_start = np.repeat(mean_ami, n_start_time_ori)
+        #             tmp_std_ami_start = np.repeat(std_ami, n_start_time_ori)
+        #             tmp_z_score_start = np.repeat(z_score, n_start_time_ori)
+        #             mean_ami_start.append(tmp_mean_ami_start)
+        #             std_ami_start.append(tmp_std_ami_start)
+        #             z_score_start.append(tmp_z_score_start)              
+        #         sleep_cycle += 1
+        #     if len(mean_ami_start)>0:
+        #         mean_ami_start = np.hstack(mean_ami_start)
+        #         std_ami_start = np.hstack(std_ami_start)    
+        #         z_score_start = np.hstack(z_score_start)
+        # else:
+        desc = 'Calculating Accidental mutual information'
+        # Safe check for terminal support
+        use_progress_bar = sys.stdout is not None and sys.stdout.isatty()
+        pbar = tqdm(total=total_event, desc=desc, disable=not use_progress_bar)
+        ite = 0
+        ami = []
+        while ite != parameters['max_iter']:
+            # Gennerate 2 random index to select 1x"10 s epoch" in signals1_art_free and 1x"10 s epoch" in signals2_art_free
+            rand_event_index = sample(range(len(signals1_art_free)),2)
+            # Extract samples, samples1 is [n_channels x time series of 10 s epoch]
+            samples1 = SignalModel.get_attribute(signals1_art_free[rand_event_index[0]], 'samples', None)
+            samples2 = SignalModel.get_attribute(signals2_art_free[rand_event_index[1]], 'samples', None)
+            # Make sure signals have the same number of samples
+            if not samples1.shape[1] == samples2.shape[1]:
+                min_len = min(samples1.shape[1], samples2.shape[1])
+                samples1 = samples1[:,0:min_len]
+                samples2 = samples2[:,0:min_len]
 
-                #  Compute mutual information for each combination, combine_signals is [n_channels][2 x time series of 10 s epoch]
-                combine_signals = [[x,y] for x in samples1 for y in samples2]
-                mutual_info_event = np.hstack([mutual_info_score(combine_signal[0], combine_signal[1], contingency=None) for combine_signal in combine_signals])
-                ami.append(mutual_info_event)
-                ite += 1
-                pbar.update(1)
-            ami = np.hstack(ami)
+            #  Compute mutual information for each combination, combine_signals is [n_channels][2 x time series of 10 s epoch]
+            combine_signals = [[x,y] for x in samples1 for y in samples2]
+            mutual_info_event = np.hstack([mutual_info_score(combine_signal[0], combine_signal[1], contingency=None) for combine_signal in combine_signals])
+            ami.append(mutual_info_event)
+            ite += 1
+            pbar.update(1)
+        ami = np.hstack(ami)
 
-            # Get stats of the distribution. Will be used to calculate Z value.
-            mean_ami = np.mean(ami, axis=0)
-            std_ami = np.std(ami, axis=0)
-            # Calculate threshold
-            ami_distribution = np.sort(ami, axis=0)
-            area_undercurve = np.cumsum(ami_distribution)/np.sum(ami_distribution)
-            ami_threshold = ami_distribution[len(np.where(area_undercurve < parameters['confidence_level'])[0])]
-            z_score = (ami_threshold - mean_ami)/std_ami
-            # one criteria per start time
-            n_start_time = len(signals1_event)
-            mean_ami_start = np.repeat(mean_ami, n_start_time)
-            std_ami_start = np.repeat(std_ami, n_start_time)
-            z_score_start = np.repeat(z_score, n_start_time)
-            pbar.close
+        # Get stats of the distribution. Will be used to calculate Z value.
+        mean_ami = np.mean(ami, axis=0)
+        std_ami = np.std(ami, axis=0)
+        # Calculate threshold
+        ami_distribution = np.sort(ami, axis=0)
+        area_undercurve = np.cumsum(ami_distribution)/np.sum(ami_distribution)
+        ami_threshold = ami_distribution[len(np.where(area_undercurve < parameters['confidence_level'])[0])]
+        z_score = (ami_threshold - mean_ami)/std_ami
+
+        # one criteria per start time
+        # n_start_time = len(signals1_event)
+        # mean_ami_start = np.repeat(mean_ami, n_start_time)
+        # std_ami_start = np.repeat(std_ami, n_start_time)
+        # z_score_start = np.repeat(z_score, n_start_time)
+        pbar.close
 
         # Write the cache
         cache = {}
@@ -422,8 +423,8 @@ class AccidentalMutualInfo(SciNode):
         cache['criteria'] = z_score
         self._cache_manager.write_mem_cache(self.identifier, cache)
 
-        return {'mean_ami': mean_ami_start,
-                'std_ami': std_ami_start,
-                'criteria': z_score_start}
+        return {'mean_ami': mean_ami,
+                'std_ami': std_ami,
+                'criteria': z_score}
     
     

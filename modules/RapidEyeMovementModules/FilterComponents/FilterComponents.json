@@ -77,8 +77,14 @@
                 "connections": {},
                 "sub_plugs": {}
             },
-            "events": {
-                "name": "events",
+            "events_components": {
+                "name": "events_components",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "events_corrected": {
+                "name": "events_corrected",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}

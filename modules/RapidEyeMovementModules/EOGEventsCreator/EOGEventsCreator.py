@@ -153,7 +153,9 @@ class EOGEventsCreator(SciNode):
 
         if DEBUG: print('EOGEventsCreator.compute')
         # Clear the cache (usefull for the second run)
-        self.clear_cache() # It  makes the cache=None             
+        self.clear_cache() # It  makes the cache=None  
+
+        event_padding_s = 0.1 # extend the event by 100ms on each side           
 
         # Raise NodeInputException if the an input is wrong. This type of
         # exception will stop the process with the error message given in parameter.

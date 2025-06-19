@@ -70,8 +70,10 @@ class MutualInfoZScoreResultsView( Ui_MutualInfoZScoreResultsView, QtWidgets.QWi
          self.duration = self.duration_events[self.index][0]
          if isinstance(self.criteria_lst, str) and self.criteria_lst == '':
              self.criteria=''
-         else:
+         elif isinstance(self.criteria_lst, list):
             self.criteria = self.criteria_lst[self.index]
+         else:
+            self.criteria = self.criteria_lst
 
          # Update event
          self._update_event_info()
@@ -172,8 +174,10 @@ class MutualInfoZScoreResultsView( Ui_MutualInfoZScoreResultsView, QtWidgets.QWi
       self.duration = self.duration_events[self.index][0]
       if isinstance(self.criteria_lst, str) and self.criteria_lst == '':
             self.criteria=''
-      else:
+      elif isinstance(self.criteria_lst, list):
          self.criteria = self.criteria_lst[self.index]
+      else:
+         self.criteria = self.criteria_lst
 
       # Update event
       self._update_event_info()

@@ -37,8 +37,15 @@ See the file LICENCE for full license details.
             List of componants obtain after filtering (only the signals that a component have been deleted)
         deleted_components : List of SignalModel
             List of deleted componants filtered
-        events : pandas DataFrame
-            df of epochs with field:
+        events_components : pandas DataFrame
+            events to describe the components attenuated (10 s)
+                group: Group of events this event is part of
+                name: Name of the event
+                start_sec: Starting time of the event in sec
+                duration_sec: Duration of the event in sec
+                channels : Channel where the event occures
+        events_corrected : pandas DataFrame
+            events corrected (MOR_C or detected REM sharing information with EOG)
                 group: Group of events this event is part of
                 name: Name of the event
                 start_sec: Starting time of the event in sec
@@ -92,8 +99,15 @@ class FilterComponents(SciNode):
                 List of componants obtain after filtering (only the signals that a component have been deleted)
             deleted_components : List of SignalModel
                 List of deleted componants filtered
-            events : pandas DataFrame
-                df of epochs with field:
+            events_components : pandas DataFrame
+                events to describe the components attenuated (10 s)
+                    group: Group of events this event is part of
+                    name: Name of the event
+                    start_sec: Starting time of the event in sec
+                    duration_sec: Duration of the event in sec
+                    channels : Channel where the event occures
+            events_corrected : pandas DataFrame
+                events corrected (MOR_C or detected REM sharing information with EOG)
                     group: Group of events this event is part of
                     name: Name of the event
                     start_sec: Starting time of the event in sec
@@ -114,7 +128,8 @@ class FilterComponents(SciNode):
         InputPlug('event_channel', self)
         OutputPlug('filter_components', self)
         OutputPlug('deleted_components', self)
-        OutputPlug('events', self)
+        OutputPlug('events_components', self)
+        OutputPlug('events_corrected', self)
 
 
     # The plugin subscribes to the publisher to receive the settings (messages) as input
@@ -141,7 +156,7 @@ class FilterComponents(SciNode):
                         start_sec: Starting time of the event in sec
                         duration_sec: Duration of the event in sec
                         channels : Channel where the event occures
-                        (based on 3 sec MOR_C event, but can be splitted if it crosses a 10 sec REM components)
+                        (based on 3 sec MOR_C event or detected MORs, but can be splitted if it crosses a 10 sec REM components)
                 threshold: array
                     Component above this value will be considered to be filtered out.
                     There is a threshold value per start time (to supportsleep cycle)
@@ -160,8 +175,15 @@ class FilterComponents(SciNode):
                     List of componants obtain after filtering
                 deleted_components : List of SignalModel
                     List of deleted componants filtered
-                events : pandas DataFrame
-                    df of epochs with field:
+                events_components : pandas DataFrame
+                    events to describe the components attenuated (10 s)
+                        group: Group of events this event is part of
+                        name: Name of the event
+                        start_sec: Starting time of the event in sec
+                        duration_sec: Duration of the event in sec
+                        channels : Channel where the event occures
+                events_corrected : pandas DataFrame
+                    events corrected (MOR_C or detected REM sharing information with EOG)
                         group: Group of events this event is part of
                         name: Name of the event
                         start_sec: Starting time of the event in sec
@@ -187,7 +209,8 @@ class FilterComponents(SciNode):
         elif isinstance(z_values, list) and len(z_values)==0:
             return {'filter_components': [],
                     'deleted_components': [],
-                    'events': create_event_dataframe(None)}
+                    'events_components': create_event_dataframe(None),
+                    'events_corrected': create_event_dataframe(None)}
         if isinstance(components,str) and components=='':
             err_message = "ERROR: signals not connected"
             self._log_manager.log(self.identifier, err_message)
@@ -201,7 +224,8 @@ class FilterComponents(SciNode):
         elif isinstance(components, list) and len(components)==0:
             return {'filter_components': [],
                     'deleted_components': [],
-                    'events': create_event_dataframe(None)}
+                    'events_components': create_event_dataframe(None),
+                    'events_corrected': create_event_dataframe(None)}
 
 
         if isinstance(threshold, str) and threshold == '':
@@ -219,10 +243,13 @@ class FilterComponents(SciNode):
         event = []
         filter_components_event = SignalModel.get_attribute(copy_components, None, 'start_time')
         z_values_event = SignalModel.get_attribute(z_values, None, 'start_time')
+        event_corrected = []
 
+        # One value for the whole recording (threshold per cycle not available anymore)
+        thresh_val=threshold
         # For each 10-sec R epoch
-        for filt_cmp_event, thresh_val in zip(filter_components_event, threshold):
-            # epochs_to_process is the events of the MOR_C
+        for filt_cmp_event in filter_components_event:
+            # epochs_to_process is the events of the MOR_C or detected MORs
             # We look if there are at least one MOR_C in the current 10 s epoch (filt_cmp_event)
             cond1 = np.array( (epochs_to_process['start_sec']+epochs_to_process['duration_sec']) > filt_cmp_event[0].start_time )
             cond2 = np.array(epochs_to_process['start_sec'] < (filt_cmp_event[0].start_time + filt_cmp_event[0].duration)) 
@@ -232,8 +259,9 @@ class FilterComponents(SciNode):
                 #   each item of z_values_event is a MOR_C
                 # Select the MOR_C in the filt_cmp_event
                 zval_cur_epoch = z_values_event[cond1 * cond2]
-                # For each MOR_C in the current epoch filt_cmp_event
-                for zval in zval_cur_epoch:
+                MOR_events_in_components = epochs_to_process.loc[cond1 * cond2]
+                # For each MOR_C or detected MOR in the current epoch filt_cmp_event
+                for i_MOR_event, zval in enumerate(zval_cur_epoch):
                     # zval is a list of SignalModel, length is n_components
                     z_val = np.array([signal.meta['z_value'] for signal in zval])
                     z_start = zval[0].start_time
@@ -241,6 +269,7 @@ class FilterComponents(SciNode):
                     # z_val is an array of n_comp
                     above_threshold = (z_val > thresh_val).any()
                     if above_threshold:
+                        cur_mor_events = MOR_events_in_components.iloc[i_MOR_event]
                         one_above_threshold = True
                         # Sort the z_val and choose the max nb components to remove
                         index_sort = np.argsort(z_val)[-(int(n_max_to_rem)):]
@@ -270,6 +299,7 @@ class FilterComponents(SciNode):
                                     scaling_win = 1-(sci.windows.tukey(nsample_win, alpha=0.1)*reduction_thres)
                                     # *** The component is modified ***
                                     filt_cmp_event[index].samples[index_start:] = scaling_win*comp_2_rem
+                                    start_time_evt_reduced = filt_cmp_event[index].start_time+index_start/sampling_rate
                                 # MOR ends before the end of the epoch
                                 elif index_stop>0:
                                     comp_2_rem = filt_cmp_event[index].samples[index_start:-index_stop]
@@ -293,12 +323,19 @@ class FilterComponents(SciNode):
                                     scaling_win = 1-(sci.windows.tukey(nsample_win, alpha=0.1)*reduction_thres)
                                     # *** The component is modified ***
                                     filt_cmp_event[index].samples[0:-index_stop] = scaling_win*comp_2_rem     
-
                         # Create an Event
                         if isinstance(event_channel,str) and len(event_channel)>0:
                             channels = event_channel
                         else:
                             channels = filt_cmp_event[index_del[0]].channel
+                            
+                        # Add the MOR_C or detected MOR corrected
+                        event_corrected.append([event_group,
+                                        event_name,
+                                        cur_mor_events.start_sec, #change for the detected REM
+                                        cur_mor_events.duration_sec,  #change for the detected REM
+                                        channels]) 
+                        
                 # If at least one MOR_C in the current 10-sec epoch has a correlation higher than the threshold
                 if one_above_threshold:
                     event.append([event_group,
@@ -306,12 +343,14 @@ class FilterComponents(SciNode):
                                     filt_cmp_event[index_del[0]].start_time,
                                     filt_cmp_event[index_del[0]].duration,
                                     channels]) 
+
             # The component numbers are not reduced (has to match the signals for the ICA restore)
             # Only components above the threshold is reset (and during a MOR_C if available)
             filter_components.append(filt_cmp_event) 
-        events = create_event_dataframe(event)
+        events_components = create_event_dataframe(event)
+        events_corrected = create_event_dataframe(event_corrected)
         # Drop duplicated events from events dataframe
-        events = events.drop_duplicates(subset=['start_sec'], keep='first')
+        events_components = events_components.drop_duplicates(subset=['start_sec'], keep='first')
         filter_components = list(np.hstack(filter_components))
 
         # Write the cache
@@ -325,6 +364,7 @@ class FilterComponents(SciNode):
 
         return {'filter_components': filter_components,
                 'deleted_components': deleted_components,
-                'events': events}
+                'events_components': events_components,
+                'events_corrected': events_corrected}
     
     
