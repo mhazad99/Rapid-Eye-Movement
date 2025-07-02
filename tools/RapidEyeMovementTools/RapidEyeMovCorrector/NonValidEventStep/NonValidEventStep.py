@@ -28,8 +28,8 @@ DEBUG = True
 class NonValidEventStep( BaseStepView,  Ui_NonValidEventStep, QtWidgets.QWidget):
 
     node_id_ResetSignalArtefact_0 = None # to activate if the signal during artifact are reset
-    node_id_Dictionary_group = "98aaf913-882a-4728-a790-3852326874d6" # select the list of group for the current filename
-    node_id_Dictionary_name = "e42725e7-1276-49f7-af92-d3efb2673e4e" # select the list of name for the current filename
+    node_id_Dictionary_group = "bb69a1bb-2b28-4d31-ba98-eac57bc0a7fc" # select the list of group for the current filename
+    node_id_Dictionary_name = "88d57f2a-3182-4323-b82c-a4b3a11cb084" # select the list of name for the current filename
     
     """
         NonValidEventStep

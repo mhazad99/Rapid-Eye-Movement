@@ -6,6 +6,8 @@ See the file LICENCE for full license details.
 """
     Filter a component with the max z value above the threshold to remove the 
     occular artefact.
+    A tukey window is used to smooth the signal on the onset and offset.
+
     Parameters
     -----------
         z_values: List of SignalModel
@@ -233,7 +235,10 @@ class FilterComponents(SciNode):
             self._log_manager.log(self.identifier, err_message)
             raise NodeInputException(self.identifier, "threshold", \
                 f"FilterComponents this input is not connected.")
-         
+        
+        padding_ratio = 0.05  # 5% before/after event
+        alpha_tukey = 0.1     # Tukey shape parameter total
+
         # Clone components to create new signals (components is a list of [n_channels x 10 s epoch of R])
         copy_components = [signal.clone(clone_samples=True) for signal in components]
         filter_components = []
@@ -275,54 +280,46 @@ class FilterComponents(SciNode):
                         index_sort = np.argsort(z_val)[-(int(n_max_to_rem)):]
                         index_pos = np.where((z_val[index_sort] > thresh_val) == True)
                         index_del = index_sort[index_pos]  
-                        # Find in the current component where is the MOR_C (z-vals)
-                        diff_start_sec = (z_start-filt_cmp_event[0].start_time)
-                        diff_stop_sec = (filt_cmp_event[0].start_time+filt_cmp_event[0].duration)-(z_start+z_duration)
+                        # Keep track of deleted components
                         deleted_components.append(filt_cmp_event[index_del])
                         # Generate 2 points to compute the linear regression between threshold and maximum MI
                         x_MI = [thresh_val, z_val[index_del[-1]]]
                         y_MI = [0, 1]
                         for index in index_del:
-                            # MI near to the threshold has a reduction_thres close to zero (small reduction, we keep the component)
-                            # MI near to the max MI has a reduction_thres close to one (big reduction, we remove the component)
+                            # Compute linear regression
                             reduction_thres = np.interp(z_val[index], x_MI, y_MI)
-                            # Force to zeros only the section during MOR_C (hamming slope)
                             sampling_rate = filt_cmp_event[index].sample_rate
-                            index_start = int(round(diff_start_sec*sampling_rate,0))
-                            index_stop = int(round(diff_stop_sec*sampling_rate,0))
-                            # MOR starts after the start of the epoch
-                            if index_start>=0:
-                                # MOR ends with the end of the epoch or after the end of the epoch
-                                if index_stop<=0:
-                                    comp_2_rem = filt_cmp_event[index].samples[index_start:]
-                                    nsample_win = len(comp_2_rem)
-                                    scaling_win = 1-(sci.windows.tukey(nsample_win, alpha=0.1)*reduction_thres)
-                                    # *** The component is modified ***
-                                    filt_cmp_event[index].samples[index_start:] = scaling_win*comp_2_rem
-                                    start_time_evt_reduced = filt_cmp_event[index].start_time+index_start/sampling_rate
-                                # MOR ends before the end of the epoch
-                                elif index_stop>0:
-                                    comp_2_rem = filt_cmp_event[index].samples[index_start:-index_stop]
-                                    nsample_win = len(comp_2_rem)
-                                    scaling_win = 1-(sci.windows.tukey(nsample_win, alpha=0.1)*reduction_thres)
-                                    # *** The component is modified ***
-                                    filt_cmp_event[index].samples[index_start:-index_stop] = scaling_win*comp_2_rem
-                            # MOR starts before the start of the epoch
-                            elif index_start<0:
-                                # MOR ends with the end of the epoch or after the end of the epoch
-                                if index_stop<=0:
-                                    comp_2_rem = filt_cmp_event[index].samples[0:]
-                                    nsample_win = len(comp_2_rem)
-                                    scaling_win = 1-(sci.windows.tukey(nsample_win, alpha=0.1)*reduction_thres)
-                                    # *** The component is modified ***
-                                    filt_cmp_event[index].samples[0:] = scaling_win*comp_2_rem
-                                # MOR ends before the end of the epoch
-                                elif index_stop>0:
-                                    comp_2_rem = filt_cmp_event[index].samples[0:-index_stop]
-                                    nsample_win = len(comp_2_rem)
-                                    scaling_win = 1-(sci.windows.tukey(nsample_win, alpha=0.1)*reduction_thres)
-                                    # *** The component is modified ***
-                                    filt_cmp_event[index].samples[0:-index_stop] = scaling_win*comp_2_rem     
+
+                            # Compute padded start/stop in time
+                            mor_start = z_start
+                            mor_end = z_start + z_duration
+                            duration = mor_end - mor_start
+                            pad = duration * padding_ratio
+                            padded_start_sec = mor_start - pad
+                            padded_end_sec = mor_end + pad
+
+                            # Convert to sample indices relative to component start
+                            comp_start_sec = filt_cmp_event[index].start_time
+                            index_start = int(round((padded_start_sec - comp_start_sec) * sampling_rate))
+                            index_stop = int(round((padded_end_sec - comp_start_sec) * sampling_rate))
+
+                            # Clip to valid sample range
+                            index_start = max(0, index_start)
+                            index_stop = min(len(filt_cmp_event[index].samples), index_stop)
+
+                            if index_start >= index_stop:
+                                continue  # nothing to attenuate
+
+                            # Extract the component
+                            comp_2_rem = filt_cmp_event[index].samples[index_start:index_stop]
+                            nsample_win = len(comp_2_rem)
+
+                            # Create the atttenuation mask
+                            scaling_win = 1 - (sci.windows.tukey(nsample_win, alpha=alpha_tukey) * reduction_thres)
+
+                            # *** Apply attenuation ***
+                            filt_cmp_event[index].samples[index_start:index_stop] = scaling_win * comp_2_rem
+
                         # Create an Event
                         if isinstance(event_channel,str) and len(event_channel)>0:
                             channels = event_channel
