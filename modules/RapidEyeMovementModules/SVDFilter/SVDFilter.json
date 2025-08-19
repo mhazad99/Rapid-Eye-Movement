@@ -1,0 +1,56 @@
+{   
+    "item_name": "SVDFilter",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "dependencies": [
+    ],
+    "module_params":{
+        "cls":"SVDFilter",
+        "name":"SVDFilter",
+        "metadata":{},
+        "file_location":null,
+        "module":"RapidEyeMovementModules.SVDFilter",
+        "module_label": "SVD Filter",
+        "module_category":"Signal Processing",
+        "module_author":"",
+        "module_url":"",
+        "module_description":"",
+        "module_options":{},
+        "inputs": {
+            "signals": {
+                "name": "signals",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"events": {
+                "name": "events",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"events_names": {
+                "name": "events_names",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"configuration": {
+                "name": "configuration",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "filtered_signal": {
+                "name": "filtered_signal",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"events": {
+                "name": "events",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        }
+    }
+}
