@@ -5,7 +5,7 @@
 """
 from commons.BaseStepView import BaseStepView
 from flowpipe.ActivationState import ActivationState
-
+from widgets.WarningDialog import WarningDialog
 
 from qtpy import QtWidgets
 
@@ -39,6 +39,12 @@ class ExportResults(BaseStepView, Ui_ExportResults, QtWidgets.QWidget):
         # This will be called as a response to ping request.
         if topic == self._StringManip_topic:
             self.Suffix_lineEdit.setText(message)
+
+    def on_validate_settings(self):
+        if self.Suffix_lineEdit.text() == '':
+            WarningDialog(f"You need to define a suffix for the exported files in step '4 - Export Results'.")
+            return False
+        return True
 
     def __del__(self):
         if self._pub_sub_manager is not None:

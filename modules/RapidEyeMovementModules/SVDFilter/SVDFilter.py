@@ -25,7 +25,7 @@ class SVDFilter(SciNode):
             TODO DESCRIPTION
         events: TODO TYPE
             TODO DESCRIPTION
-        events_names: TODO TYPE
+        signals_from_events2: TODO TYPE
             TODO DESCRIPTION
         configuration: TODO TYPE
             TODO DESCRIPTION
@@ -47,7 +47,7 @@ class SVDFilter(SciNode):
         # Input plugs
         InputPlug('signals',self)
         InputPlug('events',self)
-        InputPlug('events_names',self)
+        InputPlug('signals_from_events2',self)
         InputPlug('configuration',self)
         
 
@@ -62,7 +62,7 @@ class SVDFilter(SciNode):
         # There can only be 1 master module per process.
         self._is_master = False 
     
-    def compute(self, signals,events,events_names,configuration):
+    def compute(self, signals,events,signals_from_events2,configuration):
         """
         TODO DESCRIPTION
 
@@ -72,7 +72,7 @@ class SVDFilter(SciNode):
                 TODO DESCRIPTION
             events: TODO TYPE
                 TODO DESCRIPTION
-            events_names: TODO TYPE
+            signals_from_events2: TODO TYPE
                 TODO DESCRIPTION
             configuration: TODO TYPE
                 TODO DESCRIPTION
@@ -99,8 +99,8 @@ class SVDFilter(SciNode):
             raise NodeInputException('signals must be a list')
         '''if not isinstance(events, list):
             raise NodeInputException('events must be a list')
-        if not isinstance(events_names, str):
-            raise NodeInputException('events_names must be a list')
+        if not isinstance(signals_from_events2, str):
+            raise NodeInputException('signals_from_events2 must be a list')
         if not isinstance(configuration, dict):
             raise NodeInputException('configuration must be a dict')'''
         Seg_len = [len(signal.samples) for signal in signals]
@@ -169,9 +169,23 @@ class SVDFilter(SciNode):
                     new_signals[idx].samples = Tukey_filtered_segment[j, :]
                 else:
                     raise TypeError(f"Unsupported segment type for assignment: {type(signals[idx])}")
+        
+        if signals_from_events2 is None or signals_from_events2 == '':
+            signals_from_events2 = new_signals         
+        # Replace the REMs events with the original events (without extension)
+        else:
+            for i in range(len(signals_from_events2)):
+                len_extended = len(new_signals[i].samples)
+                len_original = len(signals_from_events2[i].samples)
+
+                if len_extended < len_original:
+                    raise ValueError(f"Extended signal length {len_extended} is less than original length {len_original} for signal {i}.")
                 
+                start_idx = (len_extended - len_original) // 2
+                end_idx = start_idx + len_original
+                signals_from_events2[i].samples = new_signals[i].samples[start_idx:end_idx]
 
         return {
-            'filtered_signal': new_signals,
+            'filtered_signal': signals_from_events2,
             'events': events
         }

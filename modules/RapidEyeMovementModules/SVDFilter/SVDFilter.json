@@ -27,8 +27,8 @@
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"events_names": {
-                "name": "events_names",
+            },"signals_from_events2": {
+                "name": "signals_from_events2",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}

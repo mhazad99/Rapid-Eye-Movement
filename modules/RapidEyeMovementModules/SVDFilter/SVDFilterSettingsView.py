@@ -27,8 +27,8 @@ class SVDFilterSettingsView(BaseSettingsView, Ui_SVDFilterSettingsView, QtWidget
         self._pub_sub_manager.subscribe(self, self._signals_topic)
         self._events_topic = f'{self._parent_node.identifier}.events'
         self._pub_sub_manager.subscribe(self, self._events_topic)
-        self._events_names_topic = f'{self._parent_node.identifier}.events_names'
-        self._pub_sub_manager.subscribe(self, self._events_names_topic)
+        self._signals_from_events2_topic = f'{self._parent_node.identifier}.signals_from_events2'
+        self._pub_sub_manager.subscribe(self, self._signals_from_events2_topic)
         self._configuration_topic = f'{self._parent_node.identifier}.configuration'
         self._pub_sub_manager.subscribe(self, self._configuration_topic)
         
@@ -40,7 +40,7 @@ class SVDFilterSettingsView(BaseSettingsView, Ui_SVDFilterSettingsView, QtWidget
         """
         self._pub_sub_manager.publish(self, self._signals_topic, 'ping')
         self._pub_sub_manager.publish(self, self._events_topic, 'ping')
-        self._pub_sub_manager.publish(self, self._events_names_topic, 'ping')
+        self._pub_sub_manager.publish(self, self._signals_from_events2_topic, 'ping')
         self._pub_sub_manager.publish(self, self._configuration_topic, 'ping')
         
 
@@ -51,7 +51,7 @@ class SVDFilterSettingsView(BaseSettingsView, Ui_SVDFilterSettingsView, QtWidget
         # Send the settings to the publisher for inputs to SVDFilter
         self._pub_sub_manager.publish(self, self._signals_topic, str(self.signals_lineedit.text()))
         self._pub_sub_manager.publish(self, self._events_topic, str(self.events_lineedit.text()))
-        self._pub_sub_manager.publish(self, self._events_names_topic, str(self.events_names_lineedit.text()))
+        self._pub_sub_manager.publish(self, self._signals_from_events2_topic, str(self.signals_from_events2_lineedit.text()))
         self._pub_sub_manager.publish(self, self._configuration_topic, str(self.configuration_lineedit.text()))
         
 
@@ -69,8 +69,8 @@ class SVDFilterSettingsView(BaseSettingsView, Ui_SVDFilterSettingsView, QtWidget
             self.signals_lineedit.setText(message)
         if topic == self._events_topic:
             self.events_lineedit.setText(message)
-        if topic == self._events_names_topic:
-            self.events_names_lineedit.setText(message)
+        if topic == self._signals_from_events2_topic:
+            self.signals_from_events2_lineedit.setText(message)
         if topic == self._configuration_topic:
             self.configuration_lineedit.setText(message)
         
@@ -81,6 +81,6 @@ class SVDFilterSettingsView(BaseSettingsView, Ui_SVDFilterSettingsView, QtWidget
         if self._pub_sub_manager is not None:
             self._pub_sub_manager.unsubscribe(self, self._signals_topic)
             self._pub_sub_manager.unsubscribe(self, self._events_topic)
-            self._pub_sub_manager.unsubscribe(self, self._events_names_topic)
+            self._pub_sub_manager.unsubscribe(self, self._signals_from_events2_topic)
             self._pub_sub_manager.unsubscribe(self, self._configuration_topic)
             

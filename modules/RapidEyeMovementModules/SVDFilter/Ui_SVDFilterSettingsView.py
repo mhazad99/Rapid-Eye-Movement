@@ -57,20 +57,20 @@ class Ui_SVDFilterSettingsView(object):
 
         self.verticalLayout.addLayout(self.events_horizontalLayout)
 
-        self.events_names_horizontalLayout = QHBoxLayout()
-        self.events_names_horizontalLayout.setObjectName(u"events_names_horizontalLayout")
-        self.events_names_label = QLabel(SVDFilterSettingsView)
-        self.events_names_label.setObjectName(u"events_names_label")
+        self.signals_from_events2_horizontalLayout = QHBoxLayout()
+        self.signals_from_events2_horizontalLayout.setObjectName(u"signals_from_events2_horizontalLayout")
+        self.signals_from_events2_label = QLabel(SVDFilterSettingsView)
+        self.signals_from_events2_label.setObjectName(u"signals_from_events2_label")
 
-        self.events_names_horizontalLayout.addWidget(self.events_names_label)
+        self.signals_from_events2_horizontalLayout.addWidget(self.signals_from_events2_label)
 
-        self.events_names_lineedit = QLineEdit(SVDFilterSettingsView)
-        self.events_names_lineedit.setObjectName(u"events_names_lineedit")
+        self.signals_from_events2_lineedit = QLineEdit(SVDFilterSettingsView)
+        self.signals_from_events2_lineedit.setObjectName(u"signals_from_events2_lineedit")
 
-        self.events_names_horizontalLayout.addWidget(self.events_names_lineedit)
+        self.signals_from_events2_horizontalLayout.addWidget(self.signals_from_events2_lineedit)
 
 
-        self.verticalLayout.addLayout(self.events_names_horizontalLayout)
+        self.verticalLayout.addLayout(self.signals_from_events2_horizontalLayout)
 
         self.configuration_horizontalLayout = QHBoxLayout()
         self.configuration_horizontalLayout.setObjectName(u"configuration_horizontalLayout")
@@ -101,7 +101,7 @@ class Ui_SVDFilterSettingsView(object):
         SVDFilterSettingsView.setWindowTitle(QCoreApplication.translate("SVDFilterSettingsView", u"Form", None))
         self.signals_label.setText(QCoreApplication.translate("SVDFilterSettingsView", u"signals", None))
         self.events_label.setText(QCoreApplication.translate("SVDFilterSettingsView", u"events", None))
-        self.events_names_label.setText(QCoreApplication.translate("SVDFilterSettingsView", u"events_names", None))
+        self.signals_from_events2_label.setText(QCoreApplication.translate("SVDFilterSettingsView", u"signals_from_events2", None))
         self.configuration_label.setText(QCoreApplication.translate("SVDFilterSettingsView", u"configuration", None))
     # retranslateUi
 

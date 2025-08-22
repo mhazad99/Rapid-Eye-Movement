@@ -29,14 +29,24 @@ class Ui_CorrectorStep(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.label = QLabel(CorrectorStep)
+        self.label.setObjectName(u"label")
 
-        self.gridLayout.addItem(self.horizontalSpacer, 2, 2, 1, 1)
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
 
-        self.label_2 = QLabel(CorrectorStep)
-        self.label_2.setObjectName(u"label_2")
+        self.label_5 = QLabel(CorrectorStep)
+        self.label_5.setObjectName(u"label_5")
 
-        self.gridLayout.addWidget(self.label_2, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_5, 5, 0, 1, 1)
+
+        self.label_6 = QLabel(CorrectorStep)
+        self.label_6.setObjectName(u"label_6")
+
+        self.gridLayout.addWidget(self.label_6, 3, 0, 1, 1)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer_2, 10, 0, 1, 1)
 
         self.Sharpness_doubleSpinBox = QDoubleSpinBox(CorrectorStep)
         self.Sharpness_doubleSpinBox.setObjectName(u"Sharpness_doubleSpinBox")
@@ -45,44 +55,54 @@ class Ui_CorrectorStep(object):
 
         self.gridLayout.addWidget(self.Sharpness_doubleSpinBox, 5, 1, 1, 1)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.Number_of_Components_spinBox = QSpinBox(CorrectorStep)
+        self.Number_of_Components_spinBox.setObjectName(u"Number_of_Components_spinBox")
 
-        self.gridLayout.addItem(self.verticalSpacer_2, 7, 0, 1, 1)
-
-        self.label_6 = QLabel(CorrectorStep)
-        self.label_6.setObjectName(u"label_6")
-
-        self.gridLayout.addWidget(self.label_6, 3, 0, 1, 1)
-
-        self.label = QLabel(CorrectorStep)
-        self.label.setObjectName(u"label")
-
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.Number_of_Components_spinBox, 2, 1, 1, 1)
 
         self.label_3 = QLabel(CorrectorStep)
         self.label_3.setObjectName(u"label_3")
 
         self.gridLayout.addWidget(self.label_3, 6, 0, 1, 1)
 
+        self.label_9 = QLabel(CorrectorStep)
+        self.label_9.setObjectName(u"label_9")
+
+        self.gridLayout.addWidget(self.label_9, 8, 0, 1, 1)
+
+        self.label_2 = QLabel(CorrectorStep)
+        self.label_2.setObjectName(u"label_2")
+
+        self.gridLayout.addWidget(self.label_2, 2, 0, 1, 1)
+
         self.label_4 = QLabel(CorrectorStep)
         self.label_4.setObjectName(u"label_4")
 
         self.gridLayout.addWidget(self.label_4, 1, 0, 1, 1)
 
-        self.Number_of_Components_spinBox = QSpinBox(CorrectorStep)
-        self.Number_of_Components_spinBox.setObjectName(u"Number_of_Components_spinBox")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.gridLayout.addWidget(self.Number_of_Components_spinBox, 2, 1, 1, 1)
-
-        self.label_5 = QLabel(CorrectorStep)
-        self.label_5.setObjectName(u"label_5")
-
-        self.gridLayout.addWidget(self.label_5, 5, 0, 1, 1)
+        self.gridLayout.addItem(self.horizontalSpacer, 2, 2, 1, 1)
 
         self.label_7 = QLabel(CorrectorStep)
         self.label_7.setObjectName(u"label_7")
 
         self.gridLayout.addWidget(self.label_7, 4, 0, 1, 1)
+
+        self.label_8 = QLabel(CorrectorStep)
+        self.label_8.setObjectName(u"label_8")
+
+        self.gridLayout.addWidget(self.label_8, 7, 0, 1, 1)
+
+        self.label_10 = QLabel(CorrectorStep)
+        self.label_10.setObjectName(u"label_10")
+
+        self.gridLayout.addWidget(self.label_10, 9, 0, 1, 1)
+
+        self.per_side_exten_percent_spinBox = QSpinBox(CorrectorStep)
+        self.per_side_exten_percent_spinBox.setObjectName(u"per_side_exten_percent_spinBox")
+
+        self.gridLayout.addWidget(self.per_side_exten_percent_spinBox, 9, 1, 1, 1)
 
 
         self.horizontalLayout_3.addLayout(self.gridLayout)
@@ -96,12 +116,15 @@ class Ui_CorrectorStep(object):
     def retranslateUi(self, CorrectorStep):
         CorrectorStep.setWindowTitle("")
         CorrectorStep.setStyleSheet(QCoreApplication.translate("CorrectorStep", u"font: 10pt \"Roboto-Regular\";", None))
-        self.label_2.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p><span style=\" font-size:12pt;\">Number of Componnents to Remove in SVD</span></p></body></html>", None))
-        self.label_6.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p>Defines the number of dominant singular components to remove from the EEG signal<br/>during each REM event segment.</p></body></html>", None))
         self.label.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">Common Settings</span></p></body></html>", None))
-        self.label_3.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p>Controls the smoothness of the correction's edges. A higher value (e.g., 0.8) means<br/>smoother transitions, while a lower value (e.g., 0.2) means sharper edges.</p></body></html>", None))
-        self.label_4.setText("")
         self.label_5.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p><span style=\" font-size:12pt;\">Tukey Window Sharpness</span></p></body></html>", None))
+        self.label_6.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p>Defines the number of dominant singular components to remove from the EEG signal<br/>during each REM event segment.</p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p>Controls the smoothness of the correction's edges. A higher value (e.g., 0.8) means<br/>smoother transitions, while a lower value (e.g., 0.2) means sharper edges.</p></body></html>", None))
+        self.label_9.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p><span style=\" font-size:12pt;\">Per-side extension percentage</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p><span style=\" font-size:12pt;\">Number of Componnents to Remove in SVD</span></p></body></html>", None))
+        self.label_4.setText("")
         self.label_7.setText("")
+        self.label_8.setText("")
+        self.label_10.setText(QCoreApplication.translate("CorrectorStep", u"<html><head/><body><p>Each side of the REM events is extended by this value based on a percentage of the<br/>REM segment's duration before applying the SVD filter and Tukey window. <br/>This is done to achieve a smoother replacement of the events in the signal after correction.</p></body></html>", None))
     # retranslateUi
 
