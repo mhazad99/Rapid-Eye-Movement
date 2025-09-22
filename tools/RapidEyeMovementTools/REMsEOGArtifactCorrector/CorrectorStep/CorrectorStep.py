@@ -26,6 +26,10 @@ class CorrectorStep(BaseStepView, Ui_CorrectorStep, QtWidgets.QWidget):
         self._SVDConfig_topic = f'{self._node_id_SVDFilter}.configuration'
         self._pub_sub_manager.subscribe(self, self._SVDConfig_topic)
 
+        self._node_id_SVDFilter2 = "bcd18748-3687-4147-9b8c-1924b8fc1b65"  # receive the second SVD filter parameters
+        self._SVDConfig2_topic = f'{self._node_id_SVDFilter2}.configuration'
+        self._pub_sub_manager.subscribe(self, self._SVDConfig2_topic)
+
         self._node_id_ExtendEvents = "6c44181b-f947-4486-b8cf-92e7a4a28fd5"
         self._ExtendEvents_topic = f'{self._node_id_ExtendEvents}.per_side_exten_percent'
         self._pub_sub_manager.subscribe(self, self._ExtendEvents_topic)
@@ -38,6 +42,7 @@ class CorrectorStep(BaseStepView, Ui_CorrectorStep, QtWidgets.QWidget):
     def load_settings(self):
         # Ask for the settings to the publisher to display on the SettingsView
         self._pub_sub_manager.publish(self, self._SVDConfig_topic, 'ping')
+        self._pub_sub_manager.publish(self, self._SVDConfig2_topic, 'ping')
         self._pub_sub_manager.publish(self, self._ExtendEvents_topic, 'ping')
 
     def on_apply_settings(self):
@@ -45,11 +50,12 @@ class CorrectorStep(BaseStepView, Ui_CorrectorStep, QtWidgets.QWidget):
         self._SVDConfig['number_of_components'] = self.Number_of_Components_spinBox.value()
         self._SVDConfig['tukey_alpha'] = self.Sharpness_doubleSpinBox.value()
         self._pub_sub_manager.publish(self, self._SVDConfig_topic, self._SVDConfig)
+        self._pub_sub_manager.publish(self, self._SVDConfig2_topic, self._SVDConfig)
         self._pub_sub_manager.publish(self, self._ExtendEvents_topic, self.per_side_exten_percent_spinBox.value())
 
     def on_topic_response(self, topic, message, sender):
         # This will be called as a response to ping request.
-        if topic == self._SVDConfig_topic:
+        if topic == self._SVDConfig_topic or topic == self._SVDConfig2_topic:
             if isinstance(message, str) and not message == '':  
                 message = eval(message)
             elif isinstance(message, dict):
@@ -66,4 +72,5 @@ class CorrectorStep(BaseStepView, Ui_CorrectorStep, QtWidgets.QWidget):
     def __del__(self):
         if self._pub_sub_manager is not None:
             self._pub_sub_manager.unsubscribe(self, self._SVDConfig_topic)
+            self._pub_sub_manager.unsubscribe(self, self._SVDConfig2_topic)
             self._pub_sub_manager.unsubscribe(self, self._ExtendEvents_topic)

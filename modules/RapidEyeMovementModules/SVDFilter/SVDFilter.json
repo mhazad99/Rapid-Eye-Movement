@@ -27,13 +27,19 @@
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"signals_from_events2": {
-                "name": "signals_from_events2",
+            },"original_signals": {
+                "name": "original_signals",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
             },"configuration": {
                 "name": "configuration",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "components": {
+                "name": "components",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
@@ -47,6 +53,12 @@
                 "sub_plugs": {}
             },"events": {
                 "name": "events",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },
+            "components": {
+                "name": "components",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}

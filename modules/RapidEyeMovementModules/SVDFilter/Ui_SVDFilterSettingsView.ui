@@ -44,16 +44,16 @@
      </item>
     </layout>
    </item><item>
-    <layout class="QHBoxLayout" name="signals_from_events2_horizontalLayout">
+    <layout class="QHBoxLayout" name="original_signals_horizontalLayout">
      <item>
-      <widget class="QLabel" name="signals_from_events2_label">
+      <widget class="QLabel" name="original_signals_label">
        <property name="text">
-        <string>signals_from_events2</string>
+        <string>original_signals</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="signals_from_events2_lineedit"/>
+      <widget class="QLineEdit" name="original_signals_lineedit"/>
      </item>
     </layout>
    </item><item>
